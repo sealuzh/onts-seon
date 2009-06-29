@@ -8,14 +8,12 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY oop "http://evolizer.org/ontologies/seon/2009/06/oop.owl#" >
-    <!ENTITY oolang "http://evolizer.org/ontologies/seon/2009/06/oolang.owl#" >
 ]>
 
 
 <rdf:RDF xmlns="http://evolizer.org/ontologies/seon/2009/06/oop.owl#"
      xml:base="http://evolizer.org/ontologies/seon/2009/06/oop.owl"
      xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:oolang="http://evolizer.org/ontologies/seon/2009/06/oolang.owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:oop="http://evolizer.org/ontologies/seon/2009/06/oop.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -33,7 +31,73 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:AnnotationProperty rdf:about="&oolang;todo"/>
+    <owl:AnnotationProperty rdf:about="#todo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#hasIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="#hasIdentifier">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <todo
+            >Maybe change property name to &quot;hasName&quot;</todo>
+        <rdfs:domain rdf:resource="#OOPEntity"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#hasPosition -->
+
+    <owl:DatatypeProperty rdf:about="#hasPosition">
+        <rdfs:domain rdf:resource="#Parameter"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#isAbstract -->
+
+    <owl:DatatypeProperty rdf:about="#isAbstract">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#CompoundType"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#isConstant -->
+
+    <owl:DatatypeProperty rdf:about="#isConstant">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Field"/>
+                    <rdf:Description rdf:about="#LocalVariable"/>
+                    <rdf:Description rdf:about="#Parameter"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
     
 
 
@@ -51,7 +115,7 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#AnnotationType -->
 
     <owl:Class rdf:about="#AnnotationType">
-        <rdfs:subClassOf rdf:resource="#Datatype"/>
+        <rdfs:subClassOf rdf:resource="#ComplexType"/>
     </owl:Class>
     
 
@@ -60,8 +124,18 @@
 
     <owl:Class rdf:about="#Class">
         <rdfs:subClassOf rdf:resource="#CompoundType"/>
-        <oolang:todo
-            >add isAbstract flag?</oolang:todo>
+        <owl:disjointWith rdf:resource="#Interface"/>
+        <todo
+            >add isAbstract flag?</todo>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#ComplexType -->
+
+    <owl:Class rdf:about="#ComplexType">
+        <rdfs:subClassOf rdf:resource="#Datatype"/>
+        <owl:disjointWith rdf:resource="#PrimitiveType"/>
     </owl:Class>
     
 
@@ -69,7 +143,7 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#CompoundType -->
 
     <owl:Class rdf:about="#CompoundType">
-        <rdfs:subClassOf rdf:resource="#Datatype"/>
+        <rdfs:subClassOf rdf:resource="#ComplexType"/>
     </owl:Class>
     
 
@@ -85,7 +159,7 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Datatype -->
 
     <owl:Class rdf:about="#Datatype">
-        <rdfs:subClassOf rdf:resource="#OOPConcept"/>
+        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
     </owl:Class>
     
 
@@ -93,7 +167,7 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#EnumerationType -->
 
     <owl:Class rdf:about="#EnumerationType">
-        <rdfs:subClassOf rdf:resource="#Datatype"/>
+        <rdfs:subClassOf rdf:resource="#ComplexType"/>
     </owl:Class>
     
 
@@ -141,7 +215,7 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Method -->
 
     <owl:Class rdf:about="#Method">
-        <rdfs:subClassOf rdf:resource="#OOPConcept"/>
+        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
     </owl:Class>
     
 
@@ -149,16 +223,16 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Namespace -->
 
     <owl:Class rdf:about="#Namespace">
-        <rdfs:subClassOf rdf:resource="#OOPConcept"/>
+        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
         <rdfs:comment
             >In Java this would be a Package.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#OOPConcept -->
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#OOPEntity -->
 
-    <owl:Class rdf:about="#OOPConcept"/>
+    <owl:Class rdf:about="#OOPEntity"/>
     
 
 
@@ -181,10 +255,38 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Variable -->
 
     <owl:Class rdf:about="#Variable">
-        <rdfs:subClassOf rdf:resource="#OOPConcept"/>
-        <oolang:todo
-            >add isConstant flag</oolang:todo>
+        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
+        <todo
+            >add isConstant flag</todo>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#AnnotationType"/>
+            <rdf:Description rdf:about="#CompoundType"/>
+            <rdf:Description rdf:about="#EnumerationType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Datatype"/>
+            <rdf:Description rdf:about="#Method"/>
+            <rdf:Description rdf:about="#Namespace"/>
+            <rdf:Description rdf:about="#Variable"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
