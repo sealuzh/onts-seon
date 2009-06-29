@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY oop "http://evolizer.org/ontologies/seon/2009/06/oop.owl#" >
+    <!ENTITY oolang "http://evolizer.org/ontologies/seon/2009/06/oolang.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://evolizer.org/ontologies/seon/2009/06/oop.owl#"
+     xml:base="http://evolizer.org/ontologies/seon/2009/06/oop.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:oolang="http://evolizer.org/ontologies/seon/2009/06/oolang.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:oop="http://evolizer.org/ontologies/seon/2009/06/oop.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&oolang;todo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#AnnotationType -->
+
+    <owl:Class rdf:about="#AnnotationType">
+        <rdfs:subClassOf rdf:resource="#Datatype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Class -->
+
+    <owl:Class rdf:about="#Class">
+        <rdfs:subClassOf rdf:resource="#CompoundType"/>
+        <oolang:todo
+            >add isAbstract flag?</oolang:todo>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#CompoundType -->
+
+    <owl:Class rdf:about="#CompoundType">
+        <rdfs:subClassOf rdf:resource="#Datatype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Constructor -->
+
+    <owl:Class rdf:about="#Constructor">
+        <rdfs:subClassOf rdf:resource="#Method"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Datatype -->
+
+    <owl:Class rdf:about="#Datatype">
+        <rdfs:subClassOf rdf:resource="#OOPConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#EnumerationType -->
+
+    <owl:Class rdf:about="#EnumerationType">
+        <rdfs:subClassOf rdf:resource="#Datatype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Exception -->
+
+    <owl:Class rdf:about="#Exception">
+        <rdfs:subClassOf rdf:resource="#Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Field -->
+
+    <owl:Class rdf:about="#Field">
+        <rdfs:subClassOf rdf:resource="#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#ImplicitVariable -->
+
+    <owl:Class rdf:about="#ImplicitVariable">
+        <rdfs:subClassOf rdf:resource="#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Interface -->
+
+    <owl:Class rdf:about="#Interface">
+        <rdfs:subClassOf rdf:resource="#CompoundType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#LocalVariable -->
+
+    <owl:Class rdf:about="#LocalVariable">
+        <rdfs:subClassOf rdf:resource="#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Method -->
+
+    <owl:Class rdf:about="#Method">
+        <rdfs:subClassOf rdf:resource="#OOPConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Namespace -->
+
+    <owl:Class rdf:about="#Namespace">
+        <rdfs:subClassOf rdf:resource="#OOPConcept"/>
+        <rdfs:comment
+            >In Java this would be a Package.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#OOPConcept -->
+
+    <owl:Class rdf:about="#OOPConcept"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Parameter -->
+
+    <owl:Class rdf:about="#Parameter">
+        <rdfs:subClassOf rdf:resource="#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#PrimitiveType -->
+
+    <owl:Class rdf:about="#PrimitiveType">
+        <rdfs:subClassOf rdf:resource="#Datatype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Variable -->
+
+    <owl:Class rdf:about="#Variable">
+        <rdfs:subClassOf rdf:resource="#OOPConcept"/>
+        <oolang:todo
+            >add isConstant flag</oolang:todo>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
