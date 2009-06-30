@@ -22,6 +22,8 @@
     <owl:Ontology rdf:about="">
         <rdfs:comment
             >This ontology models Java entities.</rdfs:comment>
+        <todo
+            >Add more comments.</todo>
     </owl:Ontology>
     
 
