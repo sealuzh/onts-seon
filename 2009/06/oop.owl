@@ -46,11 +46,153 @@
     
 
 
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#accessesField -->
+
+    <owl:ObjectProperty rdf:about="#accessesField">
+        <rdfs:range rdf:resource="#Field"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#declaresConstructor -->
+
+    <owl:ObjectProperty rdf:about="#declaresConstructor">
+        <rdfs:range rdf:resource="#Constructor"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#EnumerationType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#declaresMethod -->
 
     <owl:ObjectProperty rdf:about="#declaresMethod">
         <rdfs:domain rdf:resource="#ComplexType"/>
         <rdfs:range rdf:resource="#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#hasDatatype -->
+
+    <owl:ObjectProperty rdf:about="#hasDatatype">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="#Datatype"/>
+        <rdfs:domain rdf:resource="#Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#hasParameter -->
+
+    <owl:ObjectProperty rdf:about="#hasParameter">
+        <rdfs:range rdf:resource="#Parameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#hasSuperInterface -->
+
+    <owl:ObjectProperty rdf:about="#hasSuperInterface">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="#Interface"/>
+        <rdfs:range rdf:resource="#Interface"/>
+        <rdfs:subPropertyOf rdf:resource="#inhertitsFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#hasSuperclass -->
+
+    <owl:ObjectProperty rdf:about="#hasSuperclass">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:comment
+            >Is functional since Java does not support multible inheritance.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Class"/>
+        <rdfs:range rdf:resource="#Class"/>
+        <rdfs:subPropertyOf rdf:resource="#inhertitsFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="#implementsInterface">
+        <rdfs:range rdf:resource="#Interface"/>
+        <rdfs:subPropertyOf rdf:resource="#inhertitsFrom"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#EnumerationType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#inhertitsFrom -->
+
+    <owl:ObjectProperty rdf:about="#inhertitsFrom">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#EnumerationType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#invokesMethod -->
+
+    <owl:ObjectProperty rdf:about="#invokesMethod">
+        <todo
+            >think about who invokes a Constructor</todo>
+        <rdfs:range rdf:resource="#Method"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -92,14 +234,6 @@
     <owl:DatatypeProperty rdf:about="#isAbstract">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#CompoundType"/>
-                    <rdf:Description rdf:about="#Method"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -143,8 +277,7 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Class -->
 
     <owl:Class rdf:about="#Class">
-        <rdfs:subClassOf rdf:resource="#CompoundType"/>
-        <owl:disjointWith rdf:resource="#Interface"/>
+        <rdfs:subClassOf rdf:resource="#ComplexType"/>
         <todo
             >add isAbstract flag?</todo>
     </owl:Class>
@@ -160,18 +293,12 @@
     
 
 
-    <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#CompoundType -->
-
-    <owl:Class rdf:about="#CompoundType">
-        <rdfs:subClassOf rdf:resource="#ComplexType"/>
-    </owl:Class>
-    
-
-
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Constructor -->
 
     <owl:Class rdf:about="#Constructor">
-        <rdfs:subClassOf rdf:resource="#Method"/>
+        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
+        <rdfs:comment
+            >Basically, a constructor is a special method. However, Java Interfaces and Annotations cannot have constructors. Therefore, we did not model Constructor as subclass of Method.</rdfs:comment>
     </owl:Class>
     
 
@@ -219,7 +346,7 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/oop.owl#Interface -->
 
     <owl:Class rdf:about="#Interface">
-        <rdfs:subClassOf rdf:resource="#CompoundType"/>
+        <rdfs:subClassOf rdf:resource="#ComplexType"/>
     </owl:Class>
     
 
@@ -294,8 +421,9 @@
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="#AnnotationType"/>
-            <rdf:Description rdf:about="#CompoundType"/>
+            <rdf:Description rdf:about="#Class"/>
             <rdf:Description rdf:about="#EnumerationType"/>
+            <rdf:Description rdf:about="#Interface"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
