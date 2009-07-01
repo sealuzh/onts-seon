@@ -22,8 +22,6 @@
     <owl:Ontology rdf:about="">
         <rdfs:comment
             >This ontology models Java entities.</rdfs:comment>
-        <todo
-            >Add more comments. Geri can do that.</todo>
     </owl:Ontology>
     
 
@@ -55,6 +53,7 @@
 
     <owl:ObjectProperty rdf:about="#accessesField">
         <rdfs:range rdf:resource="#Field"/>
+        <owl:inverseOf rdf:resource="#isAccessedByMethod"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -71,11 +70,47 @@
 
     <owl:ObjectProperty rdf:about="#declaresConstructor">
         <rdfs:range rdf:resource="#Constructor"/>
+        <owl:inverseOf rdf:resource="#isDeclaredConstructorOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="#Class"/>
                     <rdf:Description rdf:about="#EnumerationType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresField -->
+
+    <owl:ObjectProperty rdf:about="#declaresField">
+        <rdfs:range rdf:resource="#Field"/>
+        <owl:inverseOf rdf:resource="#isDeclaredFieldOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresInnerComplexType -->
+
+    <owl:ObjectProperty rdf:about="#declaresInnerComplexType">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="#ComplexType"/>
+        <owl:inverseOf rdf:resource="#isDeclaredInnerComplexTypeOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -88,6 +123,7 @@
     <owl:ObjectProperty rdf:about="#declaresMethod">
         <rdfs:domain rdf:resource="#ComplexType"/>
         <rdfs:range rdf:resource="#Method"/>
+        <owl:inverseOf rdf:resource="#isDeclaredMethodOf"/>
     </owl:ObjectProperty>
     
 
@@ -98,6 +134,7 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:range rdf:resource="#Datatype"/>
         <rdfs:domain rdf:resource="#Variable"/>
+        <owl:inverseOf rdf:resource="#isDatatypeOf"/>
     </owl:ObjectProperty>
     
 
@@ -106,6 +143,7 @@
 
     <owl:ObjectProperty rdf:about="#hasParameter">
         <rdfs:range rdf:resource="#Parameter"/>
+        <owl:inverseOf rdf:resource="#isParameterOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -118,28 +156,113 @@
     
 
 
-    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSuperInterface -->
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasReturnType -->
 
-    <owl:ObjectProperty rdf:about="#hasSuperInterface">
+    <owl:ObjectProperty rdf:about="#hasReturnType">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
-        <rdfs:domain rdf:resource="#Interface"/>
-        <rdfs:range rdf:resource="#Interface"/>
-        <rdfs:subPropertyOf rdf:resource="#inhertitsFrom"/>
+        <rdfs:range rdf:resource="#Datatype"/>
+        <rdfs:domain rdf:resource="#Method"/>
+        <owl:inverseOf rdf:resource="#isReturnTypeOf"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSuperclass -->
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSubClass -->
 
-    <owl:ObjectProperty rdf:about="#hasSuperclass">
+    <owl:ObjectProperty rdf:about="#hasSubClass">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="#Class"/>
+        <rdfs:domain rdf:resource="#Class"/>
+        <rdfs:subPropertyOf rdf:resource="#hasSubType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSubInterface -->
+
+    <owl:ObjectProperty rdf:about="#hasSubInterface">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="#Interface"/>
+        <rdfs:domain rdf:resource="#Interface"/>
+        <rdfs:subPropertyOf rdf:resource="#hasSubType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSubType -->
+
+    <owl:ObjectProperty rdf:about="#hasSubType">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#EnumerationType"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSuperClass -->
+
+    <owl:ObjectProperty rdf:about="#hasSuperClass">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <todo>transitive?
+</todo>
         <rdfs:comment
             >Is functional since Java does not support multible inheritance.</rdfs:comment>
-        <rdfs:domain rdf:resource="#Class"/>
         <rdfs:range rdf:resource="#Class"/>
-        <rdfs:subPropertyOf rdf:resource="#inhertitsFrom"/>
+        <rdfs:domain rdf:resource="#Class"/>
+        <owl:inverseOf rdf:resource="#hasSubClass"/>
+        <rdfs:subPropertyOf rdf:resource="#hasSuperType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSuperInterface -->
+
+    <owl:ObjectProperty rdf:about="#hasSuperInterface">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <todo>transitive?</todo>
+        <rdfs:domain rdf:resource="#Interface"/>
+        <rdfs:range rdf:resource="#Interface"/>
+        <owl:inverseOf rdf:resource="#hasSubInterface"/>
+        <rdfs:subPropertyOf rdf:resource="#hasSuperType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSuperType -->
+
+    <owl:ObjectProperty rdf:about="#hasSuperType">
+        <owl:inverseOf rdf:resource="#hasSubType"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#EnumerationType"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -147,13 +270,26 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#implementsInterface -->
 
     <owl:ObjectProperty rdf:about="#implementsInterface">
+        <rdfs:domain rdf:resource="#Class"/>
         <rdfs:range rdf:resource="#Interface"/>
-        <rdfs:subPropertyOf rdf:resource="#inhertitsFrom"/>
+        <rdfs:subPropertyOf rdf:resource="#hasSuperType"/>
+        <owl:inverseOf rdf:resource="#isImplementedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#invokesMethod -->
+
+    <owl:ObjectProperty rdf:about="#invokesMethod">
+        <todo
+            >think about who invokes a Constructor</todo>
+        <rdfs:range rdf:resource="#Method"/>
+        <owl:inverseOf rdf:resource="#isInvokedByMethod"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#Class"/>
-                    <rdf:Description rdf:about="#EnumerationType"/>
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -161,17 +297,51 @@
     
 
 
-    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#inhertitsFrom -->
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isAccessedByMethod -->
 
-    <owl:ObjectProperty rdf:about="#inhertitsFrom">
-        <rdfs:domain>
+    <owl:ObjectProperty rdf:about="#isAccessedByMethod">
+        <rdfs:domain rdf:resource="#Field"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDatatypeOf -->
+
+    <owl:ObjectProperty rdf:about="#isDatatypeOf">
+        <rdfs:domain rdf:resource="#Datatype"/>
+        <rdfs:range rdf:resource="#Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDeclaredConstructorOf -->
+
+    <owl:ObjectProperty rdf:about="#isDeclaredConstructorOf">
+        <rdfs:domain rdf:resource="#Constructor"/>
+        <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="#Class"/>
                     <rdf:Description rdf:about="#EnumerationType"/>
                 </owl:unionOf>
             </owl:Class>
-        </rdfs:domain>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDeclaredFieldOf -->
+
+    <owl:ObjectProperty rdf:about="#isDeclaredFieldOf">
+        <rdfs:domain rdf:resource="#Field"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -184,12 +354,102 @@
     
 
 
-    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#invokesMethod -->
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDeclaredInnerComplexTypeOf -->
 
-    <owl:ObjectProperty rdf:about="#invokesMethod">
-        <todo
-            >think about who invokes a Constructor</todo>
+    <owl:ObjectProperty rdf:about="#isDeclaredInnerComplexTypeOf">
+        <rdfs:domain rdf:resource="#ComplexType"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDeclaredMethodOf -->
+
+    <owl:ObjectProperty rdf:about="#isDeclaredMethodOf">
+        <rdfs:range rdf:resource="#ComplexType"/>
+        <rdfs:domain rdf:resource="#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isImplementedBy -->
+
+    <owl:ObjectProperty rdf:about="#isImplementedBy">
+        <rdfs:range rdf:resource="#Class"/>
+        <rdfs:domain rdf:resource="#Interface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isInvokedByMethod -->
+
+    <owl:ObjectProperty rdf:about="#isInvokedByMethod">
+        <rdfs:domain rdf:resource="#Method"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isParameterOf -->
+
+    <owl:ObjectProperty rdf:about="#isParameterOf">
+        <rdfs:domain rdf:resource="#Parameter"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isReturnTypeOf -->
+
+    <owl:ObjectProperty rdf:about="#isReturnTypeOf">
+        <rdfs:domain rdf:resource="#Datatype"/>
         <rdfs:range rdf:resource="#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isThrownBy -->
+
+    <owl:ObjectProperty rdf:about="#isThrownBy">
+        <rdfs:domain rdf:resource="#Exception"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#throwsException -->
+
+    <owl:ObjectProperty rdf:about="#throwsException">
+        <rdfs:range rdf:resource="#Exception"/>
+        <owl:inverseOf rdf:resource="#isThrownBy"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -239,6 +499,16 @@
     <owl:DatatypeProperty rdf:about="#isAbstract">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#AnnotationType"/>
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
