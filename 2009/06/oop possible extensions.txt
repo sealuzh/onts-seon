@@ -2,4 +2,4 @@ Possible extension:
 - Source code documentation (for Field, AnnotationType, CompoundType, EnumerationType)
 - Source anchor for Source Code entities (hasLocation, hasOffset, hasLength)
 - Visibility modifiers (private, public, protected, default, ...)
-- Look at all object properties if they are reflexive/irreflexive
+- Look at all object properties if they are reflexive/irreflexive  
