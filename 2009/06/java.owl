@@ -192,14 +192,6 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSubType -->
 
     <owl:ObjectProperty rdf:about="#hasSubType">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#Class"/>
-                    <rdf:Description rdf:about="#Interface"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -209,6 +201,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -217,8 +217,7 @@
 
     <owl:ObjectProperty rdf:about="#hasSuperClass">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <todo>transitive?
-</todo>
+        <todo>transitive?</todo>
         <rdfs:comment
             >Is functional since Java does not support multible inheritance.</rdfs:comment>
         <rdfs:range rdf:resource="#Class"/>
@@ -246,14 +245,6 @@
 
     <owl:ObjectProperty rdf:about="#hasSuperType">
         <owl:inverseOf rdf:resource="#hasSubType"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#Class"/>
-                    <rdf:Description rdf:about="#Interface"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -263,6 +254,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -448,6 +447,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#throwsException -->
 
     <owl:ObjectProperty rdf:about="#throwsException">
+        <rdfs:comment
+            >Super class of all Java-specific concepts.</rdfs:comment>
         <rdfs:range rdf:resource="#Exception"/>
         <owl:inverseOf rdf:resource="#isThrownBy"/>
         <rdfs:domain>
@@ -479,7 +480,7 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <todo
             >Maybe change property name to &quot;hasName&quot;</todo>
-        <rdfs:domain rdf:resource="#OOPEntity"/>
+        <rdfs:domain rdf:resource="#JavaEntity"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -545,6 +546,8 @@
 
     <owl:Class rdf:about="#AnnotationType">
         <rdfs:subClassOf rdf:resource="#ComplexType"/>
+        <rdfs:comment
+            >Annotations are a mechanism for associating a meta-tag with program elements and allowing the Java compiler or the VM to derive program behaviors from these annotated elements or to generate interdependent codes when necessary.</rdfs:comment>
     </owl:Class>
     
 
@@ -554,7 +557,11 @@
     <owl:Class rdf:about="#Class">
         <rdfs:subClassOf rdf:resource="#ComplexType"/>
         <todo
-            >add isAbstract flag?</todo>
+            >Add isAbstract flag?
+
+Visibility modifiers?</todo>
+        <rdfs:comment
+            >A class is a programming language construct that is used as a blueprint to create objects. This blueprint describes the state and behavior that the created objects all share. An object created by a class is an instance of the class.</rdfs:comment>
     </owl:Class>
     
 
@@ -564,6 +571,8 @@
     <owl:Class rdf:about="#ComplexType">
         <rdfs:subClassOf rdf:resource="#Datatype"/>
         <owl:disjointWith rdf:resource="#PrimitiveType"/>
+        <rdfs:comment
+            >Complex (aka. compound/composite)  types are constructed recursively, starting from primitive types. In addition, they can define fields and methods.</rdfs:comment>
     </owl:Class>
     
 
@@ -571,9 +580,11 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#Constructor -->
 
     <owl:Class rdf:about="#Constructor">
-        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
+        <rdfs:subClassOf rdf:resource="#JavaEntity"/>
         <rdfs:comment
-            >Basically, a constructor is a special method. However, Java Interfaces and Annotations cannot have constructors. Therefore, we did not model Constructor as subclass of Method.</rdfs:comment>
+            >Constructors are used to create an instance of a Java class. 
+
+Basically, a constructor is a special method. However, Java Interfaces and Annotations cannot have constructors. Further a constructor&#39;s signature differs from a method&#39;s one. Constructor signatures can only have access modifiers, i.e., they cannot be &#39;abstract&#39;, &#39;final&#39;, &#39;native&#39;, &#39;static&#39;, or synchronized. Because of this differences, we did not model Constructor as a subclass of Method.</rdfs:comment>
     </owl:Class>
     
 
@@ -581,7 +592,9 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#Datatype -->
 
     <owl:Class rdf:about="#Datatype">
-        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
+        <rdfs:subClassOf rdf:resource="#JavaEntity"/>
+        <rdfs:comment
+            >A datatype describes the representation, interpretation, and structure of values or objects stored in computer memory.</rdfs:comment>
     </owl:Class>
     
 
@@ -590,6 +603,12 @@
 
     <owl:Class rdf:about="#EnumerationType">
         <rdfs:subClassOf rdf:resource="#ComplexType"/>
+        <rdfs:comment
+            >An enum type is a type whose fields consist of a fixed set of constants. Common examples include compass directions (values of NORTH, SOUTH, EAST, and WEST) and the days of the week. They are defined in Java using the keyword &#39;enum&#39;. Their class body can include methods and other fields. 
+
+Enums implicitly extend java.lang.Enum. Since Java does not support multiple inheritance, an enum cannot extend anything else.</rdfs:comment>
+        <todo
+            >should probably be a subclass of &#39;Class&#39;. It HAS actually a superclass -&gt; java.lang.Enum.</todo>
     </owl:Class>
     
 
@@ -598,6 +617,10 @@
 
     <owl:Class rdf:about="#Exception">
         <rdfs:subClassOf rdf:resource="#Class"/>
+        <rdfs:comment
+            >An exception is a programming language construct designed to handle the occurrence of special conditions that change the normal flow of execution.
+
+In Java, user-defined exceptions are subclasses of java.lang.Exception (statically checked, meaning that callers of methods throwing the exception need to catch them or explicitely declare that they (re-)throw it) or java.lang.RuntimeException (unchecked).</rdfs:comment>
     </owl:Class>
     
 
@@ -606,6 +629,12 @@
 
     <owl:Class rdf:about="#Field">
         <rdfs:subClassOf rdf:resource="#Variable"/>
+        <rdfs:comment
+            >Fields are either class or instance variables. Class variables are declared with the keyword static.
+
+When a number of objects are created from the same class blueprint, they each have their own distinct copies of instance variables. Two distinct objects of person might for example have different values for their names.
+
+Class variables are common to all objects: Every instance of the class shares a class variable, which is in one fixed location in memory. Any object can change the value of a class variable, but class variables can also be manipulated without creating an instance of the class.</rdfs:comment>
     </owl:Class>
     
 
@@ -614,6 +643,8 @@
 
     <owl:Class rdf:about="#ImplicitVariable">
         <rdfs:subClassOf rdf:resource="#Variable"/>
+        <todo
+            >do we need this class? I don&#39;t think so.</todo>
     </owl:Class>
     
 
@@ -622,6 +653,23 @@
 
     <owl:Class rdf:about="#Interface">
         <rdfs:subClassOf rdf:resource="#ComplexType"/>
+        <rdfs:comment
+            >Interfaces form a contract between a class and the outside world, and this contract is enforced at build time by the compiler. If a class claims to implement an interface, all methods defined by that interface must appear in its source code before the class will successfully compile.
+
+Interfaces are declared using the interface keyword, and may only contain method signatures and constant declarations (variable declarations which are declared to be both static and final). An interface may never contain method definitions.
+
+As interfaces are implicitly abstract, they cannot be directly instantiated except when instantiated by a class which implements the said interface.
+
+Interfaces simulate multiple inheritance - a mechanism that Java otherwise would not provide. Interfaces can extend other interfaces but they cannot implement them.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#JavaEntity -->
+
+    <owl:Class rdf:about="#JavaEntity">
+        <rdfs:comment
+            >Common superclass for all entities that are modelled in the SEON Java ontology.</rdfs:comment>
     </owl:Class>
     
 
@@ -630,6 +678,10 @@
 
     <owl:Class rdf:about="#LocalVariable">
         <rdfs:subClassOf rdf:resource="#Variable"/>
+        <rdfs:comment
+            >A local variable is a variable that is given local scope. Such a variable is accessible only from the constructor, method or block in which it is declared.</rdfs:comment>
+        <todo
+            >do we need scopes/blocks?</todo>
     </owl:Class>
     
 
@@ -637,24 +689,22 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#Method -->
 
     <owl:Class rdf:about="#Method">
-        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#Namespace -->
-
-    <owl:Class rdf:about="#Namespace">
-        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
+        <rdfs:subClassOf rdf:resource="#JavaEntity"/>
         <rdfs:comment
-            >In Java this would be a Package.</rdfs:comment>
+            >A method is a subroutine that is exclusively associated either with a class (in which case it is called a class method or a static method) or with an object (in which case it is an instance method). Like a subroutine in procedural programming languages, a method usually consists of a sequence of programming statements to perform an action, a set of input parameters to customize those actions, and possibly an output value (called the return value) of some kind. Methods provide a mechanism for accessing and manipulating the encapsulated data stored in an object.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#OOPEntity -->
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#Package -->
 
-    <owl:Class rdf:about="#OOPEntity"/>
+    <owl:Class rdf:about="#Package">
+        <rdfs:subClassOf rdf:resource="#JavaEntity"/>
+        <rdfs:comment
+            >Packages are a mechanism for organizing Java classes into namespaces; they provide a unique namespace for the types it contains.
+
+Packages are usually defined using a hierarchical naming pattern, with levels in the hierarchy separated by periods (.) (pronounced &quot;dot&quot;). Although packages lower in the naming hierarchy are often referred to as &quot;subpackages&quot; of the corresponding packages higher in the hierarchy, there is no semantic relationship between packages. Therefore, we cannot make statements, like &quot;Package a contains Package a.b.&quot;</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -662,6 +712,8 @@
 
     <owl:Class rdf:about="#Parameter">
         <rdfs:subClassOf rdf:resource="#Variable"/>
+        <rdfs:comment
+            >A parameter is a special kind of variable that refers to data that a method or constructor receives to operate on. A method or constructor can expect zero, one, or several parameters. Primitive types are passed by value, whereas complex types are passed by reference (value).</rdfs:comment>
     </owl:Class>
     
 
@@ -670,6 +722,10 @@
 
     <owl:Class rdf:about="#PrimitiveType">
         <rdfs:subClassOf rdf:resource="#Datatype"/>
+        <rdfs:comment
+            >A primitive type is a basic building block for complex types. It has a single value (e.g., an integer, boolean, byte, etc.), but it does not have any behaviour (aka. methods). Further, they are passed by value, not by reference (value) as parameter to methods.
+
+It is sometimes also called built-in type in Java. This term is, however, inadequate since the language also provides &quot;built-in&quot; support for e.g., Strings, which - in conflict with our definition of a primitive type - do have behaviour.</rdfs:comment>
     </owl:Class>
     
 
@@ -677,7 +733,17 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#Variable -->
 
     <owl:Class rdf:about="#Variable">
-        <rdfs:subClassOf rdf:resource="#OOPEntity"/>
+        <rdfs:subClassOf rdf:resource="#JavaEntity"/>
+        <rdfs:comment
+            >A variable is an identifier (letter, word, or phrase) that is linked to a value of a certain type. 
+
+A variable name is made from the following characters, starting with a letter:
+
+* Letters: a-z, A-Z, and other alphabetic characters from other languages.
+* Digits: 0-9
+* Special: _ (underscore)
+
+Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:comment>
         <todo
             >add isConstant flag</todo>
     </owl:Class>
@@ -695,19 +761,19 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="#Datatype"/>
-            <rdf:Description rdf:about="#Method"/>
-            <rdf:Description rdf:about="#Namespace"/>
-            <rdf:Description rdf:about="#Variable"/>
+            <rdf:Description rdf:about="#AnnotationType"/>
+            <rdf:Description rdf:about="#Class"/>
+            <rdf:Description rdf:about="#EnumerationType"/>
+            <rdf:Description rdf:about="#Interface"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="#AnnotationType"/>
-            <rdf:Description rdf:about="#Class"/>
-            <rdf:Description rdf:about="#EnumerationType"/>
-            <rdf:Description rdf:about="#Interface"/>
+            <rdf:Description rdf:about="#Datatype"/>
+            <rdf:Description rdf:about="#Method"/>
+            <rdf:Description rdf:about="#Package"/>
+            <rdf:Description rdf:about="#Variable"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
