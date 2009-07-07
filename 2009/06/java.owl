@@ -550,6 +550,8 @@ als of the Interface class by connecting the superordinate Interface instance wi
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <todo
             >Maybe change property name to &quot;hasName&quot;</todo>
+        <rdfs:comment
+            >All Java entities can have an identifier, e.g., a class-, variable, or method name.</rdfs:comment>
         <rdfs:domain rdf:resource="#JavaEntity"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -559,6 +561,8 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasPosition -->
 
     <owl:DatatypeProperty rdf:about="#hasPosition">
+        <rdfs:comment
+            >The ordering of the parameters of a method is crucial, e.g., for method overloading. This property allows to preserve that information.</rdfs:comment>
         <rdfs:domain rdf:resource="#Parameter"/>
         <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
     </owl:DatatypeProperty>
@@ -569,6 +573,10 @@ als of the Interface class by connecting the superordinate Interface instance wi
 
     <owl:DatatypeProperty rdf:about="#isAbstract">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >Classes and methods can be declared abstract. If a class is abstract, it cannot have any instances. However, it can be extended by a non-abstract subclass. If a method is declared abstract then it cannot declare a body. Instead, an implementation needs to be provided by a subclass (or the subclass needs to be abstract itself).
+
+Annotations and interfaces are implicitly abstract and, accordingly, their methods too.</rdfs:comment>
         <rdfs:range rdf:resource="&xsd;boolean"/>
         <rdfs:domain>
             <owl:Class>
@@ -587,16 +595,10 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isConstant -->
 
     <owl:DatatypeProperty rdf:about="#isConstant">
+        <rdfs:comment
+            >A variable can be declared to be constant by using the keyword &#39;final&#39;. In this case, it is not possible to change its value after initialisation.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Variable"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#Field"/>
-                    <rdf:Description rdf:about="#LocalVariable"/>
-                    <rdf:Description rdf:about="#Parameter"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
