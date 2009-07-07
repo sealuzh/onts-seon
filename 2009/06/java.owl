@@ -52,6 +52,10 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#accessesField -->
 
     <owl:ObjectProperty rdf:about="#accessesField">
+        <rdfs:comment
+            >Fields can be accessed (i.e., its value can be read and/or set) from within a method or constructor. The inverse property is isAccessedByMethod.
+
+Special cases, such as (static) initializers are not handled so far.</rdfs:comment>
         <rdfs:range rdf:resource="#Field"/>
         <owl:inverseOf rdf:resource="#isAccessedByMethod"/>
         <rdfs:domain>
@@ -69,6 +73,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresConstructor -->
 
     <owl:ObjectProperty rdf:about="#declaresConstructor">
+        <rdfs:comment
+            >A class can declare one or several constructors. If a class does not explicitely declare one then Java will add an empty default constructor. The inverse property is isDeclaredConstructorOf.</rdfs:comment>
         <rdfs:range rdf:resource="#Constructor"/>
         <owl:inverseOf rdf:resource="#isDeclaredConstructorOf"/>
         <rdfs:domain>
@@ -86,6 +92,12 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresField -->
 
     <owl:ObjectProperty rdf:about="#declaresField">
+        <rdfs:comment
+            >A class or interface can declare zero, one, or several fields.
+
+If an interface declares a field then the field has to be final, i.e., a constant.
+
+Note that a class can inherited additional fields from its superclass(es). This property is only applicable to fields that are explicitely declared in the given class.</rdfs:comment>
         <rdfs:range rdf:resource="#Field"/>
         <owl:inverseOf rdf:resource="#isDeclaredFieldOf"/>
         <rdfs:domain>
@@ -104,6 +116,10 @@
 
     <owl:ObjectProperty rdf:about="#declaresInnerComplexType">
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:comment
+            >Classes and Interfaces can declare inner annotation-, enumeration-, class-, and interface types, for example if they are mainly/only used internally.
+
+If an interface declares an inner type then the type has to be &#39;final&#39;.</rdfs:comment>
         <rdfs:range rdf:resource="#ComplexType"/>
         <owl:inverseOf rdf:resource="#isDeclaredInnerComplexTypeOf"/>
         <rdfs:domain>
@@ -121,6 +137,14 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresMethod -->
 
     <owl:ObjectProperty rdf:about="#declaresMethod">
+        <rdfs:comment
+            >A class or interface can declare zero, one, or several methods.
+
+If an interface declares a method then the method has to be abstract, i.e., it cannot have a body.
+
+Note that a class can inherited additional methods from its superclass(es). This property is only applicable to method that are explicitely declared in the given class.
+
+The inverse property is isDeclaredMethodOf.</rdfs:comment>
         <rdfs:domain rdf:resource="#ComplexType"/>
         <rdfs:range rdf:resource="#Method"/>
         <owl:inverseOf rdf:resource="#isDeclaredMethodOf"/>
@@ -132,6 +156,8 @@
 
     <owl:ObjectProperty rdf:about="#hasDatatype">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >Since Java is a strongly type language, every variable needs to have a type (String, int, JFrame, etc.). The inverse property is isDatatypeOf.</rdfs:comment>
         <rdfs:range rdf:resource="#Datatype"/>
         <rdfs:domain rdf:resource="#Variable"/>
         <owl:inverseOf rdf:resource="#isDatatypeOf"/>
@@ -142,6 +168,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasParameter -->
 
     <owl:ObjectProperty rdf:about="#hasParameter">
+        <rdfs:comment
+            >A method or constructor can have zero, one, or several parameters. The inverse property is isParameterOf.</rdfs:comment>
         <rdfs:range rdf:resource="#Parameter"/>
         <owl:inverseOf rdf:resource="#isParameterOf"/>
         <rdfs:domain>
@@ -160,6 +188,10 @@
 
     <owl:ObjectProperty rdf:about="#hasReturnType">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >A method can return a value of a certain type or void (i.e., nothing). The inverse property is isReturnTypeOf.</rdfs:comment>
+        <todo
+            >how should we treat &#39;void&#39;?</todo>
         <rdfs:range rdf:resource="#Datatype"/>
         <rdfs:domain rdf:resource="#Method"/>
         <owl:inverseOf rdf:resource="#isReturnTypeOf"/>
@@ -171,6 +203,8 @@
 
     <owl:ObjectProperty rdf:about="#hasSubClass">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:comment
+            >This subproperty models the relationship between two different Class individuals by interconnecting the superordinate Class instance with the subordinate Class instance. The inverse property is called hasSuperClass.</rdfs:comment>
         <rdfs:range rdf:resource="#Class"/>
         <rdfs:domain rdf:resource="#Class"/>
         <rdfs:subPropertyOf rdf:resource="#hasSubType"/>
@@ -182,6 +216,9 @@
 
     <owl:ObjectProperty rdf:about="#hasSubInterface">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:comment
+            >his subproperty models the relationship between two distinct individu- 
+als of the Interface class by connecting the superordinate Interface instance with the subordinate Interface instance. The inverse property is called hasSuperInterface.</rdfs:comment>
         <rdfs:range rdf:resource="#Interface"/>
         <rdfs:domain rdf:resource="#Interface"/>
         <rdfs:subPropertyOf rdf:resource="#hasSubType"/>
@@ -192,6 +229,16 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSubType -->
 
     <owl:ObjectProperty rdf:about="#hasSubType">
+        <rdfs:comment
+            >The hasSubType property is an abstract property that models subtyping in Java. Its inverse property is hasSuperType.</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -201,14 +248,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#Class"/>
-                    <rdf:Description rdf:about="#Interface"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -217,9 +256,9 @@
 
     <owl:ObjectProperty rdf:about="#hasSuperClass">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <todo>transitive?</todo>
         <rdfs:comment
-            >Is functional since Java does not support multible inheritance.</rdfs:comment>
+            >A class can have one superclass, i.e., it can inherit from another class. The property is functional since Java does not support multiple inheritance. Its inverse property is hasSubClass.</rdfs:comment>
+        <todo>transitive?</todo>
         <rdfs:range rdf:resource="#Class"/>
         <rdfs:domain rdf:resource="#Class"/>
         <owl:inverseOf rdf:resource="#hasSubClass"/>
@@ -233,6 +272,8 @@
     <owl:ObjectProperty rdf:about="#hasSuperInterface">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <todo>transitive?</todo>
+        <rdfs:comment
+            >An interface can extend another interface. The property is functional since Java does not support multiple inheritance. Its inverse property is hasSubInterface.</rdfs:comment>
         <rdfs:domain rdf:resource="#Interface"/>
         <rdfs:range rdf:resource="#Interface"/>
         <owl:inverseOf rdf:resource="#hasSubInterface"/>
@@ -244,7 +285,17 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSuperType -->
 
     <owl:ObjectProperty rdf:about="#hasSuperType">
+        <rdfs:comment
+            >Abstract property that models inheritance relationships in Java. Its inverse is &#39;hasSubType&#39;.</rdfs:comment>
         <owl:inverseOf rdf:resource="#hasSubType"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -254,14 +305,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#Class"/>
-                    <rdf:Description rdf:about="#Interface"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -269,6 +312,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#implementsInterface -->
 
     <owl:ObjectProperty rdf:about="#implementsInterface">
+        <rdfs:comment
+            >A class can implement zero, one, or several interfaces. It then needs to either provide an implementation for each of the interface methods, or be declared abstract. The inverse property is isImplementedBy.</rdfs:comment>
         <rdfs:domain rdf:resource="#Class"/>
         <rdfs:range rdf:resource="#Interface"/>
         <rdfs:subPropertyOf rdf:resource="#hasSuperType"/>
@@ -280,6 +325,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#invokesMethod -->
 
     <owl:ObjectProperty rdf:about="#invokesMethod">
+        <rdfs:comment
+            >A method or constructor can call a method of another class or of an instance of another class. It can also call methods of the same class. The inverse property is isInvokedByMethod.</rdfs:comment>
         <todo
             >think about who invokes a Constructor</todo>
         <rdfs:range rdf:resource="#Method"/>
@@ -299,6 +346,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isAccessedByMethod -->
 
     <owl:ObjectProperty rdf:about="#isAccessedByMethod">
+        <rdfs:comment
+            >A field can be accessed by a method. The inverse property is accessesField.</rdfs:comment>
         <rdfs:domain rdf:resource="#Field"/>
         <rdfs:range>
             <owl:Class>
@@ -315,6 +364,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDatatypeOf -->
 
     <owl:ObjectProperty rdf:about="#isDatatypeOf">
+        <rdfs:comment
+            >A variable in Java needs to be declared to be of a particular type. The inverse property is hasDatatype.</rdfs:comment>
         <rdfs:domain rdf:resource="#Datatype"/>
         <rdfs:range rdf:resource="#Variable"/>
     </owl:ObjectProperty>
@@ -324,6 +375,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDeclaredConstructorOf -->
 
     <owl:ObjectProperty rdf:about="#isDeclaredConstructorOf">
+        <rdfs:comment
+            >A constructor is declared in a class or enumeration type. The inverse property is declaresConstructor.</rdfs:comment>
         <rdfs:domain rdf:resource="#Constructor"/>
         <rdfs:range>
             <owl:Class>
@@ -340,6 +393,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDeclaredFieldOf -->
 
     <owl:ObjectProperty rdf:about="#isDeclaredFieldOf">
+        <rdfs:comment
+            >A field is declared in a class or interface. The inverse property is declares Field.</rdfs:comment>
         <rdfs:domain rdf:resource="#Field"/>
         <rdfs:range>
             <owl:Class>
@@ -356,6 +411,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDeclaredInnerComplexTypeOf -->
 
     <owl:ObjectProperty rdf:about="#isDeclaredInnerComplexTypeOf">
+        <rdfs:comment
+            >A complex type can be a top-level type or be declared within a class or interface. The inverse property is declaresInnerComplexType.</rdfs:comment>
         <rdfs:domain rdf:resource="#ComplexType"/>
         <rdfs:range>
             <owl:Class>
@@ -372,6 +429,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isDeclaredMethodOf -->
 
     <owl:ObjectProperty rdf:about="#isDeclaredMethodOf">
+        <rdfs:comment
+            >A method is declared in a complex type. The inverse property is declaresMethod.</rdfs:comment>
         <rdfs:range rdf:resource="#ComplexType"/>
         <rdfs:domain rdf:resource="#Method"/>
     </owl:ObjectProperty>
@@ -381,8 +440,11 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isImplementedBy -->
 
     <owl:ObjectProperty rdf:about="#isImplementedBy">
+        <rdfs:comment
+            >An interface can be implemented by a class. The inverse property is implementsInterface.</rdfs:comment>
         <rdfs:range rdf:resource="#Class"/>
         <rdfs:domain rdf:resource="#Interface"/>
+        <rdfs:subPropertyOf rdf:resource="#hasSubType"/>
     </owl:ObjectProperty>
     
 
@@ -390,6 +452,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isInvokedByMethod -->
 
     <owl:ObjectProperty rdf:about="#isInvokedByMethod">
+        <rdfs:comment
+            >A method can be invoked by an constructor or method. The inverse property is invokesMethod.</rdfs:comment>
         <rdfs:domain rdf:resource="#Method"/>
         <rdfs:range>
             <owl:Class>
@@ -406,6 +470,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isParameterOf -->
 
     <owl:ObjectProperty rdf:about="#isParameterOf">
+        <rdfs:comment
+            >A parameter can be passed to a method. The inverse property is hasParameter.</rdfs:comment>
         <rdfs:domain rdf:resource="#Parameter"/>
         <rdfs:range>
             <owl:Class>
@@ -422,6 +488,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isReturnTypeOf -->
 
     <owl:ObjectProperty rdf:about="#isReturnTypeOf">
+        <rdfs:comment
+            >A value of a certain type can be returned by a method. The inverse property is hasReturnType.</rdfs:comment>
         <rdfs:domain rdf:resource="#Datatype"/>
         <rdfs:range rdf:resource="#Method"/>
     </owl:ObjectProperty>
@@ -431,6 +499,8 @@
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isThrownBy -->
 
     <owl:ObjectProperty rdf:about="#isThrownBy">
+        <rdfs:comment
+            >Exceptions can be thrown by methods or constructors if abnormal program flow occurs. The inverse property is throwsException.</rdfs:comment>
         <rdfs:domain rdf:resource="#Exception"/>
         <rdfs:range>
             <owl:Class>
@@ -448,7 +518,7 @@
 
     <owl:ObjectProperty rdf:about="#throwsException">
         <rdfs:comment
-            >Super class of all Java-specific concepts.</rdfs:comment>
+            >A method or constructor can throw an exception in case of abnormal program flow. The inverse property is isThrownBy.</rdfs:comment>
         <rdfs:range rdf:resource="#Exception"/>
         <owl:inverseOf rdf:resource="#isThrownBy"/>
         <rdfs:domain>
@@ -639,16 +709,6 @@ Class variables are common to all objects: Every instance of the class shares a 
     
 
 
-    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#ImplicitVariable -->
-
-    <owl:Class rdf:about="#ImplicitVariable">
-        <rdfs:subClassOf rdf:resource="#Variable"/>
-        <todo
-            >do we need this class? I don&#39;t think so.</todo>
-    </owl:Class>
-    
-
-
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#Interface -->
 
     <owl:Class rdf:about="#Interface">
@@ -761,19 +821,19 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="#AnnotationType"/>
-            <rdf:Description rdf:about="#Class"/>
-            <rdf:Description rdf:about="#EnumerationType"/>
-            <rdf:Description rdf:about="#Interface"/>
+            <rdf:Description rdf:about="#Datatype"/>
+            <rdf:Description rdf:about="#Method"/>
+            <rdf:Description rdf:about="#Package"/>
+            <rdf:Description rdf:about="#Variable"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="#Datatype"/>
-            <rdf:Description rdf:about="#Method"/>
-            <rdf:Description rdf:about="#Package"/>
-            <rdf:Description rdf:about="#Variable"/>
+            <rdf:Description rdf:about="#AnnotationType"/>
+            <rdf:Description rdf:about="#Class"/>
+            <rdf:Description rdf:about="#EnumerationType"/>
+            <rdf:Description rdf:about="#Interface"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
