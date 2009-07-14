@@ -110,7 +110,6 @@ Note that a class inherits all fields from its superclass(es). This property is 
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresInnerComplexType -->
 
     <owl:ObjectProperty rdf:about="#declaresInnerComplexType">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:comment
             >Classes and Interfaces can declare inner annotation-, enumeration-, class-, and interface types, for example if they are mainly/only used internally.
 
@@ -137,6 +136,27 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
         <rdfs:domain rdf:resource="#ComplexType"/>
         <rdfs:range rdf:resource="#Method"/>
         <owl:inverseOf rdf:resource="#isDeclaredMethodOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasAccessModifier -->
+
+    <owl:ObjectProperty rdf:about="#hasAccessModifier">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >AccessModifiers can be added to Constructors, ComplexTypes, Methods, and Fields.</rdfs:comment>
+        <rdfs:range rdf:resource="#AccessModifier"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#ComplexType"/>
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Field"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -220,6 +240,14 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <owl:ObjectProperty rdf:about="#hasSubType">
         <rdfs:comment
             >The hasSubType property is an abstract property that models subtyping in Java. Its inverse property is hasSuperType.</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -229,14 +257,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#Class"/>
-                    <rdf:Description rdf:about="#Interface"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -277,14 +297,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
         <rdfs:comment
             >Abstract property that models inheritance relationships in Java. Its inverse is &#39;hasSubType&#39;.</rdfs:comment>
         <owl:inverseOf rdf:resource="#hasSubType"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#Class"/>
-                    <rdf:Description rdf:about="#Interface"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -294,6 +306,14 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -613,6 +633,17 @@ Annotations and interfaces are implicitly abstract and, accordingly, their metho
     
 
 
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#AccessModifier -->
+
+    <owl:Class rdf:about="#AccessModifier">
+        <rdfs:comment
+            >The Class AccessModifier provides an individual for all possible Java access modifiers.
+
+A method or instance variable can only be declared one of public, protected, and private. A method or instance variable declared without any of these modifiers is considered &quot;package-friendly&quot; (default) and is visible to and, in the case of variables, modifiable by any object in the package.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#AnnotationType -->
 
     <owl:Class rdf:about="#AnnotationType">
@@ -798,6 +829,49 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
         <todo
             >add isConstant flag</todo>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#default -->
+
+    <AccessModifier rdf:about="#default">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </AccessModifier>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#private -->
+
+    <AccessModifier rdf:about="#private">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </AccessModifier>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#protected -->
+
+    <AccessModifier rdf:about="#protected">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </AccessModifier>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#public -->
+
+    <owl:Thing rdf:about="#public">
+        <rdf:type rdf:resource="#AccessModifier"/>
+    </owl:Thing>
     
 
 
