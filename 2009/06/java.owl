@@ -13,12 +13,12 @@
 
 <rdf:RDF xmlns="http://evolizer.org/ontologies/seon/2009/06/java.owl#"
      xml:base="http://evolizer.org/ontologies/seon/2009/06/java.owl"
-     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:java="http://evolizer.org/ontologies/seon/2009/06/java.owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#">
+     xmlns:java="http://evolizer.org/ontologies/seon/2009/06/java.owl#">
     <owl:Ontology rdf:about="">
         <rdfs:comment
             >This ontology models Java entities.</rdfs:comment>
@@ -114,8 +114,8 @@ Note that a class inherits all fields from its superclass(es). This property is 
             >Classes and Interfaces can declare inner annotation-, enumeration-, class-, and interface types, for example if they are mainly/only used internally.
 
 If an interface declares an inner type then the type has to be &#39;final&#39;.</rdfs:comment>
-        <rdfs:range rdf:resource="#ComplexType"/>
         <rdfs:domain rdf:resource="#ComplexType"/>
+        <rdfs:range rdf:resource="#ComplexType"/>
         <owl:inverseOf rdf:resource="#isDeclaredInnerComplexTypeOf"/>
     </owl:ObjectProperty>
     
@@ -174,6 +174,18 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     
 
 
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasPackageMember -->
+
+    <owl:ObjectProperty rdf:about="#hasPackageMember">
+        <rdfs:comment
+            >Packages contain members, i.e., ComplexTypes, such as Classes or Interfaces.</rdfs:comment>
+        <rdfs:range rdf:resource="#ComplexType"/>
+        <rdfs:domain rdf:resource="#Package"/>
+        <owl:inverseOf rdf:resource="#isPackageMemberOf"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasParameter -->
 
     <owl:ObjectProperty rdf:about="#hasParameter">
@@ -197,10 +209,10 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="#hasReturnType">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:comment
-            >A method can return a value of a certain type or void (i.e., nothing). The inverse property is isReturnTypeOf.</rdfs:comment>
         <todo
             >how should we treat &#39;void&#39;?</todo>
+        <rdfs:comment
+            >A method can return a value of a certain type or void (i.e., nothing). The inverse property is isReturnTypeOf.</rdfs:comment>
         <rdfs:range rdf:resource="#Datatype"/>
         <rdfs:domain rdf:resource="#Method"/>
         <owl:inverseOf rdf:resource="#isReturnTypeOf"/>
@@ -268,8 +280,8 @@ als of the Interface class by connecting the superordinate Interface instance wi
         <rdfs:comment
             >A class can have one superclass, i.e., it can inherit from another class. The property is functional since Java does not support multiple inheritance. Its inverse property is hasSubClass.</rdfs:comment>
         <todo>transitive?</todo>
-        <rdfs:range rdf:resource="#Class"/>
         <rdfs:domain rdf:resource="#Class"/>
+        <rdfs:range rdf:resource="#Class"/>
         <owl:inverseOf rdf:resource="#hasSubClass"/>
         <rdfs:subPropertyOf rdf:resource="#hasSuperType"/>
     </owl:ObjectProperty>
@@ -297,6 +309,14 @@ als of the Interface class by connecting the superordinate Interface instance wi
         <rdfs:comment
             >Abstract property that models inheritance relationships in Java. Its inverse is &#39;hasSubType&#39;.</rdfs:comment>
         <owl:inverseOf rdf:resource="#hasSubType"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Class"/>
+                    <rdf:Description rdf:about="#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -306,14 +326,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#Class"/>
-                    <rdf:Description rdf:about="#Interface"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -334,10 +346,10 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#invokesMethod -->
 
     <owl:ObjectProperty rdf:about="#invokesMethod">
-        <todo
-            >think about who invokes a Constructor</todo>
         <rdfs:comment
             >A method or constructor can call a method of another class or of an instance of another class. It can also call methods of the same class or of instances of the same class. The inverse property is isInvokedByMethod.</rdfs:comment>
+        <todo
+            >think about who invokes a Constructor</todo>
         <rdfs:range rdf:resource="#Method"/>
         <owl:inverseOf rdf:resource="#isInvokedByMethod"/>
         <rdfs:domain>
@@ -417,8 +429,8 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <owl:ObjectProperty rdf:about="#isDeclaredInnerComplexTypeOf">
         <rdfs:comment
             >A complex type can be a top-level type or be declared within a class or interface. The inverse property is declaresInnerComplexType.</rdfs:comment>
-        <rdfs:domain rdf:resource="#ComplexType"/>
         <rdfs:range rdf:resource="#ComplexType"/>
+        <rdfs:domain rdf:resource="#ComplexType"/>
     </owl:ObjectProperty>
     
 
@@ -461,6 +473,17 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isPackageMemberOf -->
+
+    <owl:ObjectProperty rdf:about="#isPackageMemberOf">
+        <rdfs:comment
+            >ComplexTypes are members of a package.</rdfs:comment>
+        <rdfs:domain rdf:resource="#ComplexType"/>
+        <rdfs:range rdf:resource="#Package"/>
     </owl:ObjectProperty>
     
 
@@ -622,6 +645,64 @@ Annotations and interfaces are implicitly abstract and, accordingly, their metho
     
 
 
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#isStatic -->
+
+    <owl:DatatypeProperty rdf:about="#isStatic">
+        <rdfs:comment
+            >Fields and Methods can be declared as static. They will then belong to the class rather than to the instance.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Field"/>
+                    <rdf:Description rdf:about="#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#length -->
+
+    <owl:DatatypeProperty rdf:about="#length">
+        <rdfs:comment
+            >The lexical length of an entity within a source file.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#ComplexType"/>
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                    <rdf:Description rdf:about="#Variable"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#startsAt -->
+
+    <owl:DatatypeProperty rdf:about="#startsAt">
+        <rdfs:comment
+            >The offset of the entity&#39;s declaration within a source file.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#ComplexType"/>
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                    <rdf:Description rdf:about="#Variable"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -707,12 +788,12 @@ Because of this differences, we did not model Constructor as a subclass of Metho
 
     <owl:Class rdf:about="#EnumerationType">
         <rdfs:subClassOf rdf:resource="#ComplexType"/>
+        <todo
+            >should probably be a subclass of &#39;Class&#39;. It HAS actually a superclass -&gt; java.lang.Enum.</todo>
         <rdfs:comment
             >An enum type is a type whose fields consist of a fixed set of constants. Common examples include compass directions (values of NORTH, SOUTH, EAST, and WEST) and the days of the week. They are defined in Java using the keyword &#39;enum&#39;. Their class body can include methods and other fields. 
 
 Enums implicitly extend java.lang.Enum. Since Java does not support multiple inheritance, an enum cannot extend anything else.</rdfs:comment>
-        <todo
-            >should probably be a subclass of &#39;Class&#39;. It HAS actually a superclass -&gt; java.lang.Enum.</todo>
     </owl:Class>
     
 
@@ -832,6 +913,12 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
     
 
 
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -845,9 +932,9 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
 
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#default -->
 
-    <AccessModifier rdf:about="#default">
-        <rdf:type rdf:resource="&owl;Thing"/>
-    </AccessModifier>
+    <owl:Thing rdf:about="#default">
+        <rdf:type rdf:resource="#AccessModifier"/>
+    </owl:Thing>
     
 
 
@@ -861,9 +948,9 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
 
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#protected -->
 
-    <AccessModifier rdf:about="#protected">
-        <rdf:type rdf:resource="&owl;Thing"/>
-    </AccessModifier>
+    <owl:Thing rdf:about="#protected">
+        <rdf:type rdf:resource="#AccessModifier"/>
+    </owl:Thing>
     
 
 
@@ -886,19 +973,19 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="#AnnotationType"/>
-            <rdf:Description rdf:about="#Class"/>
-            <rdf:Description rdf:about="#EnumerationType"/>
-            <rdf:Description rdf:about="#Interface"/>
+            <rdf:Description rdf:about="#Datatype"/>
+            <rdf:Description rdf:about="#Method"/>
+            <rdf:Description rdf:about="#Package"/>
+            <rdf:Description rdf:about="#Variable"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="#Datatype"/>
-            <rdf:Description rdf:about="#Method"/>
-            <rdf:Description rdf:about="#Package"/>
-            <rdf:Description rdf:about="#Variable"/>
+            <rdf:Description rdf:about="#AnnotationType"/>
+            <rdf:Description rdf:about="#Class"/>
+            <rdf:Description rdf:about="#EnumerationType"/>
+            <rdf:Description rdf:about="#Interface"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
