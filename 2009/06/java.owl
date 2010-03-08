@@ -600,6 +600,26 @@ als of the Interface class by connecting the superordinate Interface instance wi
     
 
 
+    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasLength -->
+
+    <owl:DatatypeProperty rdf:about="#hasLength">
+        <rdfs:comment
+            >The lexical length of an entity within a source file.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#ComplexType"/>
+                    <rdf:Description rdf:about="#Constructor"/>
+                    <rdf:Description rdf:about="#Method"/>
+                    <rdf:Description rdf:about="#Variable"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#hasPosition -->
 
     <owl:DatatypeProperty rdf:about="#hasPosition">
@@ -656,26 +676,6 @@ Annotations and interfaces are implicitly abstract and, accordingly, their metho
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="#Field"/>
                     <rdf:Description rdf:about="#Method"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://evolizer.org/ontologies/seon/2009/06/java.owl#length -->
-
-    <owl:DatatypeProperty rdf:about="#length">
-        <rdfs:comment
-            >The lexical length of an entity within a source file.</rdfs:comment>
-        <rdfs:range rdf:resource="&xsd;int"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="#ComplexType"/>
-                    <rdf:Description rdf:about="#Constructor"/>
-                    <rdf:Description rdf:about="#Method"/>
-                    <rdf:Description rdf:about="#Variable"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -973,19 +973,19 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="#Datatype"/>
-            <rdf:Description rdf:about="#Method"/>
-            <rdf:Description rdf:about="#Package"/>
-            <rdf:Description rdf:about="#Variable"/>
+            <rdf:Description rdf:about="#AnnotationType"/>
+            <rdf:Description rdf:about="#Class"/>
+            <rdf:Description rdf:about="#EnumerationType"/>
+            <rdf:Description rdf:about="#Interface"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="#AnnotationType"/>
-            <rdf:Description rdf:about="#Class"/>
-            <rdf:Description rdf:about="#EnumerationType"/>
-            <rdf:Description rdf:about="#Interface"/>
+            <rdf:Description rdf:about="#Datatype"/>
+            <rdf:Description rdf:about="#Method"/>
+            <rdf:Description rdf:about="#Package"/>
+            <rdf:Description rdf:about="#Variable"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

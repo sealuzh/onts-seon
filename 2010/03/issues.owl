@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY top "http://evolizer.org/ontologies/seon/2010/03/top.owl#" >
+    <!ENTITY issues2 "http://evolizer.org/ontologies/seon/2010/03/issues.owl#" >
+    <!ENTITY issues "http://evolizer.org/ontologies/seon/2010/02/issues.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://evolizer.org/ontologies/seon/2010/02/issues.owl#"
+     xml:base="http://evolizer.org/ontologies/seon/2010/03/issues.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:issues2="http://evolizer.org/ontologies/seon/2010/03/issues.owl#"
+     xmlns:issues="http://evolizer.org/ontologies/seon/2010/02/issues.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:top="http://evolizer.org/ontologies/seon/2010/03/top.owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://evolizer.org/ontologies/seon/2010/03/top.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&issues;toDo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#affects -->
+
+    <owl:ObjectProperty rdf:about="#affects"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#blocks -->
+
+    <owl:ObjectProperty rdf:about="#blocks">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#dependsOn -->
+
+    <owl:ObjectProperty rdf:about="#dependsOn">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="#Issue"/>
+        <owl:inverseOf rdf:resource="#blocks"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasAssignee -->
+
+    <owl:ObjectProperty rdf:about="#hasAssignee">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="#hasAuthor">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasPriority -->
+
+    <owl:ObjectProperty rdf:about="#hasPriority">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="#Priority"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasReporter -->
+
+    <owl:ObjectProperty rdf:about="#hasReporter">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasSeverity -->
+
+    <owl:ObjectProperty rdf:about="#hasSeverity">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="#Severity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="#hasStatus">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="#Status"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#isAssignedTo -->
+
+    <owl:ObjectProperty rdf:about="#isAssignedTo">
+        <rdfs:range rdf:resource="#Issue"/>
+        <owl:inverseOf rdf:resource="#hasAssignee"/>
+        <rdfs:domain rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#reports -->
+
+    <owl:ObjectProperty rdf:about="#reports">
+        <rdfs:range rdf:resource="#Issue"/>
+        <rdfs:domain rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="#hasCreationDate">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="#hasDescription">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasID -->
+
+    <owl:DatatypeProperty rdf:about="#hasID">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasSummary -->
+
+    <owl:DatatypeProperty rdf:about="#hasSummary">
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasText -->
+
+    <owl:DatatypeProperty rdf:about="#hasText">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Comment -->
+
+    <owl:Class rdf:about="#Comment">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Issue -->
+
+    <owl:Class rdf:about="#Issue"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Priority -->
+
+    <owl:Class rdf:about="#Priority">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Severity -->
+
+    <owl:Class rdf:about="#Severity"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Status -->
+
+    <owl:Class rdf:about="#Status"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/top.owl#Person -->
+
+    <owl:Class rdf:about="&top;Person"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
