@@ -166,10 +166,46 @@
     
 
 
+    <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#hasCommitDate -->
+
+    <owl:DatatypeProperty rdf:about="#hasCommitDate">
+        <rdfs:domain rdf:resource="#ChangeSet"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#hasID -->
 
     <owl:DatatypeProperty rdf:about="#hasID">
         <rdfs:domain rdf:resource="#Version"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#hasMessage -->
+
+    <owl:DatatypeProperty rdf:about="#hasMessage">
+        <rdfs:domain rdf:resource="#ModificationReport"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#hasReleaseDate -->
+
+    <owl:DatatypeProperty rdf:about="#hasReleaseDate">
+        <rdfs:domain rdf:resource="#Release"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#hasTag -->
+
+    <owl:DatatypeProperty rdf:about="#hasTag">
+        <rdfs:domain rdf:resource="#Release"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
     
