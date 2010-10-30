@@ -934,6 +934,7 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
 
     <owl:Thing rdf:about="#default">
         <rdf:type rdf:resource="#AccessModifier"/>
+        <rdfs:label>default</rdfs:label>
     </owl:Thing>
     
 
@@ -942,6 +943,7 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
 
     <AccessModifier rdf:about="#private">
         <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>private</rdfs:label>
     </AccessModifier>
     
 
@@ -950,6 +952,7 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
 
     <owl:Thing rdf:about="#protected">
         <rdf:type rdf:resource="#AccessModifier"/>
+        <rdfs:label>protected</rdfs:label>
     </owl:Thing>
     
 
@@ -958,6 +961,7 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
 
     <owl:Thing rdf:about="#public">
         <rdf:type rdf:resource="#AccessModifier"/>
+        <rdfs:label>public</rdfs:label>
     </owl:Thing>
     
 
