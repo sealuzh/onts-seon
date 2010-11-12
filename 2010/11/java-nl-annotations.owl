@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY annotations "http://evolizer.org/ontologies/turtle/2010/11/annotations.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://evolizer.org/ontologies/seon/2010/11/java-nl-annotations.owl#"
+     xml:base="http://evolizer.org/ontologies/seon/2010/11/java-nl-annotations.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:annotations="http://evolizer.org/ontologies/turtle/2010/11/annotations.owl#">
+    <owl:Ontology rdf:about="http://evolizer.org/ontologies/seon/2010/11/java-nl-annotations.owl">
+        <owl:imports rdf:resource="http://evolizer.org/ontologies/seon/2009/06/java.owl"/>
+        <owl:imports rdf:resource="http://evolizer.org/ontologies/turtle/2010/11/annotations.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&annotations;interrogative"/>
+    <owl:AnnotationProperty rdf:about="&annotations;phrase"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Class">
+        <annotations:phrase xml:lang="en">Class</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasReturnType">
+        <annotations:phrase xml:lang="en">returns</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#invokesMethod">
+        <annotations:phrase xml:lang="en">invokes</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasParameter">
+        <annotations:phrase xml:lang="en">expects</annotations:phrase>
+        <annotations:phrase xml:lang="en">has the parameter</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresConstructor">
+        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Parameter">
+        <annotations:phrase xml:lang="en">Argument</annotations:phrase>
+        <annotations:phrase xml:lang="en">Parameter</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Method">
+        <annotations:phrase xml:lang="en">Method</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#AnnotationType">
+        <annotations:phrase xml:lang="en">Annotation</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#ComplexType">
+        <annotations:phrase xml:lang="en">Type</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasLength">
+        <annotations:interrogative>How long is</annotations:interrogative>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#throwsException">
+        <annotations:phrase xml:lang="en">throws</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Constructor">
+        <annotations:phrase xml:lang="en">Constructor</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresMethod">
+        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Exception">
+        <annotations:phrase xml:lang="en">Exception</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#EnumerationType">
+        <annotations:phrase xml:lang="en">Enum</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Field">
+        <annotations:phrase xml:lang="en">Field</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Interface">
+        <annotations:phrase xml:lang="en">Interface</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresInnerComplexType">
+        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Package">
+        <annotations:phrase xml:lang="en">Package</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#AccessModifier">
+        <annotations:phrase xml:lang="en">Access Modifier</annotations:phrase>
+        <annotations:phrase xml:lang="en">Visibility</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#accessesField">
+        <annotations:phrase xml:lang="en">accesses</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasAccessModifier">
+        <annotations:phrase xml:lang="en">has</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#declaresField">
+        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasDatatype">
+        <annotations:phrase xml:lang="en">has</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasPackageMember">
+        <annotations:phrase xml:lang="en">contains</annotations:phrase>
+        <annotations:phrase xml:lang="en">has</annotations:phrase>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+
