@@ -21,21 +21,6 @@
         <owl:imports rdf:resource="http://evolizer.org/ontologies/seon/2009/06/java.owl"/>
         <owl:imports rdf:resource="http://evolizer.org/ontologies/turtle/2010/11/annotations.owl"/>
     </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <owl:AnnotationProperty rdf:about="&annotations;interrogative"/>
-    <owl:AnnotationProperty rdf:about="&annotations;phrase"/>
-    
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
