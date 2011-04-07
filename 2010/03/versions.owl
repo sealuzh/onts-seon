@@ -22,6 +22,8 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:top="http://evolizer.org/ontologies/seon/2010/03/top.owl#">
     <owl:Ontology rdf:about="">
+        <rdfs:comment
+            >This ontology models and describes all the essential concepts of a project version control history, no matter what actual system is used (CVS, SVN, GIT, etc.).</rdfs:comment>
         <owl:imports rdf:resource="http://evolizer.org/ontologies/seon/2010/03/top.owl"/>
     </owl:Ontology>
     
@@ -53,6 +55,8 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#appearsIn -->
 
     <owl:ObjectProperty rdf:about="#appearsIn">
+        <rdfs:comment
+            >Specific file versions can be part of different releases. This can happen for several reasons, e.g. The file has not changed between the two releases.</rdfs:comment>
         <rdfs:range rdf:resource="#Release"/>
         <rdfs:domain rdf:resource="#Version"/>
     </owl:ObjectProperty>
@@ -62,6 +66,9 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#belongsTo -->
 
     <owl:ObjectProperty rdf:about="#belongsTo">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >A version is about a specific file under version control.</rdfs:comment>
         <rdfs:range rdf:resource="&top;File"/>
         <rdfs:domain rdf:resource="#Version"/>
         <owl:inverseOf rdf:resource="#hasVersion"/>
@@ -72,8 +79,22 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#commits -->
 
     <owl:ObjectProperty rdf:about="#commits">
+        <rdfs:comment
+            >A version control user commits changes into form of changesets.</rdfs:comment>
         <rdfs:domain rdf:resource="&top;Person"/>
         <rdfs:range rdf:resource="#ChangeSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#committedIn -->
+
+    <owl:ObjectProperty rdf:about="#committedIn">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >A file version is committed in a changeset.</rdfs:comment>
+        <rdfs:range rdf:resource="#ChangeSet"/>
+        <rdfs:domain rdf:resource="#Version"/>
     </owl:ObjectProperty>
     
 
@@ -81,6 +102,9 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#comprises -->
 
     <owl:ObjectProperty rdf:about="#comprises">
+        <rdfs:comment
+            >Releases are made up of specific versions of files.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Branch"/>
         <rdfs:domain rdf:resource="#Release"/>
         <rdfs:range rdf:resource="#Version"/>
         <owl:inverseOf rdf:resource="#appearsIn"/>
@@ -88,9 +112,25 @@
     
 
 
+    <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#containsVersion -->
+
+    <owl:ObjectProperty rdf:about="#containsVersion">
+        <rdfs:comment
+            >A changeset consists of one or more file versions (one per committed file).</rdfs:comment>
+        <rdfs:domain rdf:resource="#ChangeSet"/>
+        <rdfs:range rdf:resource="#Version"/>
+        <owl:inverseOf rdf:resource="#committedIn"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#follows -->
 
     <owl:ObjectProperty rdf:about="#follows">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:comment
+            >A file version, if not the first one in the history, always follows an earlier one.</rdfs:comment>
         <rdfs:domain rdf:resource="#Version"/>
         <rdfs:range rdf:resource="#Version"/>
     </owl:ObjectProperty>
@@ -100,6 +140,9 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#hasModificationReport -->
 
     <owl:ObjectProperty rdf:about="#hasModificationReport">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >Every changeset has a report usually used to give more details in the contained changes.</rdfs:comment>
         <rdfs:domain rdf:resource="#ChangeSet"/>
         <rdfs:range rdf:resource="#ModificationReport"/>
     </owl:ObjectProperty>
@@ -109,6 +152,8 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#hasVersion -->
 
     <owl:ObjectProperty rdf:about="#hasVersion">
+        <rdfs:comment
+            >A file under version control has several versions</rdfs:comment>
         <rdfs:domain rdf:resource="&top;File"/>
         <rdfs:range rdf:resource="#Version"/>
     </owl:ObjectProperty>
@@ -118,6 +163,9 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#isCommittedBy -->
 
     <owl:ObjectProperty rdf:about="#isCommittedBy">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >A changeset (commit) is committed by a specific version control user.</rdfs:comment>
         <rdfs:range rdf:resource="&top;Person"/>
         <rdfs:domain rdf:resource="#ChangeSet"/>
         <owl:inverseOf rdf:resource="#commits"/>
@@ -128,6 +176,9 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#isModificationReportOf -->
 
     <owl:ObjectProperty rdf:about="#isModificationReportOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >Every report is associated to a changeset, describing the changes contained in it.</rdfs:comment>
         <rdfs:range rdf:resource="#ChangeSet"/>
         <rdfs:domain rdf:resource="#ModificationReport"/>
         <owl:inverseOf rdf:resource="#hasModificationReport"/>
@@ -138,7 +189,8 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#isOn -->
 
     <owl:ObjectProperty rdf:about="#isOn">
-        <todo>inverse? name?</todo>
+        <rdfs:comment
+            >A file version can be part of a branch.</rdfs:comment>
         <rdfs:range rdf:resource="#Branch"/>
         <rdfs:domain rdf:resource="#Version"/>
     </owl:ObjectProperty>
@@ -148,6 +200,10 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#precedes -->
 
     <owl:ObjectProperty rdf:about="#precedes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:comment
+            >A file version, if not the last one in the history, always precedes a later one.</rdfs:comment>
         <rdfs:range rdf:resource="#Version"/>
         <rdfs:domain rdf:resource="#Version"/>
         <owl:inverseOf rdf:resource="#follows"/>
@@ -170,6 +226,15 @@
 
     <owl:DatatypeProperty rdf:about="#hasCommitDate">
         <rdfs:domain rdf:resource="#ChangeSet"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#hasCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="#hasCreationDate">
+        <rdfs:domain rdf:resource="#Branch"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
@@ -205,8 +270,27 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#hasTag -->
 
     <owl:DatatypeProperty rdf:about="#hasTag">
+        <rdfs:domain rdf:resource="#Branch"/>
         <rdfs:domain rdf:resource="#Release"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#linesAdded -->
+
+    <owl:DatatypeProperty rdf:about="#linesAdded">
+        <rdfs:domain rdf:resource="#Version"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#linesDeleted -->
+
+    <owl:DatatypeProperty rdf:about="#linesDeleted">
+        <rdfs:domain rdf:resource="#Version"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -236,31 +320,46 @@
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#Branch -->
 
-    <owl:Class rdf:about="#Branch"/>
+    <owl:Class rdf:about="#Branch">
+        <rdfs:comment
+            >The project or a subset of files under version control may be branched or forked at a point in time so that, from that time forward, two copies of those files may develop at different speeds or in different ways independently of each other.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#ChangeSet -->
 
-    <owl:Class rdf:about="#ChangeSet"/>
+    <owl:Class rdf:about="#ChangeSet">
+        <rdfs:comment
+            >Also known as Commit, Check in or Change list. It represents the changes on files that are written back to the repository at a specific moment in time by a user. It results in the creation of a new version of each modified file.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#ModificationReport -->
 
-    <owl:Class rdf:about="#ModificationReport"/>
+    <owl:Class rdf:about="#ModificationReport">
+        <rdfs:comment
+            >It represents the written report associated to a ChangeSet. Usually it is used to describe in natural language what the changes really are/mean to any human user.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#Release -->
 
-    <owl:Class rdf:about="#Release"/>
+    <owl:Class rdf:about="#Release">
+        <rdfs:comment
+            >Also known in some systems as Tag, Label or Baseline. It represent a snapshot in time of the project (or parts of it), labeled with a meaningful name or number.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/versions.owl#Version -->
 
-    <owl:Class rdf:about="#Version"/>
+    <owl:Class rdf:about="#Version">
+        <rdfs:comment
+            >Also known as Revision. It represents any type of change to a file under version control that was committed (saved) back to the project repository.</rdfs:comment>
+    </owl:Class>
 </rdf:RDF>
 
 

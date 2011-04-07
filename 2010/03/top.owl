@@ -143,7 +143,10 @@
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/top.owl#Activity -->
 
-    <owl:Class rdf:about="#Activity"/>
+    <owl:Class rdf:about="#Activity">
+        <rdfs:comment
+            >Any sort of activity (e.g. file change, bug fix, etc.) carried out by a person in a software project</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -151,19 +154,27 @@
 
     <owl:Class rdf:about="#Directory">
         <rdfs:subClassOf rdf:resource="#File"/>
+        <rdfs:comment
+            >A special type of a file, that can contain some files/directories.</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/top.owl#File -->
 
-    <owl:Class rdf:about="#File"/>
+    <owl:Class rdf:about="#File">
+        <rdfs:comment
+            >A file of any kind related to a software project (e.g. source code file, requirement file, documentation file, etc.)</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/top.owl#Person -->
 
-    <owl:Class rdf:about="#Person"/>
+    <owl:Class rdf:about="#Person">
+        <rdfs:comment
+            >An individual taking part in some activities related to a software project.</rdfs:comment>
+    </owl:Class>
 </rdf:RDF>
 
 
