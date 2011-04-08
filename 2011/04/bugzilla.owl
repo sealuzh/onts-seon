@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY top "http://evolizer.org/ontologies/seon/2010/03/top.owl#" >
+    <!ENTITY issues "http://evolizer.org/ontologies/seon/2010/03/issues.owl#" >
+    <!ENTITY bugzilla "http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#"
+     xml:base="http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:issues="http://evolizer.org/ontologies/seon/2010/03/issues.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:bugzilla="http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#"
+     xmlns:top="http://evolizer.org/ontologies/seon/2010/03/top.owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://evolizer.org/ontologies/seon/2010/03/issues.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasReporter -->
+
+    <owl:ObjectProperty rdf:about="&issues;hasReporter">
+        <owl:inverseOf rdf:resource="&issues;reports"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#reports -->
+
+    <owl:ObjectProperty rdf:about="&issues;reports"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#hasAttachment -->
+
+    <owl:ObjectProperty rdf:about="#hasAttachment">
+        <rdfs:comment
+            >In Bugzilla, an issue can have files attached to it.</rdfs:comment>
+        <rdfs:domain rdf:resource="&issues;Issue"/>
+        <rdfs:range rdf:resource="&top;File"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#isAttachedTo -->
+
+    <owl:ObjectProperty rdf:about="#isAttachedTo">
+        <rdfs:comment
+            >A file can be attached to a specifci Bugzilla issue.</rdfs:comment>
+        <rdfs:range rdf:resource="&issues;Issue"/>
+        <rdfs:domain rdf:resource="&top;File"/>
+        <owl:inverseOf rdf:resource="#hasAttachment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#isTargetedFor -->
+
+    <owl:ObjectProperty rdf:about="#isTargetedFor">
+        <rdfs:comment
+            >An issue can be planned to be fixed for a specific milestone.</rdfs:comment>
+        <rdfs:domain rdf:resource="&issues;Issue"/>
+        <rdfs:range rdf:resource="&issues;Milestone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#reportedOn -->
+
+    <owl:ObjectProperty rdf:about="#reportedOn">
+        <rdfs:comment
+            >In Bugzilla, an issue is reported to happen on specific operating systems and platforms.</rdfs:comment>
+        <rdfs:domain rdf:resource="&issues;Issue"/>
+        <rdfs:range rdf:resource="#OperatingSystem"/>
+        <rdfs:range rdf:resource="#Platform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasLevel -->
+
+    <owl:DatatypeProperty rdf:about="&issues;hasLevel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Issue -->
+
+    <owl:Class rdf:about="&issues;Issue"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Milestone -->
+
+    <owl:Class rdf:about="&issues;Milestone"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Priority -->
+
+    <owl:Class rdf:about="&issues;Priority"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Resolution -->
+
+    <owl:Class rdf:about="&issues;Resolution">
+        <rdfs:comment
+            >A resolution describes how a bug/issue was resolved (fixed, rejected, etc.)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Severity -->
+
+    <owl:Class rdf:about="&issues;Severity"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/top.owl#File -->
+
+    <owl:Class rdf:about="&top;File"/>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#OperatingSystem -->
+
+    <owl:Class rdf:about="#OperatingSystem">
+        <rdfs:comment
+            >The operating system against which the bug was reported.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#Platform -->
+
+    <owl:Class rdf:about="#Platform">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment
+            >The hardware platform against which the bug was reported.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#all -->
+
+    <Platform rdf:about="#all">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Platform>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#all_os -->
+
+    <OperatingSystem rdf:about="#all_os">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </OperatingSystem>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#blocker -->
+
+    <issues:Severity rdf:about="#blocker">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <issues:hasLevel>7</issues:hasLevel>
+    </issues:Severity>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#critical -->
+
+    <issues:Severity rdf:about="#critical">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <issues:hasLevel>6</issues:hasLevel>
+    </issues:Severity>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#linux -->
+
+    <owl:Thing rdf:about="#linux">
+        <rdf:type rdf:resource="#OperatingSystem"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#mac_os -->
+
+    <owl:Thing rdf:about="#mac_os">
+        <rdf:type rdf:resource="#OperatingSystem"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#machintosh -->
+
+    <owl:Thing rdf:about="#machintosh">
+        <rdf:type rdf:resource="#Platform"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#major -->
+
+    <owl:Thing rdf:about="#major">
+        <rdf:type rdf:resource="&issues;Severity"/>
+        <issues:hasLevel>5</issues:hasLevel>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#minor -->
+
+    <owl:Thing rdf:about="#minor">
+        <rdf:type rdf:resource="&issues;Severity"/>
+        <issues:hasLevel>3</issues:hasLevel>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#normal -->
+
+    <owl:Thing rdf:about="#normal">
+        <rdf:type rdf:resource="&issues;Severity"/>
+        <issues:hasLevel>4</issues:hasLevel>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#p1 -->
+
+    <issues:Priority rdf:about="#p1">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <issues:hasLevel>1</issues:hasLevel>
+    </issues:Priority>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#p2 -->
+
+    <issues:Priority rdf:about="#p2">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <issues:hasLevel>2</issues:hasLevel>
+    </issues:Priority>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#p3 -->
+
+    <issues:Priority rdf:about="#p3">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <issues:hasLevel>3</issues:hasLevel>
+    </issues:Priority>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#p4 -->
+
+    <issues:Priority rdf:about="#p4">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <issues:hasLevel>4</issues:hasLevel>
+    </issues:Priority>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#p5 -->
+
+    <issues:Priority rdf:about="#p5">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <issues:hasLevel>5</issues:hasLevel>
+    </issues:Priority>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#pc -->
+
+    <owl:Thing rdf:about="#pc">
+        <rdf:type rdf:resource="#Platform"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#trivial -->
+
+    <issues:Severity rdf:about="#trivial">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <issues:hasLevel>2</issues:hasLevel>
+    </issues:Severity>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2011/04/bugzilla.owl#windows -->
+
+    <owl:Thing rdf:about="#windows">
+        <rdf:type rdf:resource="#OperatingSystem"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
