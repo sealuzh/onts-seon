@@ -52,15 +52,11 @@
     
 
 
-    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#affects -->
-
-    <owl:ObjectProperty rdf:about="#affects"/>
-    
-
-
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#blocks -->
 
     <owl:ObjectProperty rdf:about="#blocks">
+        <rdfs:comment
+            >An issue can block other issues from being fixed. The blocking issue thus needs to be fixed first in order for the others to be addressed.</rdfs:comment>
         <rdfs:domain rdf:resource="#Issue"/>
         <rdfs:range rdf:resource="#Issue"/>
     </owl:ObjectProperty>
@@ -70,6 +66,8 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#dependsOn -->
 
     <owl:ObjectProperty rdf:about="#dependsOn">
+        <rdfs:comment
+            >An issue might need other issues it depends on to be resolved before it can be it can be solved.</rdfs:comment>
         <rdfs:domain rdf:resource="#Issue"/>
         <rdfs:range rdf:resource="#Issue"/>
         <owl:inverseOf rdf:resource="#blocks"/>
@@ -80,6 +78,9 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasAssignee -->
 
     <owl:ObjectProperty rdf:about="#hasAssignee">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >An issue is assigned to a person in charge of dealing with it.</rdfs:comment>
         <rdfs:domain rdf:resource="#Issue"/>
         <rdfs:range rdf:resource="&top;Person"/>
     </owl:ObjectProperty>
@@ -89,8 +90,33 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasAuthor -->
 
     <owl:ObjectProperty rdf:about="#hasAuthor">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >A comment made on an issue has always an author.</rdfs:comment>
         <rdfs:domain rdf:resource="#Comment"/>
         <rdfs:range rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasCC -->
+
+    <owl:ObjectProperty rdf:about="#hasCC">
+        <rdfs:comment
+            >Issues can have a list of persons who are interested in being informed about its progress.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasComment -->
+
+    <owl:ObjectProperty rdf:about="#hasComment">
+        <rdfs:comment
+            >Comments can be made about an issue. Usually they are used by issue tracking users to discuss its solution and details.</rdfs:comment>
+        <rdfs:range rdf:resource="#Comment"/>
+        <rdfs:domain rdf:resource="#Issue"/>
     </owl:ObjectProperty>
     
 
@@ -98,6 +124,9 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasPriority -->
 
     <owl:ObjectProperty rdf:about="#hasPriority">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >The priority describes the importance and order in which an issue should be fixed compared to other issues. It is usually used by the programmers/engineers to prioritize their work.</rdfs:comment>
         <rdfs:domain rdf:resource="#Issue"/>
         <rdfs:range rdf:resource="#Priority"/>
     </owl:ObjectProperty>
@@ -107,8 +136,23 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasReporter -->
 
     <owl:ObjectProperty rdf:about="#hasReporter">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >An issue is always created and reported by a person.</rdfs:comment>
         <rdfs:domain rdf:resource="#Issue"/>
         <rdfs:range rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasResolution -->
+
+    <owl:ObjectProperty rdf:about="#hasResolution">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >The resolution indicates what happened to an issue and how it was solved.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="#Resolution"/>
     </owl:ObjectProperty>
     
 
@@ -116,6 +160,9 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasSeverity -->
 
     <owl:ObjectProperty rdf:about="#hasSeverity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >An issue impact is always described with a specific severity.</rdfs:comment>
         <rdfs:domain rdf:resource="#Issue"/>
         <rdfs:range rdf:resource="#Severity"/>
     </owl:ObjectProperty>
@@ -125,6 +172,9 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasStatus -->
 
     <owl:ObjectProperty rdf:about="#hasStatus">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >An issue always has a stuatus, indicating its current state.</rdfs:comment>
         <rdfs:domain rdf:resource="#Issue"/>
         <rdfs:range rdf:resource="#Status"/>
     </owl:ObjectProperty>
@@ -134,6 +184,8 @@
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#isAssignedTo -->
 
     <owl:ObjectProperty rdf:about="#isAssignedTo">
+        <rdfs:comment
+            >A person is assigned several issues to fix.</rdfs:comment>
         <rdfs:range rdf:resource="#Issue"/>
         <owl:inverseOf rdf:resource="#hasAssignee"/>
         <rdfs:domain rdf:resource="&top;Person"/>
@@ -141,9 +193,60 @@
     
 
 
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#isAuthorOf -->
+
+    <owl:ObjectProperty rdf:about="#isAuthorOf">
+        <rdfs:comment
+            >Issue tracking users discuss about issues, their solution and details using comments.</rdfs:comment>
+        <rdfs:range rdf:resource="#Comment"/>
+        <owl:inverseOf rdf:resource="#hasAuthor"/>
+        <rdfs:domain rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#isCCOn -->
+
+    <owl:ObjectProperty rdf:about="#isCCOn">
+        <rdfs:comment
+            >A person might be interested in being informed on an issue resolution progress.</rdfs:comment>
+        <rdfs:range rdf:resource="#Issue"/>
+        <owl:inverseOf rdf:resource="#hasCC"/>
+        <rdfs:domain rdf:resource="&top;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#isCommentOf -->
+
+    <owl:ObjectProperty rdf:about="#isCommentOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >A comment is associated to the specific issue on which it was made.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="#Issue"/>
+        <owl:inverseOf rdf:resource="#hasComment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#isTargetedFor -->
+
+    <owl:ObjectProperty rdf:about="#isTargetedFor">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment
+            >An issue can be targeted for a specific milestone.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Issue"/>
+        <rdfs:range rdf:resource="#Milestone"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#reports -->
 
     <owl:ObjectProperty rdf:about="#reports">
+        <rdfs:comment
+            >An issue tracker user can report new issues.</rdfs:comment>
         <rdfs:range rdf:resource="#Issue"/>
         <rdfs:domain rdf:resource="&top;Person"/>
     </owl:ObjectProperty>
@@ -188,6 +291,16 @@
     
 
 
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasLevel -->
+
+    <owl:DatatypeProperty rdf:about="#hasLevel">
+        <rdfs:domain rdf:resource="#Priority"/>
+        <rdfs:domain rdf:resource="#Severity"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#hasSummary -->
 
     <owl:DatatypeProperty rdf:about="#hasSummary">
@@ -221,13 +334,27 @@
 
     <owl:Class rdf:about="#Comment">
         <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment
+            >A comment, usually discussing an issue and matters associated to it.</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Issue -->
 
-    <owl:Class rdf:about="#Issue"/>
+    <owl:Class rdf:about="#Issue">
+        <rdfs:comment
+            >The actual issue, the central concept of the ontology. It&#39;s actual type, e.g. bug, enhancement, feature request, etc. is defined by its severity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Milestone -->
+
+    <owl:Class rdf:about="#Milestone">
+        <rdfs:comment
+            >A Milestone usually represents a release by which the issue should be resolved.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -235,19 +362,36 @@
 
     <owl:Class rdf:about="#Priority">
         <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment
+            >Describes the importance and order in which an should be fixed compared to others.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Resolution -->
+
+    <owl:Class rdf:about="#Resolution">
+        <rdfs:comment
+            >The resolution indicates what happened to this bug.</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Severity -->
 
-    <owl:Class rdf:about="#Severity"/>
+    <owl:Class rdf:about="#Severity">
+        <rdfs:comment
+            >Describes the impact of a bug.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#Status -->
 
-    <owl:Class rdf:about="#Status"/>
+    <owl:Class rdf:about="#Status">
+        <rdfs:comment
+            >It indicates the current stage of a bug&#39;s life (e.g. new, assigned, fixed, etc.)</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -260,6 +404,121 @@
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#assigned -->
+
+    <owl:Thing rdf:about="#assigned">
+        <rdf:type rdf:resource="#Status"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#closed -->
+
+    <issues2:Status rdf:about="#closed">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </issues2:Status>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#duplicate -->
+
+    <issues2:Resolution rdf:about="#duplicate">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </issues2:Resolution>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#fixed -->
+
+    <issues2:Resolution rdf:about="#fixed">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </issues2:Resolution>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#invalid -->
+
+    <issues2:Resolution rdf:about="#invalid">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </issues2:Resolution>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#moved -->
+
+    <owl:Thing rdf:about="#moved">
+        <rdf:type rdf:resource="#Resolution"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#new -->
+
+    <issues2:Status rdf:about="#new">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </issues2:Status>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#reopened -->
+
+    <issues2:Status rdf:about="#reopened">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </issues2:Status>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#resolved -->
+
+    <owl:Thing rdf:about="#resolved">
+        <rdf:type rdf:resource="#Status"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#unconfirmed -->
+
+    <owl:Thing rdf:about="#unconfirmed">
+        <rdf:type rdf:resource="#Status"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#verified -->
+
+    <owl:Thing rdf:about="#verified">
+        <rdf:type rdf:resource="#Status"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#wontfix -->
+
+    <issues2:Resolution rdf:about="#wontfix">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </issues2:Resolution>
+    
+
+
+    <!-- http://evolizer.org/ontologies/seon/2010/03/issues.owl#worksforme -->
+
+    <issues2:Resolution rdf:about="#worksforme">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </issues2:Resolution>
 </rdf:RDF>
 
 
