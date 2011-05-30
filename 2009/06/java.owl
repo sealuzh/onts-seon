@@ -284,7 +284,7 @@ als of the Interface class by connecting the superordinate Interface instance wi
 
     <owl:ObjectProperty rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSuperInterface">
         <todo>transitive?</todo>
-        <rdfs:comment>An interface can extend another interface. The property is functional since Java does not support multiple inheritance. Its inverse property is hasSubInterface.</rdfs:comment>
+        <rdfs:comment>An interface can extend another interface. Its inverse property is hasSubInterface.</rdfs:comment>
         <rdfs:domain rdf:resource="http://evolizer.org/ontologies/seon/2009/06/java.owl#Interface"/>
         <rdfs:range rdf:resource="http://evolizer.org/ontologies/seon/2009/06/java.owl#Interface"/>
         <owl:inverseOf rdf:resource="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSubInterface"/>
@@ -298,6 +298,14 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <owl:ObjectProperty rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSuperType">
         <rdfs:comment>Abstract property that models inheritance relationships in Java. Its inverse is &#39;hasSubType&#39;.</rdfs:comment>
         <owl:inverseOf rdf:resource="http://evolizer.org/ontologies/seon/2009/06/java.owl#hasSubType"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Class"/>
+                    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -307,14 +315,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Class"/>
-                    <rdf:Description rdf:about="http://evolizer.org/ontologies/seon/2009/06/java.owl#Interface"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
     </owl:ObjectProperty>
     
 
