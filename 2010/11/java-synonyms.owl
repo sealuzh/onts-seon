@@ -10,14 +10,14 @@
 ]>
 
 
-<rdf:RDF xmlns="http://evolizer.org/ontologies/seon/2010/11/java-nl-annotations.owl#"
-     xml:base="http://evolizer.org/ontologies/seon/2010/11/java-nl-annotations.owl"
+<rdf:RDF xmlns="http://evolizer.org/ontologies/seon/2010/11/java-synonyms.owl#"
+     xml:base="http://evolizer.org/ontologies/seon/2010/11/java-synonyms.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:annotations="http://evolizer.org/ontologies/evolizer-nl/2010/11/annotations.owl#">
-    <owl:Ontology rdf:about="http://evolizer.org/ontologies/seon/2010/11/java-nl-annotations.owl">
+    <owl:Ontology rdf:about="http://evolizer.org/ontologies/seon/2010/11/java-synonyms.owl">
         <owl:imports rdf:resource="http://evolizer.org/ontologies/seon/2009/06/java.owl"/>
         <owl:imports rdf:resource="http://evolizer.org/ontologies/evolizer-nl/2010/11/annotations.owl"/>
     </owl:Ontology>
