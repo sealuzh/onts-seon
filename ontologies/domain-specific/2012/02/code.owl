@@ -1,0 +1,766 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#"
+     xml:base="http://se-on.org/ontologies/domain-specific/2012/02/code.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl">
+        <rdfs:comment>This ontology is part of SEON. It represents object-oriented code.</rdfs:comment>
+        <owl:imports rdf:resource="http://se-on.org/ontologies/general/2012/02/main.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#accessesField -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#accessesField">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor">
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasChild"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#EnumerationType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresField -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresField">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasChild"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresMethod -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresMethod">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasChild"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#expectsDatatype -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#expectsDatatype">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasParameter"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasDatatype"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasAccessModifier -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasAccessModifier">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasDatatype -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasDatatype">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDatatypeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasNamespaceMember -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasNamespaceMember">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Namespace"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasChild"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasParameter -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasParameter">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isParameterOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasChild"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasReturnType -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasReturnType">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isReturnTypeOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubClass -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubClass">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubInterface -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubInterface">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype">
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#EnumerationType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperClass -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperClass">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubClass"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperInterface -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperInterface">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubInterface"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperType -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperType">
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#EnumerationType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#implementsInterface -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#implementsInterface">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperType"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isImplementedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isAccessedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isAccessedBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#accessesField"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDatatypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDatatypeOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredConstructorOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredConstructorOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasParent"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#EnumerationType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredFieldOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredFieldOf">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresField"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasParent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredMethodOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredMethodOf">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresMethod"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasParent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isExpectedDatatype -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isExpectedDatatype">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDatatypeOf"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isParameterOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isImplementedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isImplementedBy">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInstantiatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInstantiatedBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInvokedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInvokedBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isNamespaceMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isNamespaceMemberOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Namespace"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasNamespaceMember"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasParent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isParameterOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isParameterOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasParent"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isReturnTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isReturnTypeOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isThrownBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isThrownBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#throwsException -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#throwsException">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isThrownBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasIdentifier">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasLength -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasLength">
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasPosition -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasPosition">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isAbstract -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isAbstract">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AnnotationType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isConstant -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isConstant">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isStatic -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isStatic">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#startsAt -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#startsAt">
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+        <rdfs:comment>Many object-oriented programming language use access-modifiers to control information hiding. The individuals of this class are to be defined in system-specific ontologies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AnnotationType -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AnnotationType">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity">
+        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#EnumerationType -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#EnumerationType">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Namespace -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Namespace">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#PrimitiveType -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#PrimitiveType">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.5.1912) http://owlapi.sourceforge.net -->
+

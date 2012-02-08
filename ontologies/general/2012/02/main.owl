@@ -15,7 +15,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://www.se-on.org/ontologies/general/2012/02/main.owl"/>
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl"/>
     
 
 
@@ -38,6 +38,32 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#hasSibling -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#hasSibling">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.se-on.org/ontologies/general/2012/02/main.owl#isBasedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.se-on.org/ontologies/general/2012/02/main.owl#isBasedOn">
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
+        <rdfs:range rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.se-on.org/ontologies/general/2012/02/main.owl#isSimilar -->
+
+    <owl:ObjectProperty rdf:about="http://www.se-on.org/ontologies/general/2012/02/main.owl#isSimilar">
+        <rdfs:range rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    </owl:ObjectProperty>
     
 
 
