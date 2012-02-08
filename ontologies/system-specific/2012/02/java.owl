@@ -48,6 +48,7 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/system-specific/2012/02/java.owl#default">
         <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier"/>
+        <rdfs:label>default</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -56,6 +57,7 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/system-specific/2012/02/java.owl#private">
         <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier"/>
+        <rdfs:label>private</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -64,6 +66,7 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/system-specific/2012/02/java.owl#protected">
         <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier"/>
+        <rdfs:label>protected</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -72,6 +75,7 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/system-specific/2012/02/java.owl#public">
         <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier"/>
+        <rdfs:label>public</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
