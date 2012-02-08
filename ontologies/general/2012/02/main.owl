@@ -104,16 +104,6 @@
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn -->
-
-    <owl:ObjectProperty rdf:about="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn">
-        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
-        <rdfs:range rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
-        <owl:inverseOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //

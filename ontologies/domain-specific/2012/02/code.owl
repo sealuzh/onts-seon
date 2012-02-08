@@ -222,7 +222,14 @@
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype">
-        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -232,14 +239,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -335,7 +334,6 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isAccessedBy">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#accessesField"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -354,7 +352,6 @@
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#catchesException"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
     </owl:ObjectProperty>
     
 
@@ -413,7 +410,6 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isExpectedDatatype">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDatatypeOf"/>
             <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isParameterOf"/>
@@ -438,7 +434,6 @@
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
     </owl:ObjectProperty>
     
 
@@ -448,7 +443,6 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInvokedBy">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -494,7 +488,6 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isReturnTypeOf">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
     </owl:ObjectProperty>
     
 
@@ -503,7 +496,6 @@
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isThrownBy">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -656,7 +648,7 @@
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier -->
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier">
-        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
         <rdfs:comment>Many object-oriented programming language use access-modifiers to control information hiding. The individuals of this class are to be defined in system-specific ontologies.</rdfs:comment>
     </owl:Class>
     

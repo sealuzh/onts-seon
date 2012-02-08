@@ -24,6 +24,122 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#blocksIssue -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#blocksIssue">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isBlockedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#dependsOnIssue -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#dependsOnIssue">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasAssignee -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasAssignee">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Assignee"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isAssigneeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasAttachement -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasAttachement">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachement"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isAttachementOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasComment -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasComment">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Comment"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isCommentOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasReporter -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasReporter">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Reporter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isAssigneeOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isAssigneeOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Assignee"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isAttachementOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isAttachementOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachement"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isBlockedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isBlockedBy">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isCommentOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isCommentOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Comment"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isReporterOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isReporterOf">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Reporter"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasReporter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -40,10 +156,50 @@
     
 
 
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachement -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachement">
+        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#File"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Comment -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Comment">
+        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue">
+        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority">
+        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    </owl:Class>
+    
+
+
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Reporter -->
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Reporter">
         <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Stakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity">
+        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
     </owl:Class>
 </rdf:RDF>
 
