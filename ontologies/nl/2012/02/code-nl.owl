@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY annotations-nl "http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://se-on.org/ontologies/nl/2012/02/code-nl.owl#"
+     xml:base="http://se-on.org/ontologies/nl/2012/02/code-nl.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:annotations-nl="http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/nl/2012/02/code-nl.owl">
+        <owl:imports rdf:resource="http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl"/>
+        <owl:imports rdf:resource="http://se-on.org/ontologies/nl/2012/02/code-nl.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AnnotationType">
+        <annotations-nl:phrase>Annotations</annotations-nl:phrase>
+        <annotations-nl:phrase>Annotation</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method">
+        <annotations-nl:phrase>Methods</annotations-nl:phrase>
+        <annotations-nl:phrase>Method</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod">
+        <annotations-nl:phrase>invokes</annotations-nl:phrase>
+        <annotations-nl:phrase>calls</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#PrimitiveType">
+        <annotations-nl:phrase>Primitive Datatype</annotations-nl:phrase>
+        <annotations-nl:phrase>Primitive Datatypes</annotations-nl:phrase>
+        <annotations-nl:phrase>Built-in Datatypes</annotations-nl:phrase>
+        <annotations-nl:phrase>Built-in Datatype</annotations-nl:phrase>
+        <annotations-nl:phrase>Primitive Types</annotations-nl:phrase>
+        <annotations-nl:phrase>Primitive Type</annotations-nl:phrase>
+        <annotations-nl:phrase>Built-in Types</annotations-nl:phrase>
+        <annotations-nl:phrase>Built-in Type</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasLength">
+        <annotations-nl:interrogative>How long is</annotations-nl:interrogative>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#throwsException">
+        <annotations-nl:phrase>throws</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresField">
+        <annotations-nl:phrase>declares</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperClass">
+        <annotations-nl:phrase>inherits from</annotations-nl:phrase>
+        <annotations-nl:phrase>extends</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor">
+        <annotations-nl:phrase>Constructors</annotations-nl:phrase>
+        <annotations-nl:phrase>Constructor</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass">
+        <annotations-nl:phrase>creates</annotations-nl:phrase>
+        <annotations-nl:phrase>instantiates</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor">
+        <annotations-nl:phrase>declares</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Namespace">
+        <annotations-nl:phrase>Package</annotations-nl:phrase>
+        <annotations-nl:phrase>Packages</annotations-nl:phrase>
+        <annotations-nl:phrase>Namespaces</annotations-nl:phrase>
+        <annotations-nl:phrase>Namespace</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasReturnType">
+        <annotations-nl:phrase>returns</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#implementsInterface">
+        <annotations-nl:phrase>implements</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType">
+        <annotations-nl:phrase>Interface</annotations-nl:phrase>
+        <annotations-nl:phrase>Interfaces</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field">
+        <annotations-nl:phrase>Field</annotations-nl:phrase>
+        <annotations-nl:phrase>Attribute</annotations-nl:phrase>
+        <annotations-nl:phrase>Fields</annotations-nl:phrase>
+        <annotations-nl:phrase>Attributes</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType">
+        <annotations-nl:phrase>Exception</annotations-nl:phrase>
+        <annotations-nl:phrase>Exceptions</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter">
+        <annotations-nl:phrase>Argument</annotations-nl:phrase>
+        <annotations-nl:phrase>Arguments</annotations-nl:phrase>
+        <annotations-nl:phrase>Parameters</annotations-nl:phrase>
+        <annotations-nl:phrase>Parameter</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#EnumerationType">
+        <annotations-nl:phrase>Enum</annotations-nl:phrase>
+        <annotations-nl:phrase>Enums</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#accessesField">
+        <annotations-nl:phrase>accesses</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable">
+        <annotations-nl:phrase>Variable</annotations-nl:phrase>
+        <annotations-nl:phrase>Variables</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresMethod">
+        <annotations-nl:phrase>declares</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasNamespaceMember">
+        <annotations-nl:phrase>contains</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperInterface">
+        <annotations-nl:phrase>extends</annotations-nl:phrase>
+        <annotations-nl:phrase>inherits from</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#catchesException">
+        <annotations-nl:phrase>catches</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier">
+        <annotations-nl:phrase>Visibility</annotations-nl:phrase>
+        <annotations-nl:phrase>Access Modifiers</annotations-nl:phrase>
+        <annotations-nl:phrase>Access Modifier</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#expectsDatatype">
+        <annotations-nl:phrase>expects</annotations-nl:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType">
+        <annotations-nl:phrase>Class</annotations-nl:phrase>
+        <annotations-nl:phrase>Classes</annotations-nl:phrase>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.5.1912) http://owlapi.sourceforge.net -->
+

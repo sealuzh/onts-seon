@@ -72,6 +72,16 @@
     
 
 
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#catchesException -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#catchesException">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor">
@@ -334,6 +344,17 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isCaughtBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isCaughtBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#catchesException"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#isDependentOn"/>
     </owl:ObjectProperty>
     
 
