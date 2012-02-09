@@ -41,10 +41,38 @@
     
 
 
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#carriesOutActivity -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#carriesOutActivity">
+        <rdfs:range rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Activity"/>
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Stakeholder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#containsFile -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#containsFile">
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Directory"/>
+        <rdfs:range rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#File"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/general/2012/02/main.owl#hasSibling -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#hasSibling">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#isCarriedOutBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#isCarriedOutBy">
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/general/2012/02/main.owl#carriesOutActivity"/>
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Activity"/>
+        <rdfs:range rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Stakeholder"/>
     </owl:ObjectProperty>
     
 
@@ -115,18 +143,61 @@
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/2/main.owl#createdOn -->
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#hasDescription -->
 
-    <owl:DatatypeProperty rdf:about="http://www.se-on.org/ontologies/general/2012/2/main.owl#createdOn">
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#hasDescription">
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#hasEmail">
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Stakeholder"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#hasIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#hasIdentifier">
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#hasName">
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Stakeholder"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#hasPath -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/general/2012/02/main.owl#hasPath">
+        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.se-on.org/ontologies/general/2012/2/main.owl#hasCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasCreationDate">
         <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/2/main.owl#modifiedOn -->
+    <!-- http://www.se-on.org/ontologies/general/2012/2/main.owl#hasModificationDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.se-on.org/ontologies/general/2012/2/main.owl#modifiedOn">
+    <owl:DatatypeProperty rdf:about="http://www.se-on.org/ontologies/general/2012/2/main.owl#hasModificationDate">
         <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
