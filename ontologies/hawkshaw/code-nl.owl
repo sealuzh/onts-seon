@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY annotations "http://se-on.org/ontologies/hawkshaw/2012/02/annotations-nl.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://se-on.org/ontologies/hawkshaw/2012/02/code-nl.owl#"
+     xml:base="http://se-on.org/ontologies/hawkshaw/2012/02/code-nl.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:annotations="http://se-on.org/ontologies/hawkshaw/2012/02/annotations-nl.owl#">
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code-nl.owl">
+        <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/annotations-nl.owl"/>
+        <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&annotations;phrase"/>
+    <owl:AnnotationProperty rdf:about="&annotations;interrogative"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresField">
+        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType">
+        <annotations:phrase xml:lang="en">Annotation</annotations:phrase>
+        <annotations:phrase xml:lang="en">Annotations</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ExceptionType">
+        <annotations:phrase xml:lang="en">Exception</annotations:phrase>
+        <annotations:phrase xml:lang="en">Exceptions</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasReturnType">
+        <annotations:phrase xml:lang="en">returns</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasLength">
+        <annotations:interrogative>How long is</annotations:interrogative>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Parameter">
+        <annotations:phrase xml:lang="en">Argument</annotations:phrase>
+        <annotations:phrase xml:lang="en">Arguments</annotations:phrase>
+        <annotations:phrase xml:lang="en">Parameter</annotations:phrase>
+        <annotations:phrase xml:lang="en">Parameters</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#throwsException">
+        <annotations:phrase xml:lang="en">throws</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype">
+        <annotations:phrase xml:lang="en">expects</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#accessesField">
+        <annotations:phrase xml:lang="en">accesses</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package">
+        <annotations:phrase xml:lang="en">Package</annotations:phrase>
+        <annotations:phrase xml:lang="en">Packages</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Constructor">
+        <annotations:phrase xml:lang="en">Constructor</annotations:phrase>
+        <annotations:phrase xml:lang="en">Constructors</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Field">
+        <annotations:phrase xml:lang="en">Attributes</annotations:phrase>
+        <annotations:phrase xml:lang="en">Field</annotations:phrase>
+        <annotations:phrase xml:lang="en">Fields</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasAccessModifier">
+        <annotations:phrase xml:lang="en">has</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasPackageMember">
+        <annotations:phrase xml:lang="en">contains</annotations:phrase>
+        <annotations:phrase xml:lang="en">has</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresMethod">
+        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType">
+        <annotations:phrase xml:lang="en">Enum</annotations:phrase>
+        <annotations:phrase xml:lang="en">Enums</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasDatatype">
+        <annotations:phrase xml:lang="en">has</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresConstructor">
+        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier">
+        <annotations:phrase xml:lang="en">Access Modifier</annotations:phrase>
+        <annotations:phrase xml:lang="en">Access Modifiers</annotations:phrase>
+        <annotations:phrase xml:lang="en">Visibility</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType">
+        <annotations:phrase xml:lang="en">Class</annotations:phrase>
+        <annotations:phrase xml:lang="en">Classes</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType">
+        <annotations:phrase xml:lang="en">Type</annotations:phrase>
+        <annotations:phrase xml:lang="en">Types</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType">
+        <annotations:phrase xml:lang="en">Interface</annotations:phrase>
+        <annotations:phrase xml:lang="en">Interfaces</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method">
+        <annotations:phrase xml:lang="en">Method</annotations:phrase>
+        <annotations:phrase xml:lang="en">Methods</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#invokesMethod">
+        <annotations:phrase xml:lang="en">invokes</annotations:phrase>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.5.1912) http://owlapi.sourceforge.net -->
+
