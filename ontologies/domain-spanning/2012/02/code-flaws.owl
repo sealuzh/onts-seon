@@ -15,7 +15,124 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl"/>
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl">
+        <rdfs:comment>This ontology is part of SEON. It defines concepts to describe flaws found in program code.</rdfs:comment>
+        <owl:imports rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#affectsCodeEntity -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#affectsCodeEntity">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DataClass -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DataClass">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DispersedCoupling -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DispersedCoupling">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#FeatureEnvy -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#FeatureEnvy">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#GodClass -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#GodClass">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#IntensiveCoupling -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#IntensiveCoupling">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#RefusedParentBequest -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#RefusedParentBequest">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#ShotgunSurgery -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#ShotgunSurgery">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#TraditionBreaker -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#TraditionBreaker">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+    </owl:Class>
 </rdf:RDF>
 
 

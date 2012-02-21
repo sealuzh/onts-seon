@@ -9,15 +9,27 @@
 ]>
 
 
-<rdf:RDF xmlns="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#"
-     xml:base="http://www.se-on.org/ontologies/general/2012/02/measurement.owl"
+<rdf:RDF xmlns="http://se-on.org/ontologies/general/2012/02/measurement.owl#"
+     xml:base="http://se-on.org/ontologies/general/2012/02/measurement.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl">
+        <rdfs:comment>This ontology is part of SEON. It defines concepts needed to conduct measurements</rdfs:comment>
         <owl:imports rdf:resource="http://se-on.org/ontologies/general/2012/02/main.owl"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
 
 
@@ -43,29 +55,29 @@
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#expressedIn -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#expressedIn -->
 
-    <owl:ObjectProperty rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#expressedIn">
-        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
-        <rdfs:range rdf:resource="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Unit"/>
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#expressedIn">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Unit"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#hasScale -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#hasScale -->
 
-    <owl:ObjectProperty rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#hasScale">
-        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
-        <rdfs:range rdf:resource="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Scale"/>
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#hasScale">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Scale"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#hasTypeOfScale -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#hasTypeOfScale -->
 
-    <owl:ObjectProperty rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#hasTypeOfScale">
-        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Scale"/>
-        <rdfs:range rdf:resource="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale"/>
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#hasTypeOfScale">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Scale"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale"/>
     </owl:ObjectProperty>
     
 
@@ -81,10 +93,10 @@
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#hasDescription -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#hasDescription -->
 
-    <owl:DatatypeProperty rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#hasDescription">
-        <rdfs:domain rdf:resource="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#hasDescription">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -101,59 +113,107 @@
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#BaseMeasure -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#BaseMeasure -->
 
-    <owl:Class rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#BaseMeasure">
-        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
+    <owl:Class rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#BaseMeasure">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
     </owl:Class>
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#DerivedMeasure -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#DerivedMeasure -->
 
-    <owl:Class rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#DerivedMeasure">
-        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
+    <owl:Class rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#DerivedMeasure">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
     </owl:Class>
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Measure -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#Measure -->
 
-    <owl:Class rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Measure">
-        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    <owl:Class rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measure">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>The means to measure something.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Measurement -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#Measurement -->
 
-    <owl:Class rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Measurement">
-        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    <owl:Class rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measurement">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Activity"/>
+        <rdfs:comment>The act of measuring something.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Scale -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#Scale -->
 
-    <owl:Class rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Scale">
-        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    <owl:Class rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#Scale">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>The scale on which a measurement is represented.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale -->
 
-    <owl:Class rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale">
-        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    <owl:Class rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>The type of scale on which a measurement is represented.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Unit -->
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#Unit -->
 
-    <owl:Class rdf:about="http://www.se-on.org/ontologies/general/2012/02/measurement.owl#Unit">
-        <rdfs:subClassOf rdf:resource="http://www.se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+    <owl:Class rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#Unit">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>The unit of the measurement result.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#interval -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#interval">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#nominal -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#nominal">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#ordinal -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#ordinal">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#ratio -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#ratio">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

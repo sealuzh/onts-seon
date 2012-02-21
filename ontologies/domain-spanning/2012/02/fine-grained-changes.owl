@@ -9,14 +9,15 @@
 ]>
 
 
-<rdf:RDF xmlns="http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl#"
-     xml:base="http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl"
+<rdf:RDF xmlns="http://se-on.org/ontologies/domain-spanning/2012/02/fine-grained-changes.owl#"
+     xml:base="http://se-on.org/ontologies/domain-spanning/2012/02/fine-grained-changes.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl">
-        <rdfs:comment>This ontology is part of SEON. It defines annotations used to augment SEON concepts with natural language.</rdfs:comment>
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/fine-grained-changes.owl">
+        <rdfs:comment>This ontology is part of SEON. It defines concepts to describe changes of source code on a fine-grained level.</rdfs:comment>
+        <owl:imports rdf:resource="http://se-on.org/ontologies/general/2012/02/main.owl"/>
     </owl:Ontology>
     
 
@@ -29,9 +30,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:AnnotationProperty rdf:about="http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl#interrogative"/>
-    <owl:AnnotationProperty rdf:about="http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl#phrase"/>
-    <owl:AnnotationProperty rdf:about="http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl#ignore"/>
 </rdf:RDF>
 
 

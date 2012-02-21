@@ -57,21 +57,8 @@
      -->
 
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresField">
+        <annotations:phrase xml:lang="en">declare</annotations:phrase>
         <annotations:phrase xml:lang="en">declares</annotations:phrase>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType">
-        <annotations:phrase xml:lang="en">Annotation</annotations:phrase>
-        <annotations:phrase xml:lang="en">Annotations</annotations:phrase>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ExceptionType">
-        <annotations:phrase xml:lang="en">Exception</annotations:phrase>
-        <annotations:phrase xml:lang="en">Exceptions</annotations:phrase>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasReturnType">
-        <annotations:phrase xml:lang="en">returns</annotations:phrase>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasLength">
-        <annotations:interrogative>How long is</annotations:interrogative>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Parameter">
         <annotations:phrase xml:lang="en">Argument</annotations:phrase>
@@ -79,52 +66,108 @@
         <annotations:phrase xml:lang="en">Parameter</annotations:phrase>
         <annotations:phrase xml:lang="en">Parameters</annotations:phrase>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasLength">
+        <annotations:interrogative>How long is</annotations:interrogative>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#throwsException">
         <annotations:phrase xml:lang="en">throws</annotations:phrase>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype">
-        <annotations:phrase xml:lang="en">expects</annotations:phrase>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSuperClass">
+        <annotations:phrase xml:lang="en">extend</annotations:phrase>
+        <annotations:phrase xml:lang="en">extends</annotations:phrase>
+        <annotations:phrase xml:lang="en">inherit from</annotations:phrase>
+        <annotations:phrase xml:lang="en">inherits from</annotations:phrase>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#accessesField">
-        <annotations:phrase xml:lang="en">accesses</annotations:phrase>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package">
-        <annotations:phrase xml:lang="en">Package</annotations:phrase>
-        <annotations:phrase xml:lang="en">Packages</annotations:phrase>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Constructor">
-        <annotations:phrase xml:lang="en">Constructor</annotations:phrase>
-        <annotations:phrase xml:lang="en">Constructors</annotations:phrase>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#implementsInterface">
+        <annotations:phrase xml:lang="en">implement</annotations:phrase>
+        <annotations:phrase xml:lang="en">implements</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Field">
         <annotations:phrase xml:lang="en">Attributes</annotations:phrase>
         <annotations:phrase xml:lang="en">Field</annotations:phrase>
         <annotations:phrase xml:lang="en">Fields</annotations:phrase>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasAccessModifier">
-        <annotations:phrase xml:lang="en">has</annotations:phrase>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresMethod">
+        <annotations:phrase xml:lang="en">declare</annotations:phrase>
+        <annotations:phrase xml:lang="en">declares</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasPackageMember">
+        <annotations:phrase xml:lang="en">contain</annotations:phrase>
         <annotations:phrase xml:lang="en">contains</annotations:phrase>
         <annotations:phrase xml:lang="en">has</annotations:phrase>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresMethod">
-        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+        <annotations:phrase xml:lang="en">have</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType">
         <annotations:phrase xml:lang="en">Enum</annotations:phrase>
         <annotations:phrase xml:lang="en">Enums</annotations:phrase>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#catchesException">
+        <annotations:phrase xml:lang="en">catch</annotations:phrase>
+        <annotations:phrase xml:lang="en">catches</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDeclaredConstructorOf">
+        <annotations:phrase xml:lang="en">are declared in</annotations:phrase>
+        <annotations:phrase xml:lang="en">is declared in</annotations:phrase>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasDatatype">
         <annotations:phrase xml:lang="en">has</annotations:phrase>
+        <annotations:phrase xml:lang="en">have</annotations:phrase>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresConstructor">
-        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType">
+        <annotations:phrase xml:lang="en">Interface</annotations:phrase>
+        <annotations:phrase xml:lang="en">Interfaces</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isAbstract">
+        <annotations:phrase xml:lang="en">abstract</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method">
+        <annotations:phrase xml:lang="en">Method</annotations:phrase>
+        <annotations:phrase xml:lang="en">Methods</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType">
+        <annotations:phrase xml:lang="en">Annotation</annotations:phrase>
+        <annotations:phrase xml:lang="en">Annotations</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasReturnType">
+        <annotations:phrase xml:lang="en">returns</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ExceptionType">
+        <annotations:phrase xml:lang="en">Exception</annotations:phrase>
+        <annotations:phrase xml:lang="en">Exceptions</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isStatic">
+        <annotations:phrase xml:lang="en">static</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#accessesField">
+        <annotations:phrase xml:lang="en">access</annotations:phrase>
+        <annotations:phrase xml:lang="en">accesses</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package">
+        <annotations:phrase xml:lang="en">Package</annotations:phrase>
+        <annotations:phrase xml:lang="en">Packages</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isAccessedBy">
+        <annotations:phrase xml:lang="en">are accessed by</annotations:phrase>
+        <annotations:phrase xml:lang="en">is accessed by</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Constructor">
+        <annotations:phrase xml:lang="en">Constructor</annotations:phrase>
+        <annotations:phrase xml:lang="en">Constructors</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasAccessModifier">
+        <annotations:phrase xml:lang="en">are</annotations:phrase>
+        <annotations:phrase xml:lang="en">has</annotations:phrase>
+        <annotations:phrase xml:lang="en">have</annotations:phrase>
+        <annotations:phrase xml:lang="en">is</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier">
         <annotations:phrase xml:lang="en">Access Modifier</annotations:phrase>
         <annotations:phrase xml:lang="en">Access Modifiers</annotations:phrase>
         <annotations:phrase xml:lang="en">Visibility</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresConstructor">
+        <annotations:phrase>declare</annotations:phrase>
+        <annotations:phrase xml:lang="en">declares</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType">
         <annotations:phrase xml:lang="en">Class</annotations:phrase>
@@ -134,15 +177,14 @@
         <annotations:phrase xml:lang="en">Type</annotations:phrase>
         <annotations:phrase xml:lang="en">Types</annotations:phrase>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType">
-        <annotations:phrase xml:lang="en">Interface</annotations:phrase>
-        <annotations:phrase xml:lang="en">Interfaces</annotations:phrase>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method">
-        <annotations:phrase xml:lang="en">Method</annotations:phrase>
-        <annotations:phrase xml:lang="en">Methods</annotations:phrase>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype">
+        <annotations:phrase xml:lang="en">expect</annotations:phrase>
+        <annotations:phrase xml:lang="en">expects</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#invokesMethod">
+        <annotations:phrase xml:lang="en">call</annotations:phrase>
+        <annotations:phrase xml:lang="en">calls</annotations:phrase>
+        <annotations:phrase xml:lang="en">invoke</annotations:phrase>
         <annotations:phrase xml:lang="en">invokes</annotations:phrase>
     </rdf:Description>
 </rdf:RDF>
