@@ -88,7 +88,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
-        <rdfs:comment>A flaw encountered in program code. Also known as code smell.</rdfs:comment>
+        <rdfs:comment>A flaw encountered in program code. Also known as code smell. The strategies to detect all these dishamonies were proposed by Lanza and Marinescu in the book Object Oriented Metrics in Practice, Springer 2006.</rdfs:comment>
     </owl:Class>
     
 
