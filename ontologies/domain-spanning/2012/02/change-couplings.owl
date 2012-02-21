@@ -24,6 +24,28 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +59,15 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#belongsToCouplingClass">
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#CouplingClass"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#hasTypeOfCoupling -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#hasTypeOfCoupling">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#CouplingClass"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#TypeOfCoupling"/>
     </owl:ObjectProperty>
     
 
@@ -74,7 +105,44 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#CouplingClass">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>A class of files that are coupled with each others, e.g., because they often change together.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#TypeOfCoupling -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#TypeOfCoupling">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>The nature of the coupling relation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#logicalCoupling -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#logicalCoupling">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#TypeOfCoupling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#staticalCoupling -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#staticalCoupling">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#TypeOfCoupling"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

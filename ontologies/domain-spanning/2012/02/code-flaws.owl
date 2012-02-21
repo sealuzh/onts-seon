@@ -36,6 +36,17 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -68,6 +79,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DataClass">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+        <rdfs:comment>A data holder class without complex functionality that other class rely on.</rdfs:comment>
     </owl:Class>
     
 
@@ -76,6 +88,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>A flaw encountered in program code. Also known as code smell.</rdfs:comment>
     </owl:Class>
     
 
@@ -84,6 +97,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DispersedCoupling">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+        <rdfs:comment>A method that calls a few methods form each of a large number of unrelated classes</rdfs:comment>
     </owl:Class>
     
 
@@ -92,6 +106,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#FeatureEnvy">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+        <rdfs:comment>A method that uses data of other classes (directly or via accessor methods) more than that of its own.</rdfs:comment>
     </owl:Class>
     
 
@@ -100,6 +115,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#GodClass">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+        <rdfs:comment>A class that tends to centralize the intelligence of the system or parts of it.</rdfs:comment>
     </owl:Class>
     
 
@@ -108,6 +124,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#IntensiveCoupling">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+        <rdfs:comment>A method that calls many methods from few unrelated classes.</rdfs:comment>
     </owl:Class>
     
 
@@ -116,6 +133,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#RefusedParentBequest">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+        <rdfs:comment>A class that uses very few inheritance specific members (i.e. protected methods and attributes) of its parent.</rdfs:comment>
     </owl:Class>
     
 
@@ -124,6 +142,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#ShotgunSurgery">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+        <rdfs:comment>A methods that is called by many other methods belonging to many different classes.</rdfs:comment>
     </owl:Class>
     
 
@@ -132,6 +151,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#TraditionBreaker">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
+        <rdfs:comment>A class providing a large set of of &apos;services&apos; that are unrelated to those provided by its base class.</rdfs:comment>
     </owl:Class>
 </rdf:RDF>
 

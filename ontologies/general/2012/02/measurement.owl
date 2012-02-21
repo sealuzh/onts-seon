@@ -117,6 +117,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#BaseMeasure">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
+        <rdfs:comment>An atomic measure.</rdfs:comment>
     </owl:Class>
     
 
@@ -125,6 +126,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#DerivedMeasure">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measure"/>
+        <rdfs:comment>A non-atomic measure derived from other measures.</rdfs:comment>
     </owl:Class>
     
 
@@ -185,6 +187,14 @@
     
 
 
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#integersBetweenZeroAndInfinity -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#integersBetweenZeroAndInfinity">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Scale"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#interval -->
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#interval">
@@ -213,6 +223,22 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#ratio">
         <rdf:type rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#TypeOfScale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#realNumbersBetweenZeroAndOne -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#realNumbersBetweenZeroAndOne">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Scale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#realNumbersFromZeroToInfinity -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/general/2012/02/measurement.owl#realNumbersFromZeroToInfinity">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Scale"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

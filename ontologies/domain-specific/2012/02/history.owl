@@ -253,6 +253,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#Branch">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>A separate development stream.</rdfs:comment>
     </owl:Class>
     
 
@@ -261,6 +262,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#ChangeSet">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>A set of files that change together, i.e., that were committet to a version control system together.</rdfs:comment>
     </owl:Class>
     
 
@@ -269,6 +271,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#Commit">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Activity"/>
+        <rdfs:comment>The act of committing changes to a version control system.</rdfs:comment>
     </owl:Class>
     
 
@@ -276,7 +279,8 @@
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/history.owl#Committer -->
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#Committer">
-        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Stakeholder"/>
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/02/main.owl#Developer"/>
+        <rdfs:comment>A developer that is allowed to commit changes to a version control system.</rdfs:comment>
     </owl:Class>
     
 
@@ -293,6 +297,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#Release">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>A release is a consistent snapshot of a system at a given time. It is usually made available to the public somehow.</rdfs:comment>
     </owl:Class>
     
 
@@ -301,6 +306,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#Version">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>A version of a file.</rdfs:comment>
     </owl:Class>
 </rdf:RDF>
 
