@@ -18,8 +18,19 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:examples="http://se-on.org/ontologies/hawkshaw/2012/02/examples.owl#">
     <owl:Ontology rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/examples.owl">
-        <owl:imports rdf:resource="http://se-on.org/ontologies/nl/2012/02/annotations-nl.owl"/>
+        <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/annotations-nl.owl"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
 
 
@@ -86,6 +97,7 @@
 
     <owl:NamedIndividual rdf:about="&examples;codeDomain">
         <rdf:type rdf:resource="&examples;QueryDomain"/>
+        <rdfs:label>Code Domain</rdfs:label>
         <hasExampleQuery rdf:datatype="&xsd;string">How many Classes are there ?</hasExampleQuery>
         <hasExampleQuery rdf:datatype="&xsd;string">How many Method invoke foo() and bar() ?</hasExampleQuery>
         <hasExampleQuery rdf:datatype="&xsd;string">What Class declares the most Methods ?</hasExampleQuery>

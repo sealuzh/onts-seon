@@ -54,6 +54,12 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#dependsOn -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#dependsOn"/>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#hasChild -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#hasChild">
@@ -75,6 +81,14 @@
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#hasSibling">
         <rdfs:comment>This property describes that, in a hierarchy, two entities are at the same level.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#isDependentOn -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#isDependentOn">
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#dependsOn"/>
     </owl:ObjectProperty>
 </rdf:RDF>
 

@@ -80,6 +80,15 @@ Special cases, such as (static) initializers are not handled so far.</rdfs:comme
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#catchesException -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#catchesException">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ExceptionType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresConstructor -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresConstructor">
@@ -129,6 +138,19 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDeclaredMethodOf"/>
         <rdfs:subPropertyOf rdf:resource="&relations;hasChild"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasParameter"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasDatatype"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
@@ -209,8 +231,8 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubClass">
         <rdfs:comment>This subproperty models the relationship between two different Class individuals by interconnecting the superordinate Class instance with the subordinate Class instance. The inverse property is called hasSuperClass.</rdfs:comment>
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubType"/>
     </owl:ObjectProperty>
     
@@ -221,8 +243,8 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubInterface">
         <rdfs:comment>This subproperty models the relationship between two distinct individu- 
 als of the Interface class by connecting the superordinate Interface instance with the subordinate Interface instance. The inverse property is called hasSuperInterface.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubType"/>
     </owl:ObjectProperty>
     
@@ -256,10 +278,10 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSuperClass -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSuperClass">
-        <rdfs:comment>A class can have one superclass, i.e., it can inherit from another class. The property is functional since Java does not support multiple inheritance. Its inverse property is hasSubClass.</rdfs:comment>
         <todo>transitive?</todo>
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+        <rdfs:comment>A class can have one superclass, i.e., it can inherit from another class. The property is functional since Java does not support multiple inheritance. Its inverse property is hasSubClass.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubClass"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSuperType"/>
     </owl:ObjectProperty>
@@ -284,6 +306,14 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSuperType">
         <rdfs:comment>Abstract property that models inheritance relationships in Java. Its inverse is &apos;hasSubType&apos;.</rdfs:comment>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubType"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -293,14 +323,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -320,8 +342,8 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#invokesMethod -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#invokesMethod">
-        <todo>think about who invokes a Constructor</todo>
         <rdfs:comment>A method or constructor can call a method of another class or of an instance of another class. It can also call methods of the same class or of instances of the same class. The inverse property is isInvokedByMethod.</rdfs:comment>
+        <todo>think about who invokes a Constructor</todo>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isInvokedBy"/>
         <rdfs:domain>
@@ -399,6 +421,20 @@ als of the Interface class by connecting the superordinate Interface instance wi
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
         <rdfs:subPropertyOf rdf:resource="&relations;hasParent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isExpectedDatatypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isExpectedDatatypeOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDatatypeOf"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isParameterOf"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
@@ -486,6 +522,12 @@ als of the Interface class by connecting the superordinate Interface instance wi
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isUsedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isUsedBy"/>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#throwsException -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#throwsException">
@@ -504,37 +546,16 @@ als of the Interface class by connecting the superordinate Interface instance wi
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#catchesException -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#usesClassType -->
 
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#catchesException">
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ExceptionType"/>
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype -->
-
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype">
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#usesClassType">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isUsedBy"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasParameter"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasDatatype"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isExpectedDatatypeOf -->
-
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isExpectedDatatypeOf">
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
-        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDatatypeOf"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isParameterOf"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresMethod"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#invokesMethod"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDeclaredMethodOf"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
@@ -554,8 +575,8 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasIdentifier -->
 
     <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasIdentifier">
-        <rdfs:comment>All Java entities can have an identifier, e.g., a class-, variable, or method name.</rdfs:comment>
         <todo>Maybe change property name to &quot;hasName&quot;</todo>
+        <rdfs:comment>All Java entities can have an identifier, e.g., a class-, variable, or method name.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -764,10 +785,10 @@ Because of this differences, we did not model Constructor as a subclass of Metho
 
     <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+        <todo>should probably be a subclass of &apos;Class&apos;. It HAS actually a superclass -&gt; java.lang.Enum.</todo>
         <rdfs:comment>An enum type is a type whose fields consist of a fixed set of constants. Common examples include compass directions (values of NORTH, SOUTH, EAST, and WEST) and the days of the week. They are defined in Java using the keyword &apos;enum&apos;. Their class body can include methods and other fields. 
 
 Enums implicitly extend java.lang.Enum. Since Java does not support multiple inheritance, an enum cannot extend anything else.</rdfs:comment>
-        <todo>should probably be a subclass of &apos;Class&apos;. It HAS actually a superclass -&gt; java.lang.Enum.</todo>
     </owl:Class>
     
 
@@ -851,11 +872,26 @@ It is sometimes also called built-in type in Java. This term is, however, inadeq
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#SubClass -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#SubClass">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#SuperClass -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#SuperClass">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+    </owl:Class>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Variable -->
 
     <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Variable">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
-        <todo>add isConstant flag</todo>
         <rdfs:comment>A variable is an identifier (letter, word, or phrase) that is linked to a value of a certain type. 
 
 A variable name is made from the following characters, starting with a letter:
@@ -865,6 +901,7 @@ A variable name is made from the following characters, starting with a letter:
 * Special: _ (underscore)
 
 Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:comment>
+        <todo>add isConstant flag</todo>
     </owl:Class>
     
 
@@ -918,7 +955,7 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
     <owl:Thing rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#default">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <rdfs:label>default</rdfs:label>
+        <rdfs:label>default visibility</rdfs:label>
     </owl:Thing>
     
 
@@ -1000,19 +1037,19 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Variable"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Variable"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
