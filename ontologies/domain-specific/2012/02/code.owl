@@ -83,10 +83,27 @@
     
 
 
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#constructorIsInvokedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#constructorIsInvokedBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor">
         <rdfs:comment>A class can declare one or several constructors. The inverse property is isDeclaredConstructorOf.</rdfs:comment>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#hasChild"/>
         <rdfs:domain>
             <owl:Class>
@@ -236,14 +253,6 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -253,6 +262,14 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -284,6 +301,14 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperType">
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -293,14 +318,6 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -320,8 +337,37 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass">
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesConstructor"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredConstructorOf"/>
+        </owl:propertyChainAxiom>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesConstructor -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesConstructor">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#constructorIsInvokedBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -446,17 +492,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInstantiatedBy">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInvokedBy -->
-
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInvokedBy">
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
-        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -522,6 +558,23 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     
 
 
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#methodIsInvokedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#methodIsInvokedBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#throwsException -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#throwsException">
@@ -540,6 +593,21 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     
 
 
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#usesClass -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#usesClass">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresMethod"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredMethodOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -551,10 +619,11 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     
 
 
-    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasIdentifier -->
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasCodeIdentifier -->
 
-    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasIdentifier">
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasCodeIdentifier">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/02/main.owl#hasIdentifier"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     

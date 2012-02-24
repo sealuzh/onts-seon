@@ -85,10 +85,10 @@
     
 
 
-    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasAttachement -->
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasAttachment -->
 
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasAttachement">
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachement"/>
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasAttachment">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachment"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isAttachementOf"/>
     </owl:ObjectProperty>
@@ -126,7 +126,7 @@
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isAttachementOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isAttachementOf">
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachement"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachment"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
     </owl:ObjectProperty>
     
@@ -137,6 +137,7 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#isBlockedBy">
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#dependsOnIssue"/>
     </owl:ObjectProperty>
     
 
@@ -199,9 +200,9 @@
     
 
 
-    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachement -->
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachment -->
 
-    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachement">
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Attachment">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#File"/>
         <rdfs:comment>A file attached to a discussion about an issue.</rdfs:comment>
     </owl:Class>

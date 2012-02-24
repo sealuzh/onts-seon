@@ -29,6 +29,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <owl:AnnotationProperty rdf:about="http://se-on.org/ontologies/general/2012/02/annotations.owl#todo"/>
 </rdf:RDF>
 
 

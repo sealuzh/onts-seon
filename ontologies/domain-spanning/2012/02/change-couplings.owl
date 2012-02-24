@@ -59,6 +59,7 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#belongsToCouplingClass">
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#CouplingClass"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#hasParent"/>
     </owl:ObjectProperty>
     
 
@@ -84,6 +85,8 @@
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#isCoupledWith -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#isCoupledWith">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:comment>Denotes that two artifacts are coupled with each other. In principle, coupling is a kind of dependency. However, the direction of the dependency relationship is unclear. For example, Artifact A and B could both depend on a business rule, leading to common commits. Because of this, it is not a subproperty of dependsOn.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
     </owl:ObjectProperty>
