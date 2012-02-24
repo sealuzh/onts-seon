@@ -79,12 +79,6 @@
     
 
 
-    <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#hasDescription -->
-
-    <owl:DatatypeProperty rdf:about="&measurement;hasDescription"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
