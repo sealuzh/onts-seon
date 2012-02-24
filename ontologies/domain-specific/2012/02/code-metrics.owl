@@ -19,7 +19,9 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:measurement="http://se-on.org/ontologies/general/2012/02/measurement.owl#"
      xmlns:main="http://se-on.org/ontologies/general/2012/02/main.owl#">
-    <owl:Ontology rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl"/>
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl">
+        <owl:imports rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl"/>
+    </owl:Ontology>
     
 
 
@@ -70,12 +72,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#hasDescription -->
-
-    <owl:DatatypeProperty rdf:about="&main;hasDescription"/>
     
 
 
@@ -139,8 +135,8 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#amw">
         <rdf:type rdf:resource="&measurement;DerivedMeasure"/>
-        <main:hasDescription>The average McCabe&#39;s cyclomatic complexity of the methods of a class (Average Method Weight).</main:hasDescription>
-        <rdfs:comment>The average McCabe&#39;s cyclomatic complexity of the methods of a class (Average Method Weight).</rdfs:comment>
+        <main:hasDescription>The average McCabe&apos;s cyclomatic complexity of the methods of a class (Average Method Weight).</main:hasDescription>
+        <rdfs:comment>The average McCabe&apos;s cyclomatic complexity of the methods of a class (Average Method Weight).</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -260,8 +256,8 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#fdp">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <main:hasDescription>The number of classes in which the attributes accessed by a method are defined. Only classes that are unrelated to the method&#39;s definition class are considered (Foreign Data Providers).</main:hasDescription>
-        <rdfs:comment>The number of classes in which the attributes accessed by a method are defined. Only classes that are unrelated to the method&#39;s definition class are considered (Foreign Data Providers).</rdfs:comment>
+        <main:hasDescription>The number of classes in which the attributes accessed by a method are defined. Only classes that are unrelated to the method&apos;s definition class are considered (Foreign Data Providers).</main:hasDescription>
+        <rdfs:comment>The number of classes in which the attributes accessed by a method are defined. Only classes that are unrelated to the method&apos;s definition class are considered (Foreign Data Providers).</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -282,8 +278,8 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#laa">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <rdfs:comment>The number of accessed attributes that are from the measured method&#39;s definition class, divided by the total number of accessed attributes, including attributes accessed via accessor methods (Locality of Attribute Accesses). </rdfs:comment>
-        <main:hasDescription>The number of accessed attributes that are from the measured method&#39;s definition class, divided by the total number of accessed attributes, including attributes accessed via accessor methods (Locality of Attribute Accesses). </main:hasDescription>
+        <rdfs:comment>The number of accessed attributes that are from the measured method&apos;s definition class, divided by the total number of accessed attributes, including attributes accessed via accessor methods (Locality of Attribute Accesses). </rdfs:comment>
+        <main:hasDescription>The number of accessed attributes that are from the measured method&apos;s definition class, divided by the total number of accessed attributes, including attributes accessed via accessor methods (Locality of Attribute Accesses). </main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -315,8 +311,8 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#mcCabe">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <rdfs:comment>The McCabe&#39;s cyclomatic complexity of a code entity.</rdfs:comment>
-        <main:hasDescription>The McCabe&#39;s cyclomatic complexity of a code entity.</main:hasDescription>
+        <rdfs:comment>The McCabe&apos;s cyclomatic complexity of a code entity.</rdfs:comment>
+        <main:hasDescription>The McCabe&apos;s cyclomatic complexity of a code entity.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -469,8 +465,8 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#tcc">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <rdfs:comment>The relative number of directly connected public methods (i.e. the ones that access in common at least one attribute) in a class (Tight Class Cohesion).</rdfs:comment>
         <main:hasDescription>The relative number of directly connected public methods (i.e. the ones that access in common at least one attribute) in a class (Tight Class Cohesion).</main:hasDescription>
+        <rdfs:comment>The relative number of directly connected public methods (i.e. the ones that access in common at least one attribute) in a class (Tight Class Cohesion).</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;realNumbersBetweenZeroAndOne"/>
     </owl:NamedIndividual>
     
@@ -480,8 +476,8 @@
 
     <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#wmc">
         <rdf:type rdf:resource="&measurement;DerivedMeasure"/>
-        <rdfs:comment>The sum of McCabe&#39;s cyclomatic complexity of the methods of a class.</rdfs:comment>
-        <main:hasDescription>The sum of McCabe&#39;s cyclomatic complexity of the methods of a class.</main:hasDescription>
+        <rdfs:comment>The sum of McCabe&apos;s cyclomatic complexity of the methods of a class.</rdfs:comment>
+        <main:hasDescription>The sum of McCabe&apos;s cyclomatic complexity of the methods of a class.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -506,5 +502,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.2.5.1912) http://owlapi.sourceforge.net -->
 

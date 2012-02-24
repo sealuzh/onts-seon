@@ -59,6 +59,7 @@
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#affectsCodeEntity -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#affectsCodeEntity">
+        <rdfs:comment>A design disharmony affects a piece of code, such as a class or method.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
     </owl:ObjectProperty>
@@ -68,6 +69,7 @@
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#identifiedByMeasurement -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#identifiedByMeasurement">
+        <rdfs:comment>Certain measurements can be used to identify design disharmonies. E.g., a high number of lines of code, many dependencies, and a large number of fields and methods could indicate a god class. The measurements that actually lead to the identification of a design disharmony can be related with this property to a an instance of a disharmony.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/code-flaws.owl#DesignDisharmony"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/general/2012/02/measurement.owl#Measurement"/>
     </owl:ObjectProperty>

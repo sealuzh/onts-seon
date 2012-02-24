@@ -57,6 +57,7 @@
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#belongsToCouplingClass -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#belongsToCouplingClass">
+        <rdfs:comment>An artifact can belong to a class of coupled artifacts.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#CouplingClass"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Artifact"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#hasParent"/>
@@ -67,6 +68,7 @@
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#hasTypeOfCoupling -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#hasTypeOfCoupling">
+        <rdfs:comment>A coupling class can have a type. For example, the class can contain logically coupled files, or Java classes that are coupled due to static source code dependencies.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#CouplingClass"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#TypeOfCoupling"/>
     </owl:ObjectProperty>
@@ -76,6 +78,7 @@
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#isBasedOnChangeSet -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#isBasedOnChangeSet">
+        <rdfs:comment>When files are changed together often, then they are logically coupled.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/change-couplings.owl#CouplingClass"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#ChangeSet"/>
     </owl:ObjectProperty>

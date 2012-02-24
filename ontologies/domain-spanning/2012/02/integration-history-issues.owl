@@ -25,6 +25,28 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -36,6 +58,7 @@
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/integration-history-issues.owl#fixesIssue -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/integration-history-issues.owl#fixesIssue">
+        <rdfs:comment>A version is created when a certain issue is resolved.</rdfs:comment>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/integration-history-issues.owl#isFixedIn"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#Version"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
@@ -46,6 +69,7 @@
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/integration-history-issues.owl#isFixedIn -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/integration-history-issues.owl#isFixedIn">
+        <rdfs:comment>An issue is fixed in a certain version.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#Version"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
     </owl:ObjectProperty>
