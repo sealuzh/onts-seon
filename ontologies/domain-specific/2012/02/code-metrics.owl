@@ -6,19 +6,19 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY main "http://se-on.org/ontologies/general/2012/02/main.owl#" >
     <!ENTITY measurement "http://se-on.org/ontologies/general/2012/02/measurement.owl#" >
-    <!ENTITY code-metrics "http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#" >
 ]>
 
 
 <rdf:RDF xmlns="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#"
      xml:base="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:code-metrics="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:measurement="http://se-on.org/ontologies/general/2012/02/measurement.owl#">
+     xmlns:measurement="http://se-on.org/ontologies/general/2012/02/measurement.owl#"
+     xmlns:main="http://se-on.org/ontologies/general/2012/02/main.owl#">
     <owl:Ontology rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl"/>
     
 
@@ -73,6 +73,12 @@
     
 
 
+    <!-- http://se-on.org/ontologies/general/2012/02/main.owl#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="&main;hasDescription"/>
+    
+
+
     <!-- http://se-on.org/ontologies/general/2012/02/measurement.owl#hasDescription -->
 
     <owl:DatatypeProperty rdf:about="&measurement;hasDescription"/>
@@ -115,10 +121,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#NProtM -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;NProtM">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#NProtM">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of protected members of a class.</measurement:hasDescription>
         <rdfs:comment>The number of protected members of a class.</rdfs:comment>
+        <main:hasDescription>The number of protected members of a class.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -126,9 +132,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#ahh -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;ahh">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#ahh">
         <rdf:type rdf:resource="&measurement;DerivedMeasure"/>
-        <measurement:hasDescription>The average of the Height of the Inheritance Tree (HIT) of all the the root classes of a system.</measurement:hasDescription>
+        <main:hasDescription>The average of the Height of the Inheritance Tree (HIT) of all the the root classes of a system.</main:hasDescription>
         <rdfs:comment>The average of the Height of the Inheritance Tree (HIT) of all the the root classes of a system.</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
@@ -137,10 +143,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#amw -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;amw">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#amw">
         <rdf:type rdf:resource="&measurement;DerivedMeasure"/>
+        <main:hasDescription>The average McCabe&#39;s cyclomatic complexity of the methods of a class (Average Method Weight).</main:hasDescription>
         <rdfs:comment>The average McCabe&#39;s cyclomatic complexity of the methods of a class (Average Method Weight).</rdfs:comment>
-        <measurement:hasDescription>The average McCabe&#39;s cyclomatic complexity of the methods of a class (Average Method Weight).</measurement:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -148,10 +154,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#andc -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;andc">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#andc">
         <rdf:type rdf:resource="&measurement;DerivedMeasure"/>
         <rdfs:comment>The average number of direct subclasses of a class.</rdfs:comment>
-        <measurement:hasDescription>The average number of direct subclasses of a class.</measurement:hasDescription>
+        <main:hasDescription>The average number of direct subclasses of a class.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -159,9 +165,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#atfd -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;atfd">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#atfd">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of attributes from unrelated classes accessed through accessor methods or directly by a method or a class (Access To Foreign Data).</measurement:hasDescription>
+        <main:hasDescription>The number of attributes from unrelated classes accessed through accessor methods or directly by a method or a class (Access To Foreign Data).</main:hasDescription>
         <rdfs:comment>The number of attributes from unrelated classes accessed through accessor methods or directly by a method or a class (Access To Foreign Data).</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
@@ -170,9 +176,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#bovr -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;bovr">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#bovr">
         <rdf:type rdf:resource="&measurement;DerivedMeasure"/>
-        <measurement:hasDescription>The number of methods of the measured class overriding methods from the base class, divided by the total number of methods in the class (Base Class Overriding Ration).</measurement:hasDescription>
+        <main:hasDescription>The number of methods of the measured class overriding methods from the base class, divided by the total number of methods in the class (Base Class Overriding Ration).</main:hasDescription>
         <rdfs:comment>The number of methods of the measured class overriding methods from the base class, divided by the total number of methods in the class (Base Class Overriding Ration).</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
@@ -181,10 +187,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#bur -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;bur">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#bur">
         <rdf:type rdf:resource="&measurement;DerivedMeasure"/>
         <rdfs:comment>The number of protected members used by the measured class divided by the total number of protected members from the base class (Base Class Usage Ratio).</rdfs:comment>
-        <measurement:hasDescription>The number of protected members used by the measured class divided by the total number of protected members from the base class (Base Class Usage Ratio).</measurement:hasDescription>
+        <main:hasDescription>The number of protected members used by the measured class divided by the total number of protected members from the base class (Base Class Usage Ratio).</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -192,9 +198,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#cc -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;cc">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#cc">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of distinct classes in which the methods calling the measured method are defined (Changing Classes).</measurement:hasDescription>
+        <main:hasDescription>The number of distinct classes in which the methods calling the measured method are defined (Changing Classes).</main:hasDescription>
         <rdfs:comment>The number of distinct classes in which the methods calling the measured method are defined (Changing Classes).</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
@@ -203,9 +209,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#cdisp -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;cdisp">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#cdisp">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The distinct number of classes in which the methods called by the measured method are defined (Coupling Dispersion).</measurement:hasDescription>
+        <main:hasDescription>The distinct number of classes in which the methods called by the measured method are defined (Coupling Dispersion).</main:hasDescription>
         <rdfs:comment>The distinct number of classes in which the methods called by the measured method are defined (Coupling Dispersion).</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
@@ -214,10 +220,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#cint -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;cint">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#cint">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The distinct number of distinct methods called by a method (Coupling Intensity).</rdfs:comment>
-        <measurement:hasDescription>The distinct number of distinct methods called by a method (Coupling Intensity).</measurement:hasDescription>
+        <main:hasDescription>The distinct number of distinct methods called by a method (Coupling Intensity).</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -225,10 +231,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#cm -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;cm">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#cm">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The number of distinct methods calling the measured method (Changing Methods).</rdfs:comment>
-        <measurement:hasDescription>The number of distinct methods calling the measured method (Changing Methods).</measurement:hasDescription>
+        <main:hasDescription>The number of distinct methods calling the measured method (Changing Methods).</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -236,10 +242,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#fanIn -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;fanIn">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#fanIn">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
+        <main:hasDescription>The number of classes calling a specific code entity.</main:hasDescription>
         <rdfs:comment>The number of classes calling a specific code entity.</rdfs:comment>
-        <measurement:hasDescription>The number of classes calling a specific code entity.</measurement:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -247,10 +253,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#fanOut -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;fanOut">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#fanOut">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The number of called classes by a specific code entity.</rdfs:comment>
-        <measurement:hasDescription>The number of called classes by a specific code entity.</measurement:hasDescription>
+        <main:hasDescription>The number of called classes by a specific code entity.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -258,10 +264,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#fdp -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;fdp">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#fdp">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
+        <main:hasDescription>The number of classes in which the attributes accessed by a method are defined. Only classes that are unrelated to the method&#39;s definition class are considered (Foreign Data Providers).</main:hasDescription>
         <rdfs:comment>The number of classes in which the attributes accessed by a method are defined. Only classes that are unrelated to the method&#39;s definition class are considered (Foreign Data Providers).</rdfs:comment>
-        <measurement:hasDescription>The number of classes in which the attributes accessed by a method are defined. Only classes that are unrelated to the method&#39;s definition class are considered (Foreign Data Providers).</measurement:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -269,10 +275,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#hit -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;hit">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#hit">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The maximum path length from a class to its deepest subclass.</rdfs:comment>
-        <measurement:hasDescription>The maximum path length from a class to its deepest subclass.</measurement:hasDescription>
+        <main:hasDescription>The maximum path length from a class to its deepest subclass.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -280,10 +286,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#laa -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;laa">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#laa">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of accessed attributes that are from the measured method&#39;s definition class, divided by the total number of accessed attributes, including attributes accessed via accessor methods (Locality of Attribute Accesses). </measurement:hasDescription>
         <rdfs:comment>The number of accessed attributes that are from the measured method&#39;s definition class, divided by the total number of accessed attributes, including attributes accessed via accessor methods (Locality of Attribute Accesses). </rdfs:comment>
+        <main:hasDescription>The number of accessed attributes that are from the measured method&#39;s definition class, divided by the total number of accessed attributes, including attributes accessed via accessor methods (Locality of Attribute Accesses). </main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -291,9 +297,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#loc -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;loc">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#loc">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The lines of code of a code entity.</measurement:hasDescription>
+        <main:hasDescription>The lines of code of a code entity.</main:hasDescription>
         <rdfs:comment>The lines of code of a code entity.</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
@@ -302,10 +308,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#maxNesting -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;maxNesting">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#maxNesting">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
+        <main:hasDescription>The maximum nesting level of control structures of a method/function.</main:hasDescription>
         <rdfs:comment>The maximum nesting level of control structures of a method/function.</rdfs:comment>
-        <measurement:hasDescription>The maximum nesting level of control structures of a method/function.</measurement:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -313,10 +319,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#mcCabe -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;mcCabe">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#mcCabe">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The McCabe&#39;s cyclomatic complexity of a code entity.</rdfs:comment>
-        <measurement:hasDescription>The McCabe&#39;s cyclomatic complexity of a code entity.</measurement:hasDescription>
+        <main:hasDescription>The McCabe&#39;s cyclomatic complexity of a code entity.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -324,10 +330,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nas -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;nas">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nas">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of public methods of a class that are not overridden or specialized from the ancestor classes (Number of Added Services).</measurement:hasDescription>
         <rdfs:comment>The number of public methods of a class that are not overridden or specialized from the ancestor classes (Number of Added Services).</rdfs:comment>
+        <main:hasDescription>The number of public methods of a class that are not overridden or specialized from the ancestor classes (Number of Added Services).</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -335,10 +341,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#ndc -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;ndc">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#ndc">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The number of direct subclasses of a class.</rdfs:comment>
-        <measurement:hasDescription>The number of direct subclasses of a class.</measurement:hasDescription>
+        <main:hasDescription>The number of direct subclasses of a class.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -346,10 +352,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#noa -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;noa">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#noa">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of attributes of a class.</measurement:hasDescription>
         <rdfs:comment>The number of attributes of a class.</rdfs:comment>
+        <main:hasDescription>The number of attributes of a class.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -357,10 +363,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#noam -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;noam">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#noam">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The number of accessor methods of a class.</rdfs:comment>
-        <measurement:hasDescription>The number of accessor methods of a class.</measurement:hasDescription>
+        <main:hasDescription>The number of accessor methods of a class.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -368,10 +374,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#noav -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;noav">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#noav">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of variables accessed by a method.</measurement:hasDescription>
         <rdfs:comment>The number of variables accessed by a method.</rdfs:comment>
+        <main:hasDescription>The number of variables accessed by a method.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -379,9 +385,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#noc -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;noc">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#noc">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of classes in the system.</measurement:hasDescription>
+        <main:hasDescription>The number of classes in the system.</main:hasDescription>
         <rdfs:comment>The number of classes in the system.</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
@@ -390,9 +396,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nom -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;nom">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nom">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of methods of a class.</measurement:hasDescription>
+        <main:hasDescription>The number of methods of a class.</main:hasDescription>
         <rdfs:comment>The number of methods of a class.</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
@@ -401,10 +407,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nop -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;nop">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nop">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The number of packages/namespaces in the system.</rdfs:comment>
-        <measurement:hasDescription>The number of packages/namespaces in the system.</measurement:hasDescription>
+        <main:hasDescription>The number of packages/namespaces in the system.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -412,9 +418,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nopa -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;nopa">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nopa">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The number of public attributes of a class.</measurement:hasDescription>
+        <main:hasDescription>The number of public attributes of a class.</main:hasDescription>
         <rdfs:comment>The number of public attributes of a class.</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
@@ -423,10 +429,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nopar -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;nopar">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#nopar">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
+        <main:hasDescription>The number of parameters of a method.</main:hasDescription>
         <rdfs:comment>The number of parameters of a method.</rdfs:comment>
-        <measurement:hasDescription>The number of parameters of a method.</measurement:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -434,10 +440,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#norm -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;norm">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#norm">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The number of methods overriding a method in any one of the super-classes of a class</rdfs:comment>
-        <measurement:hasDescription>The number of methods overriding a method in any one of the super-classes of a class</measurement:hasDescription>
+        <main:hasDescription>The number of methods overriding a method in any one of the super-classes of a class</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
     
@@ -445,9 +451,9 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#numberOfCalls -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;numberOfCalls">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#numberOfCalls">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
-        <measurement:hasDescription>The total number of distinct operation calls (method invocations) in a system.</measurement:hasDescription>
+        <main:hasDescription>The total number of distinct operation calls (method invocations) in a system.</main:hasDescription>
         <rdfs:comment>The total number of distinct operation calls (method invocations) in a system.</rdfs:comment>
         <measurement:hasScale rdf:resource="&measurement;integersBetweenZeroAndInfinity"/>
     </owl:NamedIndividual>
@@ -456,10 +462,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#pnas -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;pnas">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#pnas">
         <rdf:type rdf:resource="&measurement;DerivedMeasure"/>
         <rdfs:comment>The nas metrics of a class divided by its total number of public methods.</rdfs:comment>
-        <measurement:hasDescription>The nas metrics of a class divided by its total number of public methods.</measurement:hasDescription>
+        <main:hasDescription>The nas metrics of a class divided by its total number of public methods.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
@@ -467,10 +473,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#tcc -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;tcc">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#tcc">
         <rdf:type rdf:resource="&measurement;BaseMeasure"/>
         <rdfs:comment>The relative number of directly connected public methods (i.e. the ones that access in common at least one attribute) in a class (Tight Class Cohesion).</rdfs:comment>
-        <measurement:hasDescription>The relative number of directly connected public methods (i.e. the ones that access in common at least one attribute) in a class (Tight Class Cohesion).</measurement:hasDescription>
+        <main:hasDescription>The relative number of directly connected public methods (i.e. the ones that access in common at least one attribute) in a class (Tight Class Cohesion).</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersBetweenZeroAndOne"/>
     </owl:NamedIndividual>
     
@@ -478,10 +484,10 @@
 
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#wmc -->
 
-    <owl:NamedIndividual rdf:about="&code-metrics;wmc">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code-metrics.owl#wmc">
         <rdf:type rdf:resource="&measurement;DerivedMeasure"/>
-        <measurement:hasDescription>The sum of McCabe&#39;s cyclomatic complexity of the methods of a class.</measurement:hasDescription>
         <rdfs:comment>The sum of McCabe&#39;s cyclomatic complexity of the methods of a class.</rdfs:comment>
+        <main:hasDescription>The sum of McCabe&#39;s cyclomatic complexity of the methods of a class.</main:hasDescription>
         <measurement:hasScale rdf:resource="&measurement;realNumbersFromZeroToInfinity"/>
     </owl:NamedIndividual>
     
