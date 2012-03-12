@@ -58,6 +58,7 @@
     <!-- http://se-on.org/ontologies/system-specific/2012/02/java.owl#hasJavaDoc -->
 
     <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/system-specific/2012/02/java.owl#hasJavaDoc">
+        <rdfs:comment>Java knows a special syntax for adding comments to classes, methods, fields, etc.</rdfs:comment>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>

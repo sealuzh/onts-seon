@@ -76,6 +76,7 @@
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#catchesException -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#catchesException">
+        <rdfs:comment>An exception can be caught in a method.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
@@ -86,6 +87,7 @@
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#constructorIsInvokedBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#constructorIsInvokedBy">
+        <rdfs:comment>A constructor can be called by another constructor or a method.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
         <rdfs:range>
             <owl:Class>
@@ -152,6 +154,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#expectsDatatype -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#expectsDatatype">
+        <rdfs:comment>A method can expect one or several (potentially different) datatypes as parameter.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
@@ -166,6 +169,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasAccessModifier -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasAccessModifier">
+        <rdfs:comment>Types, constructors, fields, and methods can have their visibility defined.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#AccessModifier"/>
         <rdfs:domain>
             <owl:Class>
@@ -184,6 +188,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasDatatype -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasDatatype">
+        <rdfs:comment>Variables in statically checked programming languages do have a type.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDatatypeOf"/>
@@ -194,6 +199,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasNamespaceMember -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasNamespaceMember">
+        <rdfs:comment>A namespace can contain type definitions.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Namespace"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#hasChild"/>
@@ -204,6 +210,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasParameter -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasParameter">
+        <rdfs:comment>Constructors and methods can have one or several parameters.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isParameterOf"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#hasChild"/>
@@ -222,6 +229,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasReturnType -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasReturnType">
+        <rdfs:comment>A method can return a value of a certain type.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isReturnTypeOf"/>
@@ -233,6 +241,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubClass -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubClass">
+        <rdfs:comment>A class can have a subclass.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype"/>
@@ -243,6 +252,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubInterface -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubInterface">
+        <rdfs:comment>An interface can have a subinterface.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype"/>
@@ -253,6 +263,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype">
+        <rdfs:comment>Classes or interfaces can have subtypes.</rdfs:comment>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -277,6 +288,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperClass -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperClass">
+        <rdfs:comment>A class can inherit from another class.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubClass"/>
@@ -288,6 +300,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperInterface -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperInterface">
+        <rdfs:comment>Interfaces can inherit from other interfaces.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubInterface"/>
@@ -299,16 +312,9 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperType -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperType">
+        <rdfs:comment>Types can inherit from other types.</rdfs:comment>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -318,6 +324,14 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -325,6 +339,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#implementsInterface -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#implementsInterface">
+        <rdfs:comment>A class can implement one or more interfaces and become a subtype of them like that.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSuperType"/>
@@ -336,12 +351,9 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass">
+        <rdfs:comment>A constructor or method can create a new instance of a class.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesConstructor"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredConstructorOf"/>
-        </owl:propertyChainAxiom>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -350,6 +362,10 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesConstructor"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredConstructorOf"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
@@ -357,6 +373,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesConstructor -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesConstructor">
+        <rdfs:comment>A constructor or method can invoke a constructor, leading to a new instance of the invoked constructor eventually.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#constructorIsInvokedBy"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
@@ -375,6 +392,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod">
+        <rdfs:comment>A constructor or method can invoke another method.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
         <rdfs:domain>
@@ -392,6 +410,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isAccessedBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isAccessedBy">
+        <rdfs:comment>Fields are accessed by methods or constructors.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#accessesField"/>
         <rdfs:range>
@@ -409,6 +428,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isCaughtBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isCaughtBy">
+        <rdfs:comment>Exceptions are caught within a method.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#catchesException"/>
@@ -419,6 +439,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDatatypeOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDatatypeOf">
+        <rdfs:comment>A variable can have a datatype.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Variable"/>
     </owl:ObjectProperty>
@@ -428,6 +449,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredConstructorOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredConstructorOf">
+        <rdfs:comment>A constructor can be declared for a class or enum type.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#hasParent"/>
@@ -446,6 +468,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredFieldOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredFieldOf">
+        <rdfs:comment>A field can be declared in a complex type.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresField"/>
@@ -457,6 +480,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredMethodOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredMethodOf">
+        <rdfs:comment>A method can be declared as part of a type definition.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresMethod"/>
@@ -468,6 +492,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isExpectedDatatype -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isExpectedDatatype">
+        <rdfs:comment>A datatype is expected as a method&apos;s parameter.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -481,6 +506,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isImplementedBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isImplementedBy">
+        <rdfs:comment>An interface can be implemented by a class.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype"/>
@@ -491,6 +517,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInstantiatedBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isInstantiatedBy">
+        <rdfs:comment>Classes are instantiated when their constructor is called by another constructor or a method.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#instantiatesClass"/>
         <rdfs:range>
@@ -508,6 +535,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isNamespaceMemberOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isNamespaceMemberOf">
+        <rdfs:comment>Complex types are declared in a namespace.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Namespace"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasNamespaceMember"/>
@@ -519,6 +547,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isParameterOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isParameterOf">
+        <rdfs:comment>Parameters belong to a method.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#hasParent"/>
         <rdfs:range>
@@ -536,6 +565,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isReturnTypeOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isReturnTypeOf">
+        <rdfs:comment>A variable of a certain datatype can be returned by method.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Datatype"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
     </owl:ObjectProperty>
@@ -545,6 +575,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isThrownBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isThrownBy">
+        <rdfs:comment>An exception can be thrown by a method.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
         <rdfs:range>
             <owl:Class>
@@ -561,6 +592,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#methodIsInvokedBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#methodIsInvokedBy">
+        <rdfs:comment>Methods can be invoked by constructors or other methods.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesMethod"/>
         <rdfs:range>
@@ -578,6 +610,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#throwsException -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#throwsException">
+        <rdfs:comment>A method can throw an exception.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ExceptionType"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isThrownBy"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
@@ -596,6 +629,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#usesClass -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#usesClass">
+        <rdfs:comment>One class can use another, when the first class&apos; methods invoke  or access methods or fields of the other class.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
@@ -622,6 +656,7 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasCodeIdentifier -->
 
     <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasCodeIdentifier">
+        <rdfs:comment>Code entities, such as classes, methods, variables, etc. have an identifier. </rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/02/main.owl#hasIdentifier"/>
         <rdfs:range rdf:resource="&xsd;string"/>

@@ -25,6 +25,28 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -36,6 +58,7 @@
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/integration-code-history.owl#containsComplexType -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/integration-code-history.owl#containsComplexType">
+        <rdfs:comment>A version of a file can contain a complex type.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/history.owl#Version"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#hasChild"/>
