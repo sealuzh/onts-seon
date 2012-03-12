@@ -35,7 +35,10 @@
 
     <owl:AnnotationProperty rdf:about="&annotations;ignore"/>
     <owl:AnnotationProperty rdf:about="&annotations;phrase"/>
+    <owl:AnnotationProperty rdf:about="&annotations;phrase-singular"/>
+    <owl:AnnotationProperty rdf:about="&annotations;phrase-plural"/>
     <owl:AnnotationProperty rdf:about="&annotations;interrogative"/>
+    <owl:AnnotationProperty rdf:about="&annotations;explanation"/>
 </rdf:RDF>
 
 

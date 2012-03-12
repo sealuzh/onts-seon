@@ -32,10 +32,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:AnnotationProperty rdf:about="&annotations;phrase"/>
-    <owl:AnnotationProperty rdf:about="&annotations;interrogative"/>
     
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -57,151 +54,152 @@
      -->
 
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresField">
-        <annotations:phrase xml:lang="en">declare</annotations:phrase>
-        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">declare</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">declares</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#throwsException">
-        <annotations:phrase xml:lang="en">throws</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">throws</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">throw</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Parameter">
-        <annotations:phrase xml:lang="en">Argument</annotations:phrase>
-        <annotations:phrase xml:lang="en">Arguments</annotations:phrase>
-        <annotations:phrase xml:lang="en">Parameter</annotations:phrase>
-        <annotations:phrase xml:lang="en">Parameters</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Argument</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Arguments</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">Parameter</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Parameters</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasLength">
         <annotations:interrogative>How long is</annotations:interrogative>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSuperClass">
-        <annotations:phrase xml:lang="en">extend</annotations:phrase>
-        <annotations:phrase xml:lang="en">extends</annotations:phrase>
-        <annotations:phrase xml:lang="en">inherit from</annotations:phrase>
-        <annotations:phrase xml:lang="en">inherits from</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">extend</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">extends</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">inherit from</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">inherits from</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#implementsInterface">
-        <annotations:phrase xml:lang="en">implement</annotations:phrase>
-        <annotations:phrase xml:lang="en">implements</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">implement</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">implements</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Field">
-        <annotations:phrase>Attribute</annotations:phrase>
-        <annotations:phrase xml:lang="en">Attributes</annotations:phrase>
-        <annotations:phrase xml:lang="en">Field</annotations:phrase>
-        <annotations:phrase xml:lang="en">Fields</annotations:phrase>
+        <annotations:phrase-singular>Attribute</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Attributes</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">Field</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Fields</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresMethod">
-        <annotations:phrase xml:lang="en">declare</annotations:phrase>
-        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">declare</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">declares</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasPackageMember">
-        <annotations:phrase xml:lang="en">contain</annotations:phrase>
-        <annotations:phrase xml:lang="en">contains</annotations:phrase>
-        <annotations:phrase xml:lang="en">has</annotations:phrase>
-        <annotations:phrase xml:lang="en">have</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">contain</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">contains</annotations:phrase-singular>
+        <annotations:phrase-singular xml:lang="en">has</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">have</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType">
-        <annotations:phrase xml:lang="en">Enum</annotations:phrase>
-        <annotations:phrase xml:lang="en">Enums</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Enum</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Enums</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#catchesException">
-        <annotations:phrase xml:lang="en">catch</annotations:phrase>
-        <annotations:phrase xml:lang="en">catches</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">catch</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">catches</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDeclaredFieldOf">
-        <annotations:phrase>are declared in</annotations:phrase>
-        <annotations:phrase>is declared in</annotations:phrase>
+        <annotations:phrase-plural>are declared in</annotations:phrase-plural>
+        <annotations:phrase-singular>is declared in</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDeclaredConstructorOf">
-        <annotations:phrase xml:lang="en">are declared in</annotations:phrase>
-        <annotations:phrase xml:lang="en">is declared in</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">are declared in</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">is declared in</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasDatatype">
-        <annotations:phrase xml:lang="en">has</annotations:phrase>
-        <annotations:phrase xml:lang="en">have</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">has</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">have</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType">
-        <annotations:phrase xml:lang="en">Interface</annotations:phrase>
-        <annotations:phrase xml:lang="en">Interfaces</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Interface</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Interfaces</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#usesClassType">
-        <annotations:phrase>use</annotations:phrase>
-        <annotations:phrase>uses</annotations:phrase>
+        <annotations:phrase-plural>use</annotations:phrase-plural>
+        <annotations:phrase-singular>uses</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isAbstract">
         <annotations:phrase xml:lang="en">abstract</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method">
-        <annotations:phrase xml:lang="en">Method</annotations:phrase>
-        <annotations:phrase xml:lang="en">Methods</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Method</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Methods</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType">
-        <annotations:phrase xml:lang="en">Annotation</annotations:phrase>
-        <annotations:phrase xml:lang="en">Annotations</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Annotation</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Annotations</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isPackageMemberOf">
-        <annotations:phrase>is in</annotations:phrase>
+        <annotations:phrase-singular>is in</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasReturnType">
-        <annotations:phrase xml:lang="en">returns</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">returns</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ExceptionType">
-        <annotations:phrase xml:lang="en">Exception</annotations:phrase>
-        <annotations:phrase xml:lang="en">Exceptions</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Exception</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Exceptions</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isStatic">
         <annotations:phrase xml:lang="en">static</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package">
-        <annotations:phrase xml:lang="en">Package</annotations:phrase>
-        <annotations:phrase xml:lang="en">Packages</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Package</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Packages</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#accessesField">
-        <annotations:phrase xml:lang="en">access</annotations:phrase>
-        <annotations:phrase xml:lang="en">accesses</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">access</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">accesses</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isAccessedBy">
-        <annotations:phrase xml:lang="en">are accessed by</annotations:phrase>
-        <annotations:phrase xml:lang="en">is accessed by</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">are accessed by</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">is accessed by</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Constructor">
-        <annotations:phrase xml:lang="en">Constructor</annotations:phrase>
-        <annotations:phrase xml:lang="en">Constructors</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Constructor</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Constructors</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasAccessModifier">
-        <annotations:phrase xml:lang="en">are</annotations:phrase>
-        <annotations:phrase xml:lang="en">has</annotations:phrase>
-        <annotations:phrase xml:lang="en">have</annotations:phrase>
-        <annotations:phrase xml:lang="en">is</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">are</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">has</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">have</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">is</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDeclaredMethodOf">
-        <annotations:phrase>are declared in</annotations:phrase>
-        <annotations:phrase>is declared in</annotations:phrase>
+        <annotations:phrase-plural>are declared in</annotations:phrase-plural>
+        <annotations:phrase-singular>is declared in</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier">
-        <annotations:phrase xml:lang="en">Access Modifier</annotations:phrase>
-        <annotations:phrase xml:lang="en">Access Modifiers</annotations:phrase>
-        <annotations:phrase xml:lang="en">Visibility</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Access Modifier</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Access Modifiers</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">Visibility</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresConstructor">
-        <annotations:phrase>declare</annotations:phrase>
-        <annotations:phrase xml:lang="en">declares</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">declare</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">declares</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType">
-        <annotations:phrase xml:lang="en">Class</annotations:phrase>
-        <annotations:phrase xml:lang="en">Classes</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Class</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Classes</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType">
-        <annotations:phrase xml:lang="en">Type</annotations:phrase>
-        <annotations:phrase xml:lang="en">Types</annotations:phrase>
+        <annotations:phrase-singular xml:lang="en">Type</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Types</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype">
-        <annotations:phrase xml:lang="en">expect</annotations:phrase>
-        <annotations:phrase xml:lang="en">expects</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">expect</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">expects</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#invokesMethod">
-        <annotations:phrase xml:lang="en">call</annotations:phrase>
-        <annotations:phrase xml:lang="en">calls</annotations:phrase>
-        <annotations:phrase xml:lang="en">invoke</annotations:phrase>
-        <annotations:phrase xml:lang="en">invokes</annotations:phrase>
+        <annotations:phrase-plural xml:lang="en">call</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">calls</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">invoke</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">invokes</annotations:phrase-singular>
     </rdf:Description>
 </rdf:RDF>
 
