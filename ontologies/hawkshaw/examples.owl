@@ -109,6 +109,7 @@
         <hasExampleQuery rdf:datatype="&xsd;string">What Method invokes foo() and bar() ?</hasExampleQuery>
         <hasExampleQuery rdf:datatype="&xsd;string">What Method invokes the method bar() ?</hasExampleQuery>
         <hasExampleQuery rdf:datatype="&xsd;string">What Method return the type Foo ?</hasExampleQuery>
+        <hasExampleQuery rdf:datatype="&xsd;string">What classes declare more than fifty methods ?</hasExampleQuery>
         <hasExampleQuery rdf:datatype="&xsd;string">What is the ratio between Packages and Classes ?</hasExampleQuery>
         <hasExampleQuery rdf:datatype="&xsd;string">What orphan methods are there ?</hasExampleQuery>
     </owl:NamedIndividual>
