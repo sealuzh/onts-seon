@@ -89,6 +89,16 @@ Special cases, such as (static) initializers are not handled so far.</rdfs:comme
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#containsCodeEntity -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#containsCodeEntity">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
+        <rdfs:domain rdf:resource="&relations;File"/>
+        <rdfs:subPropertyOf rdf:resource="&relations;hasChild"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresConstructor -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresConstructor">
@@ -254,14 +264,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubType">
         <rdfs:comment>The hasSubType property is an abstract property that models subtyping in Java. Its inverse property is hasSuperType.</rdfs:comment>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -271,6 +273,14 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -371,6 +381,17 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isContainedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isContainedBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#containsCodeEntity"/>
+        <rdfs:range rdf:resource="&relations;File"/>
+        <rdfs:subPropertyOf rdf:resource="&relations;hasParent"/>
     </owl:ObjectProperty>
     
 

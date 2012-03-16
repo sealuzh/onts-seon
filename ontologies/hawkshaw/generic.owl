@@ -90,6 +90,23 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#isDependentOn">
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#dependsOn"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#File -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#File"/>
 </rdf:RDF>
 
 

@@ -34,6 +34,7 @@
 
     
 
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -57,18 +58,18 @@
         <annotations:phrase-plural xml:lang="en">declare</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">declares</annotations:phrase-singular>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasLength">
+        <annotations:interrogative>How long is</annotations:interrogative>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#throwsException">
-        <annotations:phrase-singular xml:lang="en">throws</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">throw</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">throws</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Parameter">
         <annotations:phrase-singular xml:lang="en">Argument</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Arguments</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">Parameter</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Parameters</annotations:phrase-plural>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasLength">
-        <annotations:interrogative>How long is</annotations:interrogative>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSuperClass">
         <annotations:phrase-plural xml:lang="en">extend</annotations:phrase-plural>
@@ -131,6 +132,10 @@
         <annotations:phrase-singular xml:lang="en">Method</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Methods</annotations:phrase-plural>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isContainedBy">
+        <annotations:phrase-plural xml:lang="en">are contained in</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">is contained</annotations:phrase-singular>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType">
         <annotations:phrase-singular xml:lang="en">Annotation</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Annotations</annotations:phrase-plural>
@@ -169,8 +174,8 @@
         <annotations:phrase-singular xml:lang="en">is</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDeclaredMethodOf">
-        <annotations:phrase-plural>are declared in</annotations:phrase-plural>
         <annotations:phrase-singular>is declared in</annotations:phrase-singular>
+        <annotations:phrase-plural>are declared in</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier">
         <annotations:phrase-singular xml:lang="en">Access Modifier</annotations:phrase-singular>
@@ -185,19 +190,23 @@
         <annotations:phrase-singular xml:lang="en">Class</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Classes</annotations:phrase-plural>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType">
-        <annotations:phrase-singular xml:lang="en">Type</annotations:phrase-singular>
-        <annotations:phrase-plural xml:lang="en">Types</annotations:phrase-plural>
-    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#expectsDatatype">
         <annotations:phrase-plural xml:lang="en">expect</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">expects</annotations:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType">
+        <annotations:phrase-singular xml:lang="en">Type</annotations:phrase-singular>
+        <annotations:phrase-plural xml:lang="en">Types</annotations:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#invokesMethod">
         <annotations:phrase-plural xml:lang="en">call</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">calls</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">invoke</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">invokes</annotations:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#containsCodeEntity">
+        <annotations:phrase-plural xml:lang="en">contain</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">contains</annotations:phrase-singular>
     </rdf:Description>
 </rdf:RDF>
 
