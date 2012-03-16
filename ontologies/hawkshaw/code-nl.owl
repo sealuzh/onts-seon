@@ -121,10 +121,6 @@
         <annotations:phrase-singular xml:lang="en">Interface</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Interfaces</annotations:phrase-plural>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#usesClassType">
-        <annotations:phrase-plural>use</annotations:phrase-plural>
-        <annotations:phrase-singular>uses</annotations:phrase-singular>
-    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isAbstract">
         <annotations:phrase xml:lang="en">abstract</annotations:phrase>
     </rdf:Description>
@@ -161,6 +157,10 @@
         <annotations:phrase-plural xml:lang="en">access</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">accesses</annotations:phrase-singular>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#usesComplexType">
+        <annotations:phrase-plural xml:lang="en">use</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">uses</annotations:phrase-singular>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isAccessedBy">
         <annotations:phrase-plural xml:lang="en">are accessed by</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">is accessed by</annotations:phrase-singular>
@@ -168,6 +168,10 @@
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Constructor">
         <annotations:phrase-singular xml:lang="en">Constructor</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Constructors</annotations:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isUsedBy">
+        <annotations:phrase-plural xml:lang="en">are used by</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">is used by</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasAccessModifier">
         <annotations:phrase-plural xml:lang="en">are</annotations:phrase-plural>

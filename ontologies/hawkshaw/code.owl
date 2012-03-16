@@ -94,7 +94,6 @@ Special cases, such as (static) initializers are not handled so far.</rdfs:comme
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#containsCodeEntity">
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
         <rdfs:domain rdf:resource="&relations;File"/>
-        <rdfs:subPropertyOf rdf:resource="&relations;hasChild"/>
     </owl:ObjectProperty>
     
 
@@ -388,7 +387,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isContainedBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isContainedBy">
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#containsCodeEntity"/>
         <rdfs:range rdf:resource="&relations;File"/>
         <rdfs:subPropertyOf rdf:resource="&relations;hasParent"/>
@@ -545,7 +543,10 @@ als of the Interface class by connecting the superordinate Interface instance wi
 
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isUsedBy -->
 
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isUsedBy"/>
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isUsedBy">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+    </owl:ObjectProperty>
     
 
 
@@ -567,11 +568,11 @@ als of the Interface class by connecting the superordinate Interface instance wi
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#usesClassType -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#usesComplexType -->
 
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#usesClassType">
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#usesComplexType">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isUsedBy"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresMethod"/>
