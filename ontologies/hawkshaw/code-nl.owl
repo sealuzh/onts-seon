@@ -166,8 +166,6 @@
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasAccessModifier">
         <annotations:phrase-plural xml:lang="en">are</annotations:phrase-plural>
-        <annotations:phrase-singular xml:lang="en">has</annotations:phrase-singular>
-        <annotations:phrase-plural xml:lang="en">have</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">is</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isDeclaredMethodOf">
