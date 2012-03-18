@@ -140,6 +140,7 @@
         <annotations:phrase-singular>is in</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasReturnType">
+        <annotations:phrase-plural xml:lang="en">return</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">returns</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ExceptionType">

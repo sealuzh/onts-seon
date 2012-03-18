@@ -387,9 +387,9 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isContainedBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isContainedBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#containsCodeEntity"/>
         <rdfs:range rdf:resource="&relations;File"/>
-        <rdfs:subPropertyOf rdf:resource="&relations;hasParent"/>
     </owl:ObjectProperty>
     
 
@@ -1059,19 +1059,19 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Variable"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Variable"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

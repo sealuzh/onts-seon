@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#"
+     xml:base="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl">
+        <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#commitsVersion -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#commitsVersion">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Developer"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#hasVersion -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#hasVersion">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#File"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#hasChild"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isCommittedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isCommittedBy">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Developer"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#commitsVersion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isVersionOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isVersionOf">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#File"/>
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#hasParent"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#hasVersion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#committedOn -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#committedOn">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#hasCommitMessage -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#hasCommitMessage">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#hasContentIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#hasContentIdentifier">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#modifiedOn -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#modifiedOn">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#File"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Developer -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Developer"/>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.5.1912) http://owlapi.sourceforge.net -->
+
