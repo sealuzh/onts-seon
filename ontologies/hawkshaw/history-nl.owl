@@ -56,10 +56,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Developer">
-        <annotations-nl:phrase-singular xml:lang="en">Developer</annotations-nl:phrase-singular>
-        <annotations-nl:phrase-plural xml:lang="en">Developers</annotations-nl:phrase-plural>
-    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#hasVersion">
         <annotations-nl:phrase-singular xml:lang="en">has</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">have</annotations-nl:phrase-plural>

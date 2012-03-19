@@ -104,9 +104,23 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Developer -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Developer">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder"/>
+    </owl:Class>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#File -->
 
     <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#File"/>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder"/>
 </rdf:RDF>
 
 
