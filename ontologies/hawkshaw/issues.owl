@@ -279,81 +279,81 @@
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Blocker -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#blocker -->
 
-    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Blocker">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#blocker">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Priority"/>
         <rdfs:label>Blocker</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Closed -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#closed -->
 
-    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Closed">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#closed">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Status"/>
         <rdfs:label>Closed</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Critical -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#critical -->
 
-    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Critical">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#critical">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Priority"/>
         <rdfs:label>Critical</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Major -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#major -->
 
-    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Major">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#major">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Priority"/>
         <rdfs:label>Major</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Minor -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#minor -->
 
-    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Minor">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#minor">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Priority"/>
         <rdfs:label>Minor</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Open -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#open -->
 
-    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Open">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#open">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Status"/>
         <rdfs:label>Open</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Reopened -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#reopened -->
 
-    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Reopened">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#reopened">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Status"/>
         <rdfs:label>Reopened</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Resolved -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#resolved -->
 
-    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Resolved">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#resolved">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Status"/>
         <rdfs:label>Resolved</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Trivial -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#trivial -->
 
-    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Trivial">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#trivial">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Priority"/>
         <rdfs:label>Trivial</rdfs:label>
     </owl:NamedIndividual>
