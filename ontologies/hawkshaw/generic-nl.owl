@@ -54,6 +54,19 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Developer">
+        <annotations-nl:phrase-singular xml:lang="en">Developer</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Developers</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">Programmer</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Programmers</annotations-nl:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder">
+        <annotations-nl:phrase-plural xml:lang="en">People</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">Person</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Persons</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">Stakeholder</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Stakeholders</annotations-nl:phrase-plural>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#File">
         <annotations-nl:phrase-singular xml:lang="en">File</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">Files</annotations-nl:phrase-plural>

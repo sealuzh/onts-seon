@@ -974,11 +974,10 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
 
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#default -->
 
-    <owl:Thing rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#default">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#default">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier"/>
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
         <rdfs:label>default visibility</rdfs:label>
-    </owl:Thing>
+    </owl:NamedIndividual>
     
 
 
@@ -1011,31 +1010,28 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
 
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#private -->
 
-    <owl:Thing rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#private">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#private">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier"/>
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
         <rdfs:label>private</rdfs:label>
-    </owl:Thing>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#protected -->
 
-    <owl:Thing rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#protected">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#protected">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier"/>
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
         <rdfs:label>protected</rdfs:label>
-    </owl:Thing>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#public -->
 
-    <owl:Thing rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#public">
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#public">
         <rdf:type rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier"/>
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
         <rdfs:label>public</rdfs:label>
-    </owl:Thing>
+    </owl:NamedIndividual>
     
 
 

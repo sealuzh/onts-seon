@@ -18,7 +18,6 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-nl.owl">
-        <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl"/>
         <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl"/>
     </owl:Ontology>
     
@@ -56,6 +55,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Committer">
+        <annotations-nl:phrase-singular xml:lang="en">Committer</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Committers</annotations-nl:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isCommittedBy">
+        <annotations-nl:phrase-plural xml:lang="en">are committed by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is committed by</annotations-nl:phrase-singular>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#hasVersion">
         <annotations-nl:phrase-singular xml:lang="en">has</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">have</annotations-nl:phrase-plural>

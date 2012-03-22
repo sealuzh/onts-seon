@@ -17,9 +17,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:examples="http://se-on.org/ontologies/hawkshaw/2012/02/examples.owl#">
-    <owl:Ontology rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/examples.owl">
-        <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/annotations-nl.owl"/>
-    </owl:Ontology>
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/examples.owl"/>
     
 
 

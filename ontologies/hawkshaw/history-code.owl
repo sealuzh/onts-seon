@@ -37,6 +37,8 @@
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesComplexType -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesComplexType">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Committer"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#commitsVersion"/>
             <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isVersionOf"/>
