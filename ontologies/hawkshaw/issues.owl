@@ -60,7 +60,7 @@
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#writesComment"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAuthorOf"/>
             <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentOf"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -72,6 +72,16 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasAssignee">
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Assignee"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasAuthor">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Comment"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAuthorOf"/>
     </owl:ObjectProperty>
     
 
@@ -95,6 +105,15 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAuthorOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAuthorOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Comment"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentOf">
@@ -105,20 +124,31 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentedBy">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#commentsOn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isReportedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isReportedBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Reporter"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#reportsIssue"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#reportsIssue -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#reportsIssue">
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Reporter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#writesComment -->
-
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#writesComment">
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder"/>
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Comment"/>
     </owl:ObjectProperty>
     
 

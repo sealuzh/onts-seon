@@ -25,6 +25,8 @@
         <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl"/>
         <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history-nl.owl"/>
         <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl"/>
+        <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues-history-code-nl.owl"/>
+        <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues-history-code.owl"/>
         <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues-nl.owl"/>
         <owl:imports rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl"/>
     </owl:Ontology>
