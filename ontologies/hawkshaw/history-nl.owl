@@ -31,8 +31,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:AnnotationProperty rdf:about="&annotations-nl;phrase-singular"/>
-    <owl:AnnotationProperty rdf:about="&annotations-nl;phrase-plural"/>
     
 
 
@@ -58,6 +56,10 @@
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Committer">
         <annotations-nl:phrase-singular xml:lang="en">Committer</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">Committers</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">Developer</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Developers</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">Programmer</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Programmers</annotations-nl:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isCommittedBy">
         <annotations-nl:phrase-plural xml:lang="en">are committed by</annotations-nl:phrase-plural>
