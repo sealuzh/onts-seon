@@ -164,6 +164,15 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasCommentText -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasCommentText">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasDescription -->
 
     <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasDescription">
