@@ -83,6 +83,19 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#modifiesFile -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#modifiesFile">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#File"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Committer"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#commitsVersion"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isVersionOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
