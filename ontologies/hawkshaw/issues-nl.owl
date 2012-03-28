@@ -76,7 +76,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasComment">
         <annotations-nl:phrase-singular xml:lang="en">has</annotations-nl:phrase-singular>
-        <annotations-nl:phrase-singular xml:lang="en">have</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">have</annotations-nl:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#reportsIssue">
         <annotations-nl:phrase-plural xml:lang="en">report</annotations-nl:phrase-plural>
