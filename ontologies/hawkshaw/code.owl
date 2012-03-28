@@ -228,7 +228,6 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasReturnType">
         <rdfs:comment>A method can return a value of a certain type or void (i.e., nothing). The inverse property is isReturnTypeOf.</rdfs:comment>
-        <todo>how should we treat &apos;void&apos;?</todo>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isReturnTypeOf"/>
@@ -263,6 +262,14 @@ als of the Interface class by connecting the superordinate Interface instance wi
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubType">
         <rdfs:comment>The hasSubType property is an abstract property that models subtyping in Java. Its inverse property is hasSuperType.</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -272,14 +279,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -315,14 +314,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSuperType">
         <rdfs:comment>Abstract property that models inheritance relationships in Java. Its inverse is &apos;hasSubType&apos;.</rdfs:comment>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubType"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -332,6 +323,14 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
