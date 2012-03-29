@@ -60,6 +60,12 @@
         <annotations-nl:phrase-singular xml:lang="en">modifies</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">modify</annotations-nl:phrase-plural>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isModifiedFileBy">
+        <annotations-nl:phrase-plural xml:lang="en">are changed by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-plural xml:lang="en">are modified by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is changed by</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-singular xml:lang="en">is modified by</annotations-nl:phrase-singular>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Committer">
         <annotations-nl:phrase-singular xml:lang="en">Committer</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">Committers</annotations-nl:phrase-plural>
@@ -67,6 +73,12 @@
         <annotations-nl:phrase-plural xml:lang="en">Developers</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">Programmer</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">Programmers</annotations-nl:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isVersionOf">
+        <annotations-nl:phrase-plural xml:lang="en">belong to</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">belongs to</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">change</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">changes</annotations-nl:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isCommittedBy">
         <annotations-nl:phrase-plural xml:lang="en">are committed by</annotations-nl:phrase-plural>
@@ -85,6 +97,10 @@
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#commitsVersion">
         <annotations-nl:phrase-plural xml:lang="en">commit</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">commits</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#FileUnderVersionControl">
+        <annotations-nl:phrase-singular xml:lang="en">File</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Files</annotations-nl:phrase-plural>
     </rdf:Description>
 </rdf:RDF>
 

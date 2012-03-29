@@ -54,6 +54,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isModifiedComplexTypeBy">
+        <annotations-nl:phrase-plural xml:lang="en">are changed by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-plural xml:lang="en">are modified by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is changed by</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-singular xml:lang="en">is modified by</annotations-nl:phrase-singular>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesComplexType">
         <annotations-nl:phrase-plural xml:lang="en">change</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">changes</annotations-nl:phrase-singular>
