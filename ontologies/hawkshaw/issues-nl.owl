@@ -54,25 +54,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentOf">
-        <annotations-nl:phrase-plural xml:lang="en">are about</annotations-nl:phrase-plural>
-        <annotations-nl:phrase-singular xml:lang="en">is about</annotations-nl:phrase-singular>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isReportedBy">
-        <annotations-nl:phrase-plural xml:lang="en">are reported by</annotations-nl:phrase-plural>
-        <annotations-nl:phrase-singular xml:lang="en">is reported by</annotations-nl:phrase-singular>
-    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasAssignee">
         <annotations-nl:phrase-plural xml:lang="en">are assigned to</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">is assigned to</annotations-nl:phrase-singular>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasAuthor">
-        <annotations-nl:phrase-plural xml:lang="en">are written by</annotations-nl:phrase-plural>
-        <annotations-nl:phrase-singular xml:lang="en">is written by</annotations-nl:phrase-singular>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Bug">
-        <annotations-nl:phrase-singular xml:lang="en">Bug</annotations-nl:phrase-singular>
-        <annotations-nl:phrase-plural xml:lang="en">Bugs</annotations-nl:phrase-plural>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isOpen">
+        <annotations-nl:phrase xml:lang="en">open</annotations-nl:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasComment">
         <annotations-nl:phrase-singular xml:lang="en">has</annotations-nl:phrase-singular>
@@ -85,21 +72,81 @@
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#fixTime">
         <annotations-nl:phrase xml:lang="en">fix time in days</annotations-nl:phrase>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isBlockedBy">
+        <annotations-nl:phrase-plural xml:lang="en">are blocked by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is blocked by</annotations-nl:phrase-singular>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#reportsIssue">
         <annotations-nl:phrase-plural xml:lang="en">report</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">reports</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isACloneOf">
+        <annotations-nl:phrase-plural xml:lang="en">are clones of</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is a clone of</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isClonedAs">
+        <annotations-nl:phrase-plural xml:lang="en">are cloned as</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is cloned as</annotations-nl:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Improvement">
         <annotations-nl:phrase-singular xml:lang="en">Improvement</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">Improvements</annotations-nl:phrase-plural>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isRelatedTo">
+        <annotations-nl:phrase-plural xml:lang="en">are related to</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is related to</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAuthorOf">
+        <annotations-nl:phrase-plural xml:lang="en">write</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">writes</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentedBy">
+        <annotations-nl:phrase-plural xml:lang="en">are commented by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is commented by</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#incorporates">
+        <annotations-nl:phrase-plural xml:lang="en">incorporate</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">incorporates</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isPartOf">
+        <annotations-nl:phrase-plural xml:lang="en">are part of</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is part of</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#New_Feature">
+        <annotations-nl:phrase-singular xml:lang="en">new Feature</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">new Features</annotations-nl:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentOf">
+        <annotations-nl:phrase-plural xml:lang="en">are about</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is about</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isDuplicatedBy">
+        <annotations-nl:phrase-plural xml:lang="en">are duplicated by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is duplicated by</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isReportedBy">
+        <annotations-nl:phrase-plural xml:lang="en">are reported by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is reported by</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#duplicates">
+        <annotations-nl:phrase-plural xml:lang="en">duplicate</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">duplicates</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Bug">
+        <annotations-nl:phrase-singular xml:lang="en">Bug</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Bugs</annotations-nl:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasAuthor">
+        <annotations-nl:phrase-plural xml:lang="en">are written by</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is written by</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#relatesTo">
+        <annotations-nl:phrase-plural xml:lang="en">relate to</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">relates to</annotations-nl:phrase-singular>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue">
         <annotations-nl:phrase-singular xml:lang="en">Issue</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">Issues</annotations-nl:phrase-plural>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAssigneeOf">
-        <annotations-nl:phrase-plural xml:lang="en">are assigned to</annotations-nl:phrase-plural>
-        <annotations-nl:phrase-singular xml:lang="en">is assigned to</annotations-nl:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Assignee">
         <annotations-nl:phrase-singular xml:lang="en">Assignee</annotations-nl:phrase-singular>
@@ -109,31 +156,23 @@
         <annotations-nl:phrase-singular xml:lang="en">Programmer</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">Programmers</annotations-nl:phrase-plural>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAssigneeOf">
+        <annotations-nl:phrase-plural xml:lang="en">are assigned to</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">is assigned to</annotations-nl:phrase-singular>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Comment">
         <annotations-nl:phrase-singular xml:lang="en">Comment</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">Comments</annotations-nl:phrase-plural>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAuthorOf">
-        <annotations-nl:phrase-plural xml:lang="en">write</annotations-nl:phrase-plural>
-        <annotations-nl:phrase-singular xml:lang="en">writes</annotations-nl:phrase-singular>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Status">
+        <annotations-nl:phrase-singular xml:lang="en">Status</annotations-nl:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Priority">
         <annotations-nl:phrase-singular xml:lang="en">Priority</annotations-nl:phrase-singular>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Status">
-        <annotations-nl:phrase-singular xml:lang="en">Status</annotations-nl:phrase-singular>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentedBy">
-        <annotations-nl:phrase-plural xml:lang="en">are commented by</annotations-nl:phrase-plural>
-        <annotations-nl:phrase-singular xml:lang="en">is commented by</annotations-nl:phrase-singular>
-    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#commentsOn">
         <annotations-nl:phrase-plural xml:lang="en">comment on</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">comments on</annotations-nl:phrase-singular>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#New_Feature">
-        <annotations-nl:phrase-singular xml:lang="en">new Feature</annotations-nl:phrase-singular>
-        <annotations-nl:phrase-plural xml:lang="en">new Features</annotations-nl:phrase-plural>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Reporter">
         <annotations-nl:phrase-plural xml:lang="en">People</annotations-nl:phrase-plural>
@@ -143,6 +182,10 @@
         <annotations-nl:phrase-plural xml:lang="en">Reporters</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">Stakeholder</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">Stakeholders</annotations-nl:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#blocks">
+        <annotations-nl:phrase-plural xml:lang="en">block</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">blocks</annotations-nl:phrase-singular>
     </rdf:Description>
 </rdf:RDF>
 

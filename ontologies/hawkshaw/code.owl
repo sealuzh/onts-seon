@@ -262,14 +262,6 @@ als of the Interface class by connecting the superordinate Interface instance wi
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSubType">
         <rdfs:comment>The hasSubType property is an abstract property that models subtyping in Java. Its inverse property is hasSuperType.</rdfs:comment>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -279,6 +271,14 @@ als of the Interface class by connecting the superordinate Interface instance wi
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -674,12 +674,74 @@ Annotations and interfaces are implicitly abstract and, accordingly, their metho
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isConstant -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isFinal -->
 
-    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isConstant">
-        <rdfs:comment>A variable can be declared to be constant by using the keyword &apos;final&apos;. In this case, it is not possible to change its value after initialisation.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Variable"/>
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isFinal">
         <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Field"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isPrivate -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isPrivate">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Field"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isProtected -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isProtected">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Field"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isPublic -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isPublic">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Field"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -1054,19 +1116,19 @@ Names cannot be the same as a Java keyword (eg, import, if, class, etc.).</rdfs:
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Variable"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Datatype"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Variable"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AnnotationType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ClassType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#EnumerationType"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#InterfaceType"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

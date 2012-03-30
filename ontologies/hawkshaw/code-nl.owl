@@ -54,15 +54,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresField">
+        <annotations:phrase-plural xml:lang="en">declare</annotations:phrase-plural>
+        <annotations:phrase-singular xml:lang="en">declares</annotations:phrase-singular>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasSuperInterface">
         <annotations:phrase-plural xml:lang="en">extend</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">extends</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">inherit from</annotations:phrase-plural>
         <annotations:phrase-singular xml:lang="en">inherits from</annotations:phrase-singular>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresField">
-        <annotations:phrase-plural xml:lang="en">declare</annotations:phrase-plural>
-        <annotations:phrase-singular xml:lang="en">declares</annotations:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#hasLength">
         <annotations:interrogative>How long is</annotations:interrogative>
@@ -134,6 +134,9 @@
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isAbstract">
         <annotations:phrase xml:lang="en">abstract</annotations:phrase>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isPrivate">
+        <annotations:phrase xml:lang="en">private</annotations:phrase>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Method">
         <annotations:phrase-singular xml:lang="en">Method</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Methods</annotations:phrase-plural>
@@ -162,6 +165,10 @@
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isStatic">
         <annotations:phrase xml:lang="en">static</annotations:phrase>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isFinal">
+        <annotations:phrase xml:lang="en">constant</annotations:phrase>
+        <annotations:phrase xml:lang="en">final</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#Package">
         <annotations:phrase-singular xml:lang="en">Package</annotations:phrase-singular>
@@ -212,6 +219,9 @@
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isReturnTypeOf">
         <annotations:phrase-singular xml:lang="en">is returned by</annotations:phrase-singular>
     </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isProtected">
+        <annotations:phrase xml:lang="en">protected</annotations:phrase>
+    </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#AccessModifier">
         <annotations:phrase-singular xml:lang="en">Access Modifier</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Access Modifiers</annotations:phrase-plural>
@@ -232,6 +242,9 @@
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType">
         <annotations:phrase-singular xml:lang="en">Type</annotations:phrase-singular>
         <annotations:phrase-plural xml:lang="en">Types</annotations:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#isPublic">
+        <annotations:phrase xml:lang="en">public</annotations:phrase>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#containsCodeEntity">
         <annotations:phrase-plural xml:lang="en">contain</annotations:phrase-plural>

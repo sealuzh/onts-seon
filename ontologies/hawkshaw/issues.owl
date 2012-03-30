@@ -54,6 +54,16 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#blocks -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#blocks">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isBlockedBy"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#commentsOn -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#commentsOn">
@@ -63,6 +73,16 @@
             <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAuthorOf"/>
             <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCommentOf"/>
         </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#duplicates -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#duplicates">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isDuplicatedBy"/>
     </owl:ObjectProperty>
     
 
@@ -95,6 +115,26 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#incorporates -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#incorporates">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isACloneOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isACloneOf">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isClonedAs"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAssigneeOf -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAssigneeOf">
@@ -110,6 +150,24 @@
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isAuthorOf">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/generic.owl#Stakeholder"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Comment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isBlockedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isBlockedBy">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isClonedAs -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isClonedAs">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
     </owl:ObjectProperty>
     
 
@@ -134,12 +192,49 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isDuplicatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isDuplicatedBy">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isPartOf">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isRelatedTo">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#relatesTo"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isReportedBy -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isReportedBy">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Reporter"/>
         <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#reportsIssue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#relatesTo -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#relatesTo">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
     </owl:ObjectProperty>
     
 
@@ -196,6 +291,15 @@
     <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#hasKey">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isOpen -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isOpen">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
     
 
