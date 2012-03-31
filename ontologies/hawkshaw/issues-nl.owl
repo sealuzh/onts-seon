@@ -113,6 +113,8 @@
         <annotations-nl:phrase-singular xml:lang="en">is part of</annotations-nl:phrase-singular>
     </rdf:Description>
     <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#New_Feature">
+        <annotations-nl:phrase-singular xml:lang="en">Feature Request</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">Feature Requests</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">new Feature</annotations-nl:phrase-singular>
         <annotations-nl:phrase-plural xml:lang="en">new Features</annotations-nl:phrase-plural>
     </rdf:Description>
