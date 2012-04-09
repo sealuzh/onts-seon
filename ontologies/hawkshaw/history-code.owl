@@ -34,25 +34,70 @@
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isModifiedComplexTypeBy -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#changesInVersion -->
 
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isModifiedComplexTypeBy">
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#changesInVersion">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#childChangesInVersion -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#childChangesInVersion">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
-        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesComplexType"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isChangeVersionOfChild"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#declaresMethod"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#changesInVersion"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isChangeVersionOf -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isChangeVersionOf">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#changesInVersion"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isChangeVersionOfChild -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isChangeVersionOfChild">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Version"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isModifiedCodeEntityBy -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isModifiedCodeEntityBy">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Committer"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesComplexType -->
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesCodeEntity -->
 
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesComplexType">
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#ComplexType"/>
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesCodeEntity">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#CodeEntity"/>
+        <owl:inverseOf rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isModifiedCodeEntityBy"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#Committer"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#commitsVersion"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#isVersionOf"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/code.owl#containsCodeEntity"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isChangeVersionOf"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history.owl#commitsVersion"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isChangeVersionOfChild"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
 </rdf:RDF>
