@@ -295,6 +295,42 @@
     
 
 
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isBlocker -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isBlocker">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCritical -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isCritical">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isMajor -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isMajor">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isMinor -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isMinor">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isOpen -->
 
     <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isOpen">
@@ -307,6 +343,15 @@
     <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isResolved -->
 
     <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isResolved">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isTrivial -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#isTrivial">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/hawkshaw/2012/02/issues.owl#Issue"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
