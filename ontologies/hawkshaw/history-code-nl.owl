@@ -54,17 +54,33 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isModifiedComplexTypeBy">
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesCodeEntity">
+        <annotations-nl:phrase-plural xml:lang="en">change</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">changes</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-singular xml:lang="en">modifies</annotations-nl:phrase-singular>
+        <annotations-nl:phrase-plural xml:lang="en">modify</annotations-nl:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#childChangesInVersion">
+        <annotations-nl:phrase-plural xml:lang="en">change in</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">changes in</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isModifiedCodeEntityBy">
         <annotations-nl:phrase-plural xml:lang="en">are changed by</annotations-nl:phrase-plural>
         <annotations-nl:phrase-plural xml:lang="en">are modified by</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">is changed by</annotations-nl:phrase-singular>
         <annotations-nl:phrase-singular xml:lang="en">is modified by</annotations-nl:phrase-singular>
     </rdf:Description>
-    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#modifiesComplexType">
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isChangeVersionOfChild">
         <annotations-nl:phrase-plural xml:lang="en">change</annotations-nl:phrase-plural>
         <annotations-nl:phrase-singular xml:lang="en">changes</annotations-nl:phrase-singular>
-        <annotations-nl:phrase-singular xml:lang="en">modifies</annotations-nl:phrase-singular>
-        <annotations-nl:phrase-plural xml:lang="en">modify</annotations-nl:phrase-plural>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#changesInVersion">
+        <annotations-nl:phrase-plural xml:lang="en">change in</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">changes in</annotations-nl:phrase-singular>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://se-on.org/ontologies/hawkshaw/2012/02/history-code.owl#isChangeVersionOf">
+        <annotations-nl:phrase-plural xml:lang="en">change</annotations-nl:phrase-plural>
+        <annotations-nl:phrase-singular xml:lang="en">changes</annotations-nl:phrase-singular>
     </rdf:Description>
 </rdf:RDF>
 
