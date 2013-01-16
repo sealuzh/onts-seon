@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#"
+     xml:base="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl">
+        <rdfs:comment>System-specific ontology for Atlassian Jira.</rdfs:comment>
+        <owl:imports rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#hasKey -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#hasKey">
+        <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasIssueNumber"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#Question -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#Question">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#Task -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#Task">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#Test -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#Test">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#Wish -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#Wish">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#blocker -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#blocker">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#cannotreproduce -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#cannotreproduce">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#closed -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#closed">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#critical -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#critical">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#duplicate -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#duplicate">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#fixed -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#fixed">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#incomplete -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#incomplete">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#major -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#major">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#minor -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#minor">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#open -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#open">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#reopened -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#reopened">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#resolved -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#resolved">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#trivial -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#trivial">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#wontfix -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-jira.owl#wontfix">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

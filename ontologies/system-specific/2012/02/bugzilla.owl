@@ -1,0 +1,426 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#"
+     xml:base="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl">
+        <owl:imports rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#affectsComponent -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#affectsComponent">
+        <rdfs:comment>Issues affect one or several components of a system.</rdfs:comment>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Component"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#hasCC -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#hasCC">
+        <rdfs:comment>Persons can opt-in to be notified if the issue is modified.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Stakeholder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#isTargetedFor -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#isTargetedFor">
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Milestone"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#reportedOn -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#reportedOn">
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#OperatingSystem"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Platform"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Component -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Component">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>The component affected by the issue.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Milestone -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Milestone">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>A milestone usually represents a release by which the issue should be resolved.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#OperatingSystem -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#OperatingSystem">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>The operating system against which the bug was reported.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Platform -->
+
+    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Platform">
+        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
+        <rdfs:comment>Hardware platform against which the bug was reported.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P1 -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P1">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P2 -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P2">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P3 -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P3">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P4 -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P4">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P5 -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#P5">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Priority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#assigned -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#assigned">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#blocker -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#blocker">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#cleanup -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#cleanup">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#closed -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#closed">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#critical -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#critical">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#duplicate -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#duplicate">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#enhancement -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#enhancement">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#fixed -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#fixed">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#invalid -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#invalid">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#linux -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#linux">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#OperatingSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#mac -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#mac">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Platform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#macos -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#macos">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#OperatingSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#major -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#major">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#minor -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#minor">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#moved -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#moved">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#new -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#new">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#normal -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#normal">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#otheros -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#otheros">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#OperatingSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#otherplatform -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#otherplatform">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Platform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#pc -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#pc">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Platform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#reopened -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#reopened">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#resolved -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#resolved">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#trivial -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#trivial">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#unconfirmed -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#unconfirmed">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#verified -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#verified">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Status"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#windows -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#windows">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#OperatingSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#wontfix -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#wontfix">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#worksforme -->
+
+    <owl:NamedIndividual rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#worksforme">
+        <rdf:type rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Resolution"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

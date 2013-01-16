@@ -101,6 +101,16 @@
     
 
 
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#containsCodeEntity -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#containsCodeEntity">
+        <rdfs:comment>Files can contain various code entities, such as classes, methods, etc.</rdfs:comment>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#File"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresConstructor">
@@ -264,6 +274,14 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasSubtype">
         <rdfs:comment>Classes or interfaces can have subtypes.</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -273,14 +291,6 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
-                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -354,6 +364,10 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
         <rdfs:comment>A constructor or method can create a new instance of a class.</rdfs:comment>
         <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesConstructor"/>
+            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredConstructorOf"/>
+        </owl:propertyChainAxiom>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -362,10 +376,6 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#invokesConstructor"/>
-            <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#isDeclaredConstructorOf"/>
-        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
@@ -626,12 +636,12 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
     
 
 
-    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#usesClass -->
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#usesComplexType -->
 
-    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#usesClass">
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#usesComplexType">
         <rdfs:comment>One class can use another, when the first class&apos; methods invoke  or access methods or fields of the other class.</rdfs:comment>
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
-        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType"/>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#dependsOn"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#declaresMethod"/>
@@ -660,6 +670,25 @@ The inverse property is isDeclaredMethodOf.</rdfs:comment>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#CodeEntity"/>
         <rdfs:subPropertyOf rdf:resource="http://se-on.org/ontologies/general/2012/02/main.owl#hasIdentifier"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasDoc -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#hasDoc">
+        <rdfs:comment>Code can be documented.</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ComplexType"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method"/>
+                    <rdf:Description rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Namespace"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -930,5 +959,5 @@ Interfaces simulate multiple inheritance - a mechanism that many languages other
 
 
 
-<!-- Generated by the OWL API (version 3.2.5.1912) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
 
