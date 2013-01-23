@@ -257,11 +257,31 @@
     
 
 
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasActualEffort -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasActualEffort">
+        <rdfs:comment>The actual effort in hours needed for fixing the issue.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasCommentText -->
 
     <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasCommentText">
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Comment"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasEstimatedEffort -->
+
+    <owl:DatatypeProperty rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#hasEstimatedEffort">
+        <rdfs:comment>The estimated effort in hours needed for fixing the issue.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
     </owl:DatatypeProperty>
     
 
@@ -373,6 +393,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#FeatureRequest">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:comment>A new feature of the product, which has yet to be developed.</rdfs:comment>
     </owl:Class>
     
 
@@ -381,6 +402,7 @@
 
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Improvement">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:comment>An improvement or enhancement to an *existing* feature or task.</rdfs:comment>
     </owl:Class>
     
 

@@ -75,10 +75,21 @@
     
 
 
+    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#hasQAContact -->
+
+    <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#hasQAContact">
+        <rdfs:comment>The QA Contact in Bugzilla is the person who is ultimately resposible for aensuring that a particular bug will be fixed.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#Stakeholder"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#isTargetedFor -->
 
     <owl:ObjectProperty rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#isTargetedFor">
-        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Milestone"/>
+        <rdfs:comment>For planning, issues can be assigned to a particular milestone, until when the issue should be resolved.</rdfs:comment>
+        <rdfs:range rdf:resource="http://se-on.org/ontologies/domain-spanning/2012/02/main.owl#Milestone"/>
         <rdfs:domain rdf:resource="http://se-on.org/ontologies/domain-specific/2012/02/issues.owl#Issue"/>
     </owl:ObjectProperty>
     
@@ -116,15 +127,6 @@
     <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Component">
         <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
         <rdfs:comment>The component affected by the issue.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Milestone -->
-
-    <owl:Class rdf:about="http://se-on.org/ontologies/domain-spanning/2012/02/issues-bugzilla.owl#Milestone">
-        <rdfs:subClassOf rdf:resource="http://se-on.org/ontologies/general/2012/2/main.owl#SeonThing"/>
-        <rdfs:comment>A milestone usually represents a release by which the issue should be resolved.</rdfs:comment>
     </owl:Class>
     
 
